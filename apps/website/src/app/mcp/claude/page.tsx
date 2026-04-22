@@ -1,18 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { MCPClaude } from "@/components/mcp-claude";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Claude + Laudos.AI via MCP",
+  title: "Claude MCP Integration",
   description:
-    "Leve o contexto da operação radiológica da Laudos.AI para copilotos e agentes com governança.",
+    "Connect Claude to your Midday data via Model Context Protocol. Get AI-powered financial insights grounded in your real business numbers.",
   path: "/mcp/claude",
   og: {
-    title: "Claude + Laudos.AI",
-    description: "MCP para copilotos com contexto clínico e operacional.",
+    title: "Claude + Midday",
+    description: "Financial insights from your real business data",
   },
+  keywords: [
+    "Claude MCP",
+    "Claude integration",
+    "Model Context Protocol",
+    "Anthropic Claude",
+    "AI financial assistant",
+  ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.mcp} />;
+  return <MCPClaude />;
 }

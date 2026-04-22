@@ -17,23 +17,24 @@ import { PricingSection } from "./sections/pricing-section";
 
 const howItWorksSteps = [
   {
-    title: "Transactions collected automatically",
+    title: "Casos entram automaticamente",
     subtitle:
-      "Payments in and out are synced daily from connected bank accounts.",
+      "Pedidos, anexos e eventos entram por email, upload ou integracao sem depender de repasse manual.",
   },
   {
-    title: "Receipts and invoices matched",
+    title: "Contexto e anexos se juntam",
     subtitle:
-      "Documents are pulled from email, uploads, or folders and matched to the right transactions.",
+      "Documentos, mensagens e historico aparecem ao lado do caso certo para a equipe agir com contexto.",
   },
   {
-    title: "Categories and tax applied",
+    title: "Regras e status sao aplicados",
     subtitle:
-      "Transactions are categorized continuously, with tax and VAT stored where it belongs.",
+      "Prioridade, SLA, categoria e trilha de acao ficam consistentes em toda a operacao.",
   },
   {
-    title: "Everything stays up to date",
-    subtitle: "As new data comes in, your numbers stay reconciled and ready.",
+    title: "Tudo segue atualizado",
+    subtitle:
+      "Quando algo muda, o historico permanece claro e o fluxo segue pronto para revisao ou auditoria.",
   },
 ];
 
@@ -84,11 +85,11 @@ export function PreAccounting() {
             {/* Title and Description */}
             <div className="space-y-4 text-center max-w-xl w-full pt-4">
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-foreground">
-                Pre-accounting, handled.
+                Operacao auditavel.
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto">
-                Midday collects, matches, and prepares your data so your books
-                are always ready before they reach an accountant.
+                Laudos.AI organiza o que vem depois do exame para que contexto,
+                comunicacao e anexos fiquem prontos para revisao ou auditoria.
               </p>
             </div>
 
@@ -100,17 +101,17 @@ export function PreAccounting() {
                   className="w-full sm:w-auto h-11 px-6 text-sm font-sans"
                 >
                   <a
-                    href="https://app.midday.ai/"
+                    href="https://copilot.laudos.ai"
                     onClick={() =>
                       track({
                         event: LogEvents.CTA.name,
                         channel: LogEvents.CTA.channel,
-                        label: "Start free trial",
+                        label: "Comecar",
                         position: "pre_accounting_hero",
                       })
                     }
                   >
-                    Start free trial
+                    Comecar
                   </a>
                 </Button>
                 <Button
@@ -121,11 +122,11 @@ export function PreAccounting() {
                   }}
                   className="w-full sm:w-auto h-11 px-6 text-sm font-sans bg-background border-border hover:bg-accent"
                 >
-                  See how it works
+                  Ver fluxo
                 </Button>
               </div>
               <p className="text-muted-foreground text-xs font-sans">
-                14-day free trial · Cancel anytime
+                30 dias gratis · Cancelamento simples
               </p>
             </div>
           </div>
@@ -169,11 +170,11 @@ export function PreAccounting() {
             {/* Title and Description */}
             <div className="text-center space-y-4 w-full pt-6">
               <h1 className="font-serif text-6xl xl:text-7xl 2xl:text-7xl leading-tight text-foreground">
-                Pre-accounting, handled.
+                Operacao auditavel.
               </h1>
               <p className="text-muted-foreground text-sm xl:text-base leading-normal max-w-xl mx-auto font-sans text-center">
-                Midday collects, matches, and prepares your data so your books
-                are always ready before they reach an accountant.
+                Laudos.AI organiza o que vem depois do exame para que contexto,
+                comunicacao e anexos fiquem prontos para revisao ou auditoria.
               </p>
             </div>
 
@@ -181,17 +182,17 @@ export function PreAccounting() {
             <div className="flex gap-6 justify-center">
               <Button asChild className="h-11 px-6 text-sm font-sans">
                 <a
-                  href="https://app.midday.ai/"
+                  href="https://copilot.laudos.ai"
                   onClick={() =>
                     track({
                       event: LogEvents.CTA.name,
                       channel: LogEvents.CTA.channel,
-                      label: "Start free trial",
+                      label: "Comecar",
                       position: "pre_accounting_hero",
                     })
                   }
                 >
-                  Start free trial
+                  Comecar
                 </a>
               </Button>
               <Button
@@ -202,11 +203,11 @@ export function PreAccounting() {
                 }}
                 className="h-11 px-6 text-sm font-sans bg-background border-border hover:bg-accent"
               >
-                See how it works
+                Ver fluxo
               </Button>
             </div>
             <p className="text-muted-foreground text-xs font-sans text-center">
-              14-day free trial · Cancel anytime
+              30 dias gratis · Cancelamento simples
             </p>
           </div>
         </div>
@@ -308,7 +309,7 @@ export function PreAccounting() {
                   style={{ minHeight: "3rem" }}
                 >
                   <h2 className="font-serif text-2xl text-foreground">
-                    Less time fixing. Less money wasted.
+                    Menos retrabalho. Mais rastreabilidade.
                   </h2>
                 </div>
                 {howItWorksSteps.map((step, index) => (
@@ -381,62 +382,43 @@ export function PreAccounting() {
         <div className="h-px w-full border-t border-border" />
       </div>
 
-      {/* Accountant handoff Section */}
+      {/* Review handoff Section */}
       <section className="bg-background py-12 sm:py-16 lg:py-24">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center space-y-4 mb-8">
             <h2 className="font-serif text-2xl sm:text-2xl text-foreground">
-              Accountant-ready, without the back and forth
+              Pronto para revisao, sem caca ao contexto
             </h2>
             <p className="font-sans text-base text-muted-foreground leading-normal max-w-2xl mx-auto">
-              Midday prepares clean, structured records so exporting or syncing
-              to your accounting system takes minutes, not days.
+              A operacao fica estruturada para revisao clinica, coordenacao ou
+              auditoria, sem prints, planilhas ou vaivem.
             </p>
           </div>
 
           <div className="max-w-2xl mx-auto">
             <div className="flex flex-wrap gap-3 justify-center mb-8 pt-2">
               <Link
-                href="/integrations/fortnox"
+                href="/transactions"
                 className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
               >
-                <Image
-                  src="/images/fortnox.svg"
-                  alt="Fortnox"
-                  width={16}
-                  height={16}
-                  className="object-contain"
-                />
                 <span className="font-sans text-sm text-foreground">
-                  Fortnox
+                  Fluxo
                 </span>
               </Link>
               <Link
-                href="/integrations/xero"
+                href="/file-storage"
                 className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
               >
-                <Image
-                  src="/images/xero.svg"
-                  alt="Xero"
-                  width={16}
-                  height={16}
-                  className="object-contain"
-                />
-                <span className="font-sans text-sm text-foreground">Xero</span>
+                <span className="font-sans text-sm text-foreground">
+                  Arquivos
+                </span>
               </Link>
               <Link
-                href="/integrations/quickbooks"
+                href="/inbox"
                 className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
               >
-                <Image
-                  src="/images/quickbooks.svg"
-                  alt="QuickBooks"
-                  width={16}
-                  height={16}
-                  className="object-contain"
-                />
                 <span className="font-sans text-sm text-foreground">
-                  QuickBooks
+                  CRIT
                 </span>
               </Link>
             </div>
@@ -451,7 +433,7 @@ export function PreAccounting() {
                     />
                   </div>
                   <span className="font-sans text-sm text-foreground">
-                    Transactions and attachments reviewed in one place
+                    Eventos e anexos revisados no mesmo lugar
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -463,7 +445,7 @@ export function PreAccounting() {
                     />
                   </div>
                   <span className="font-sans text-sm text-foreground">
-                    Clear "ready for export" state
+                    Status claro de pronto para revisar
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -475,7 +457,7 @@ export function PreAccounting() {
                     />
                   </div>
                   <span className="font-sans text-sm text-foreground">
-                    No loose receipts or missing context
+                    Sem mensagem solta ou contexto perdido
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -487,7 +469,7 @@ export function PreAccounting() {
                     />
                   </div>
                   <span className="font-sans text-sm text-foreground">
-                    Consistent categories and report codes
+                    Categorias e trilhas consistentes
                   </span>
                 </div>
               </div>
@@ -501,79 +483,49 @@ export function PreAccounting() {
         <div className="h-px w-full border-t border-border" />
       </div>
 
-      {/* Receipts & documents Section */}
+      {/* Attachments & documents Section */}
       <section className="bg-background py-12 sm:py-16 lg:pt-32 lg:pb-24">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-stretch">
             <div className="flex items-center lg:order-2">
               <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                 <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                  Receipts matched automatically
+                  Anexos conectados automaticamente
                 </h2>
                 <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                  Invoices and receipts are collected from email, uploads, or
-                  bulk drag-and-drop, scanned with OCR, and matched to the right
-                  transactions. Missing receipts are surfaced automatically so
-                  reconciliation doesn't pile up.
+                  Pedidos, PDFs e documentos podem entrar por email, upload ou
+                  arraste em lote, ser lidos com OCR e aparecer no caso correto.
                 </p>
                 <div className="pt-6">
                   <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                     <Link
-                      href="/integrations/gmail"
+                      href="/chat/imessage"
                       className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
                     >
-                      <Image
-                        src="/images/gmail.svg"
-                        alt="Gmail"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
                       <span className="font-sans text-sm text-foreground">
-                        Gmail
+                        Email
                       </span>
                     </Link>
                     <Link
-                      href="/integrations/outlook"
+                      href="/file-storage"
                       className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
                     >
-                      <Image
-                        src="/images/outlook.svg"
-                        alt="Outlook"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
                       <span className="font-sans text-sm text-foreground">
-                        Outlook
+                        Upload
                       </span>
                     </Link>
                     <Link
-                      href="/integrations/slack"
+                      href="/chat/slack"
                       className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
                     >
-                      <Image
-                        src="/images/slack.svg"
-                        alt="Slack"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
                       <span className="font-sans text-sm text-foreground">
                         Slack
                       </span>
                     </Link>
                     <Link
-                      href="/integrations/whatsapp"
+                      href="/chat/whatsapp"
                       className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
                     >
-                      <Image
-                        src="/images/whatsapp.svg"
-                        alt="WhatsApp"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
                       <span className="font-sans text-sm text-foreground">
                         WhatsApp
                       </span>

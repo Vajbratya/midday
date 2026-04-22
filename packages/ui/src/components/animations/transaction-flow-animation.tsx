@@ -2,51 +2,23 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import type { IconType } from "react-icons";
-import {
-  MdOutlineAccountBalance,
-  MdOutlineAccountBalanceWallet,
-  MdOutlineCreditCard,
-  MdOutlineSavings,
-} from "react-icons/md";
-
-const dynamicIconMap: Record<string, IconType> = {
-  account_balance: MdOutlineAccountBalance,
-  credit_card: MdOutlineCreditCard,
-  account_balance_wallet: MdOutlineAccountBalanceWallet,
-  savings: MdOutlineSavings,
-};
-
-function DynamicIcon({
-  name,
-  className,
-  size,
-}: {
-  name: string;
-  className?: string;
-  size?: number;
-}) {
-  const Icon = dynamicIconMap[name];
-  return Icon ? <Icon className={className} size={size} /> : null;
-}
 
 interface AccountNode {
   id: number;
   x: number;
   y: number;
   label: string;
-  color: string;
-  icon: string;
+  chip: string;
 }
 
-interface Transaction {
+interface FlowEntry {
   id: number;
   description: string;
-  amount: number;
   date: string;
   category: string;
   categoryColor: string;
-  taxAmount: number;
+  turnaround: string;
+  turnaroundTone: "default" | "good" | "critical";
 }
 
 export function TransactionFlowAnimation({
@@ -82,178 +54,139 @@ export function TransactionFlowAnimation({
       id: 1,
       x: startX,
       y: topY,
-      label: "Account",
-      color: "hsl(var(--muted-foreground))",
-      icon: "account_balance",
+      label: "Origem",
+      chip: "PACS",
     },
     {
       id: 2,
       x: startX + nodeSpacing,
       y: topY,
-      label: "Account",
-      color: "hsl(var(--muted-foreground))",
-      icon: "credit_card",
+      label: "Contexto",
+      chip: "RIS",
     },
     {
       id: 3,
       x: startX + nodeSpacing * 2,
       y: topY,
-      label: "Account",
-      color: "hsl(var(--muted-foreground))",
-      icon: "account_balance_wallet",
+      label: "Estrutura",
+      chip: "IA",
     },
     {
       id: 4,
       x: startX + nodeSpacing * 3,
       y: topY,
-      label: "Account",
-      color: "hsl(var(--muted-foreground))",
-      icon: "savings",
+      label: "Saída",
+      chip: "CRIT",
     },
   ];
 
-  const formatAmount = (amount: number) => {
-    return new Intl.NumberFormat("sv-SE", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(Math.abs(amount));
+  const turnaroundToneClass = (
+    tone: FlowEntry["turnaroundTone"],
+  ): string => {
+    if (tone === "good") return "text-[#4CAF50]";
+    if (tone === "critical") return "text-[#F97316]";
+    return "text-foreground";
   };
 
-  const transactions: Transaction[] = [
+  const transactions: FlowEntry[] = [
     {
       id: 1,
-      description: "Office Supplies Co.",
-      amount: -45.2,
-      taxAmount: 9.04,
-      date: "Sep 10",
-      category: "Office Supplies",
-      categoryColor: "#1976D2",
+      description: "TC abdome total",
+      date: "22 abr",
+      category: "Abdome",
+      categoryColor: "#3B82F6",
+      turnaround: "07 min",
+      turnaroundTone: "good",
     },
     {
       id: 2,
-      description: "Cloud Services Inc.",
-      amount: -89.0,
-      taxAmount: 17.8,
-      date: "Sep 10",
-      category: "Software",
-      categoryColor: "#2196F3",
+      description: "RM encéfalo",
+      date: "22 abr",
+      category: "Neuro",
+      categoryColor: "#8B5CF6",
+      turnaround: "16 min",
+      turnaroundTone: "default",
     },
     {
       id: 3,
-      description: "Freelance Payment",
-      amount: 1200.0,
-      taxAmount: 0,
-      date: "Sep 09",
-      category: "Income",
-      categoryColor: "#4CAF50",
+      description: "RX tórax PA",
+      date: "22 abr",
+      category: "Tórax",
+      categoryColor: "#22C55E",
+      turnaround: "03 min",
+      turnaroundTone: "good",
     },
     {
       id: 4,
-      description: "Marketing Agency",
-      amount: -350.0,
-      taxAmount: 70.0,
-      date: "Sep 09",
-      category: "Marketing",
-      categoryColor: "#9C27B0",
+      description: "US abdome total",
+      date: "21 abr",
+      category: "Ultrassom",
+      categoryColor: "#EAB308",
+      turnaround: "11 min",
+      turnaroundTone: "default",
     },
     {
       id: 5,
-      description: "Software Subscription",
-      amount: -24.0,
-      taxAmount: 4.8,
-      date: "Sep 08",
-      category: "Software",
-      categoryColor: "#2196F3",
+      description: "TC crânio trauma",
+      date: "21 abr",
+      category: "Urgência",
+      categoryColor: "#F97316",
+      turnaround: "CRIT",
+      turnaroundTone: "critical",
     },
     {
       id: 6,
-      description: "AWS",
-      amount: -1820.5,
-      taxAmount: 364.1,
-      date: "Sep 08",
-      category: "Infrastructure",
-      categoryColor: "#FF9800",
+      description: "AngioTC pulmonar",
+      date: "21 abr",
+      category: "Vascular",
+      categoryColor: "#06B6D4",
+      turnaround: "14 min",
+      turnaroundTone: "default",
     },
     {
       id: 7,
-      description: "Stripe Payment",
-      amount: 2450.0,
-      taxAmount: 0,
-      date: "Sep 07",
-      category: "Income",
-      categoryColor: "#4CAF50",
+      description: "Mamografia rastreio",
+      date: "20 abr",
+      category: "Mama",
+      categoryColor: "#EC4899",
+      turnaround: "08 min",
+      turnaroundTone: "good",
     },
     {
       id: 8,
-      description: "Figma",
-      amount: -225.88,
-      taxAmount: 45.18,
-      date: "Sep 07",
-      category: "Office Supplies",
-      categoryColor: "#1976D2",
+      description: "TC seios da face",
+      date: "20 abr",
+      category: "Otorrino",
+      categoryColor: "#6366F1",
+      turnaround: "09 min",
+      turnaroundTone: "good",
     },
     {
       id: 9,
-      description: "Webflow",
-      amount: -176.36,
-      taxAmount: 35.27,
-      date: "Sep 06",
-      category: "Software",
-      categoryColor: "#2196F3",
+      description: "RX coluna lombar",
+      date: "20 abr",
+      category: "Ortopedia",
+      categoryColor: "#14B8A6",
+      turnaround: "12 min",
+      turnaroundTone: "default",
     },
     {
       id: 10,
-      description: "GitHub",
-      amount: -44.0,
-      taxAmount: 8.8,
-      date: "Sep 06",
-      category: "Software",
-      categoryColor: "#2196F3",
+      description: "RM joelho direito",
+      date: "19 abr",
+      category: "Músculo-esquelético",
+      categoryColor: "#A855F7",
+      turnaround: "18 min",
+      turnaroundTone: "default",
     },
     {
       id: 11,
-      description: "Notion",
-      amount: -120.0,
-      taxAmount: 24.0,
-      date: "Sep 05",
-      category: "Software",
-      categoryColor: "#2196F3",
-    },
-    {
-      id: 12,
-      description: "OpenAI",
-      amount: -89.5,
-      taxAmount: 17.9,
-      date: "Sep 05",
-      category: "Software",
-      categoryColor: "#2196F3",
-    },
-    {
-      id: 13,
-      description: "Vercel",
-      amount: -299.0,
-      taxAmount: 59.8,
-      date: "Sep 04",
-      category: "Infrastructure",
-      categoryColor: "#FF9800",
-    },
-    {
-      id: 14,
-      description: "Adobe",
-      amount: -649.0,
-      taxAmount: 129.8,
-      date: "Sep 04",
-      category: "Software",
-      categoryColor: "#2196F3",
-    },
-    {
-      id: 15,
-      description: "Client Invoice",
-      amount: 8500.0,
-      taxAmount: 0,
-      date: "Sep 03",
-      category: "Income",
-      categoryColor: "#4CAF50",
+      description: "TC tórax alta resolução",
+      date: "19 abr",
+      category: "Pneumo",
+      categoryColor: "#10B981",
+      turnaround: "10 min",
+      turnaroundTone: "good",
     },
   ];
 
@@ -312,7 +245,7 @@ export function TransactionFlowAnimation({
       {/* Header */}
       <div className="px-2 md:px-3 pt-2 md:pt-3 pb-1.5 md:pb-2 border-b border-border relative z-10">
         <h3 className="text-[13px] md:text-[14px] text-foreground">
-          Transactions
+          Fluxo clínico
         </h3>
       </div>
 
@@ -346,28 +279,31 @@ export function TransactionFlowAnimation({
                   height={36}
                   style={{ overflow: "visible" }}
                 >
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      display: "flex",
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
-                  >
-                    <div
-                      style={{
-                        color: "hsl(var(--muted-foreground))",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        opacity: showAccounts ? 1 : 0,
-                      }}
                     >
-                      <DynamicIcon name={node.icon} size={18} />
+                      <div
+                        style={{
+                          color: "hsl(var(--foreground))",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          opacity: showAccounts ? 1 : 0,
+                          fontSize: "8px",
+                          fontWeight: 600,
+                          letterSpacing: "0.08em",
+                        }}
+                      >
+                        {node.chip}
+                      </div>
                     </div>
-                  </div>
-                </foreignObject>
+                  </foreignObject>
                 <text
                   x={node.x}
                   y={node.y - 25}
@@ -426,16 +362,16 @@ export function TransactionFlowAnimation({
             <thead className="sticky top-0 z-10 bg-secondary border-b border-border">
               <tr className="h-[28px] md:h-[32px]">
                 <th className="w-[60px] md:w-[70px] px-1.5 md:px-2 text-left text-[10px] md:text-[11px] font-medium text-muted-foreground border-r border-border">
-                  Date
+                  Data
                 </th>
                 <th className="w-[140px] md:w-[160px] px-1.5 md:px-2 text-left text-[10px] md:text-[11px] font-medium text-muted-foreground border-r border-border">
-                  Description
+                  Caso
                 </th>
                 <th className="w-[90px] md:w-[100px] px-1.5 md:px-2 text-left text-[10px] md:text-[11px] font-medium text-muted-foreground border-r border-border">
-                  Amount
+                  TAT
                 </th>
                 <th className="w-[110px] md:w-[120px] px-1.5 md:px-2 text-left text-[10px] md:text-[11px] font-medium text-muted-foreground">
-                  Category
+                  Fila
                 </th>
               </tr>
             </thead>
@@ -459,25 +395,18 @@ export function TransactionFlowAnimation({
                     {transaction.date}
                   </td>
                   <td
-                    className={`w-[140px] md:w-[160px] px-1.5 md:px-2 text-[10px] md:text-[11px] border-r border-border ${
-                      transaction.amount > 0
-                        ? "text-[#4CAF50]"
-                        : "text-foreground"
-                    }`}
+                    className="w-[140px] md:w-[160px] px-1.5 md:px-2 text-[10px] md:text-[11px] border-r border-border text-foreground"
                   >
                     <div className="truncate" title={transaction.description}>
                       {transaction.description}
                     </div>
                   </td>
                   <td
-                    className={`w-[90px] md:w-[100px] px-1.5 md:px-2 text-[10px] md:text-[11px] border-r border-border ${
-                      transaction.amount > 0
-                        ? "text-[#4CAF50]"
-                        : "text-foreground"
-                    }`}
+                    className={`w-[90px] md:w-[100px] px-1.5 md:px-2 text-[10px] md:text-[11px] border-r border-border ${turnaroundToneClass(
+                      transaction.turnaroundTone,
+                    )}`}
                   >
-                    {transaction.amount > 0 ? "+" : "-"}
-                    {formatAmount(transaction.amount)} kr
+                    {transaction.turnaround}
                   </td>
                   <td className="w-[110px] md:w-[120px] px-1.5 md:px-2">
                     <div className="flex items-center gap-1 md:gap-1.5">

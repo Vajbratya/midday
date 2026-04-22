@@ -5,15 +5,15 @@ import { Icons } from "@midday/ui/icons";
 import { useState } from "react";
 
 const SHORTCUT_SUGGESTIONS = [
-  "Show latest transactions",
-  "Show cash burn and top 3 vendor increases",
-  "Show where we're spending the most this month",
-  "Show weekly trends and insights",
-  "Show revenue performance",
-  "Show expense breakdown by category",
-  "Show profit margins",
-  "Show cash runway",
-  "Show cash flow stress test",
+  "Mostre os casos mais urgentes agora",
+  "Mostre os gargalos de TAT",
+  "Quais filas estao mais lentas hoje?",
+  "Resuma a operacao da semana",
+  "Mostre desempenho por radiologista",
+  "Mostre a quebra por modalidade",
+  "Quais instituicoes mais cresceram?",
+  "Quais casos precisam de contexto?",
+  "Quais alertas criticos estao pendentes?",
 ];
 
 export function HeaderAssistantInputPreview() {
@@ -44,7 +44,7 @@ export function HeaderAssistantInputPreview() {
         <div className="flex items-center px-3 py-2.5">
           <input
             type="text"
-            placeholder="Ask anything"
+            placeholder="Pergunte qualquer coisa"
             className="flex-1 bg-transparent border-0 outline-none text-[11px] text-foreground placeholder:text-muted-foreground"
             readOnly
           />

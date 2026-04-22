@@ -1,24 +1,25 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { MCP } from "@/components/mcp";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "API e MCP para integrar a Laudos.AI",
+  title: "MCP para Claude, ChatGPT, Cursor e Mais",
   description:
-    "Conecte a Laudos.AI ao seu stack tecnico com API e MCP para fluxos clinicos, automacoes, agentes e integracoes institucionais.",
+    "Leve casos, laudos, CRIT e contexto clinico para qualquer agente via MCP a partir de Cursor, Claude, ChatGPT, Raycast ou Zapier.",
   path: "/mcp",
   og: {
-    title: "API e MCP",
-    description: "Leve o workflow radiologico para os sistemas e agentes que voce ja usa.",
+    title: "MCP",
+    description: "Laudos.AI em qualquer agente",
   },
   keywords: [
-    "api laudos",
-    "mcp radiologia",
-    "integracao hospitalar",
-    "agentes com mcp",
+    "MCP",
+    "Model Context Protocol",
+    "integracao ai",
+    "Claude MCP",
+    "Cursor MCP",
+    "automacao radiologica",
   ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.mcp} />;
+  return <MCP />;
 }

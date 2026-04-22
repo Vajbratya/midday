@@ -1,24 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { Transactions } from "@/components/transactions";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Fluxo de exames e prioridades",
+  title: "Fluxo Operacional da Radiologia",
   description:
-    "Organize estudos, prioridades e contexto do trabalho com um fluxo mais claro entre aquisicao, redacao, revisao e entrega.",
+    "Centralize casos, etapas, anexos e integrações em um fluxo unico com contexto completo e menos retrabalho.",
   path: "/transactions",
   og: {
-    title: "Fluxo operacional",
-    description: "Exames, prioridade e contexto organizados no mesmo sistema.",
+    title: "Fluxo",
+    description: "Tudo o que entra e sai da operacao, em uma fila so",
   },
   keywords: [
-    "fila de exames",
-    "workflow radiologia",
-    "priorizacao radiologica",
+    "fluxo radiologia",
+    "fila de casos",
+    "orquestracao clinica",
+    "workflow radiologico",
     "operacao de laudos",
   ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.transactions} />;
+  return <Transactions />;
 }

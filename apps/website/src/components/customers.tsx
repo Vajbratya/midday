@@ -63,17 +63,17 @@ export function Customers() {
           <div className="flex flex-col justify-start items-center space-y-6 z-20 px-3 sm:px-4">
             <div className="space-y-4 text-center max-w-xl px-2 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Customers
+                Instituições
               </p>
               <h1 className="font-serif text-4xl sm:text-4xl md:text-5xl leading-tight">
-                <span className="text-foreground">Know your customers</span>
+                <span className="text-foreground">Gerencie instituições</span>
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto lg:hidden">
-                See revenue and activity per customer in one view.
+                Veja equipe, produção e contexto institucional em um painel.
               </p>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto hidden lg:block">
-                See revenue, profitability, and activity per customer in one
-                place without switching tools or exporting data.
+                Operação por equipe, especialidade e instituição em um só lugar,
+                sem depender de planilhas paralelas.
               </p>
             </div>
 
@@ -90,7 +90,7 @@ export function Customers() {
                 <HeroImage
                   lightSrc="/images/customers-light.svg"
                   darkSrc="/images/customers-dark.svg"
-                  alt="Customers Interface"
+                  alt="Instituições e equipes"
                 />
               </div>
             </div>
@@ -103,17 +103,17 @@ export function Customers() {
             {/* Main Heading */}
             <div className="text-center space-y-8 2xl:space-y-12 3xl:space-y-12 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Customers
+                Instituições
               </p>
               <h1 className="font-serif text-8xl xl:text-9xl 2xl:text-[11rem] leading-tight text-center">
                 <span className="text-foreground block">
-                  Know your customers
+                  Gerencie instituições
                 </span>
               </h1>
 
               <p className="text-muted-foreground text-base leading-normal max-w-2xl mx-auto font-sans text-center">
-                See revenue, profitability, and activity per customer in one
-                place without switching tools or exporting data.
+                Operação por equipe, especialidade e instituição em um só lugar,
+                sem depender de planilhas paralelas.
               </p>
             </div>
 
@@ -130,7 +130,7 @@ export function Customers() {
                 <HeroImage
                   lightSrc="/images/customers-light.svg"
                   darkSrc="/images/customers-dark.svg"
-                  alt="Customers Interface"
+                  alt="Instituições e equipes"
                 />
               </div>
             </div>
@@ -148,37 +148,36 @@ export function Customers() {
               <div className="flex items-center">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    Customer revenue and activity
+                    Visao por instituicao
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    See revenue, invoices, time, and activity per customer in
-                    one place, with automatically enriched company details and a
-                    shareable customer portal when needed.
+                    Veja volume, equipes, unidades e atividade por instituicao
+                    em um so lugar, com governanca clara para cada conta.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Customer profiles
+                        Perfis institucionais
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Revenue per customer
+                        Volume por unidade
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Customer portal
+                        Portal institucional
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Invoice history
+                        Historico de operacao
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Time tracked
+                        Equipes e acesso
                       </span>
                     </div>
                   </div>
@@ -201,37 +200,36 @@ export function Customers() {
               <div className="flex items-center order-1 lg:order-2">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    Customer context, built in
+                    Contexto institucional, nativo
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Automatically enriched company profiles give you instant
-                    context on customers, without manual research or switching
-                    tools.
+                    Dados de unidade, equipe e operacao ajudam a entender o
+                    caso certo sem procurar informacao em outra tela.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Company profiles
+                        Perfis de unidade
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Industry and size
+                        Equipe e escala
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Location and local time
+                        Localizacao e cobertura
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Funding and ownership
+                        Acesso e governanca
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Web and social presence
+                        Integracoes por instituicao
                       </span>
                     </div>
                   </div>

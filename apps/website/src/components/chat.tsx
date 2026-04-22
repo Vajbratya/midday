@@ -36,43 +36,43 @@ const DEMO_STORY_META: Record<
   { title: string; description: string; bullets: string[] }
 > = {
   reminder: {
-    title: "Catch overdue invoices right from a notification",
+    title: "Abra um alerta crítico e aja sem perder tempo",
     description:
-      "Start on the lock screen, open Midday from the push, and send a reminder without breaking focus.",
+      "Receba o alerta, abra o caso e registre a comunicação crítica sem sair do fluxo.",
     bullets: [
-      "Lock-screen alert opens directly into the iMessage thread.",
-      "Midday drafts the reminder and sends the payment link automatically.",
-      "Perfect for chasing cash the moment an invoice goes overdue.",
+      "O alerta abre direto no fluxo da comunicação.",
+      "A plataforma registra a ação e o horário automaticamente.",
+      "Ideal para casos em que cada minuto importa.",
     ],
   },
   "create-invoice": {
-    title: "Draft and send invoices from the chat itself",
+    title: "Dispare a comunicação pelo canal que a equipe já usa",
     description:
-      "Turn a plain-language instruction into a polished invoice, then send it immediately from the same thread.",
+      "Use o canal certo para avisar a equipe assistente e manter a prova do contato.",
     bullets: [
-      "Convert billable work into a ready-to-send invoice in seconds.",
-      "Keep everything in context instead of jumping back to the dashboard.",
-      "Ideal for founders who invoice between meetings.",
+      "Envio e histórico ficam no mesmo lugar.",
+      "Sem alternar entre sistemas para provar o contato.",
+      "Pensado para rotina real de plantão.",
     ],
   },
   "receipt-match": {
-    title: "Upload a receipt and let Midday match the transaction",
+    title: "Anexe contexto clínico junto da ocorrência",
     description:
-      "Drop a receipt photo into the conversation and get back the exact card transaction it belongs to.",
+      "Mensagens, anexos e observações podem acompanhar a ocorrência crítica quando necessário.",
     bullets: [
-      "Receipt upload gets recognized inside the thread.",
-      "Midday finds the matching transaction automatically.",
-      "A fast way to keep expenses reconciled without inbox cleanup.",
+      "O registro fica associado ao evento certo.",
+      "A equipe ganha contexto sem perder rastreabilidade.",
+      "Tudo auditável do início ao fim.",
     ],
   },
   "latest-transactions": {
-    title: "Ask for the latest activity and spot anything unusual",
+    title: "Veja pendências, confirmações e o que ainda está aberto",
     description:
-      "Get the newest transactions in a compact summary and ask follow-up questions without leaving chat.",
+      "Acompanhe quem recebeu, quem confirmou e quais alertas ainda exigem ação.",
     bullets: [
-      "See recent spend and payouts in one answer.",
-      "Ask Midday to flag anomalies or explain changes instantly.",
-      "Useful when you want a quick financial pulse check on the go.",
+      "Resumo compacto do estado atual dos alertas.",
+      "Priorize o que segue sem ciência registrada.",
+      "Controle operacional direto no canal do time.",
     ],
   },
 };
@@ -368,7 +368,7 @@ export function Chat() {
             <div className="flex flex-col items-center w-full text-center space-y-6 lg:space-y-8">
               <div className="space-y-5 lg:space-y-6 max-w-3xl 3xl:max-w-5xl mx-auto px-2 lg:px-0">
                 <h1 className="font-serif text-3xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl 2xl:text-7xl 3xl:text-8xl leading-[1.1] tracking-tight text-foreground">
-                  <span className="block">Run your business</span>
+                  <span className="block">Comunique o crítico</span>
                   <span className="mt-[0.08em] block">
                     from{" "}
                     <TextMorph
@@ -387,15 +387,15 @@ export function Chat() {
                 </h1>
 
                 <p className="text-muted-foreground text-base lg:text-lg leading-relaxed font-sans max-w-xl mx-auto">
-                  Everything Midday, right from chat.
+                  CRIT da Laudos.AI direto dos canais que o plantão já usa.
                 </p>
 
                 <div className="flex justify-center pt-1">
                   <a
-                    href="https://app.midday.ai/apps?app=sendblue"
+                    href="https://copilot.laudos.ai"
                     className="inline-flex items-center justify-center bg-foreground px-5 py-2.5 font-sans text-sm font-medium text-background transition-opacity hover:opacity-90"
                   >
-                    Set up your company
+                    Testar o CRIT
                   </a>
                 </div>
               </div>

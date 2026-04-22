@@ -1,24 +1,25 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { Chat } from "@/components/chat";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "CRIT para achados criticos com SLA e prova juridica",
+  title: "CRIT em WhatsApp, Slack, Telegram e iMessage",
   description:
-    "O CRIT fecha o ciclo de comunicacao de achados criticos com notificacao segura, registro de ciencia, auditoria completa e rastreabilidade institucional.",
+    "Comunique achados críticos pelos canais que a equipe já usa, com confirmação de ciência, histórico e trilha auditável.",
   path: "/chat",
   og: {
     title: "CRIT",
-    description: "Achado critico comunicado. Vida salva.",
+    description: "Comunique o crítico com prova jurídica e rastreabilidade.",
   },
   keywords: [
-    "achados criticos",
     "crit radiologia",
-    "comunicacao segura",
-    "sla radiologia",
+    "comunicação crítica",
+    "whatsapp radiologia",
+    "sla achados críticos",
+    "telegram plantão",
+    "slack radiologia",
   ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.chat} />;
+  return <Chat />;
 }

@@ -67,19 +67,18 @@ export function Assistant() {
           <div className="flex flex-col justify-start items-center space-y-6 z-20 px-3 sm:px-4">
             <div className="space-y-4 text-center max-w-xl px-2 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Assistant
+                Copilot
               </p>
               <h1 className="font-serif text-4xl sm:text-4xl md:text-5xl leading-tight">
-                <span className="text-foreground">Get things done</span>
+                <span className="text-foreground">Laude falando</span>
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto lg:hidden">
-                Send an invoice, check your runway, or export last month to your
-                accountant. Just ask.
+                Dite os achados com naturalidade e deixe a IA estruturar o
+                laudo para revisão.
               </p>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto hidden lg:block">
-                Send an invoice, check your runway, categorize last week's
-                expenses, or export everything to your accountant. Just describe
-                what you need and the assistant handles it.
+                Descreva o caso como pensa. O Copilot organiza, padroniza e
+                acelera a redação sem tirar o médico da decisão clínica.
               </p>
 
               <div className="flex items-center justify-center gap-3 pt-4">
@@ -161,7 +160,7 @@ export function Assistant() {
                 <HeroImage
                   lightSrc="/images/assistant-light.svg"
                   darkSrc="/images/assistant-dark.svg"
-                  alt="Assistant Interface"
+                  alt="Copilot Laudos.AI"
                 />
               </div>
             </div>
@@ -174,16 +173,15 @@ export function Assistant() {
             {/* Main Heading */}
             <div className="text-center space-y-8 2xl:space-y-12 3xl:space-y-12 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Assistant
+                Copilot
               </p>
               <h1 className="font-serif text-8xl xl:text-9xl 2xl:text-[11rem] leading-tight text-center">
-                <span className="text-foreground block">Get things done</span>
+                <span className="text-foreground block">Laude falando</span>
               </h1>
 
               <p className="text-muted-foreground text-base leading-normal max-w-2xl mx-auto font-sans text-center">
-                Send an invoice, check your runway, categorize last week's
-                expenses, or export everything to your accountant. Just describe
-                what you need and the assistant handles it.
+                Descreva o caso como pensa. O Copilot organiza, padroniza e
+                acelera a redação sem tirar o médico da decisão clínica.
               </p>
 
               <div className="flex items-center justify-center gap-3 pt-4">
@@ -265,7 +263,7 @@ export function Assistant() {
                 <HeroImage
                   lightSrc="/images/assistant-light.svg"
                   darkSrc="/images/assistant-dark.svg"
-                  alt="Assistant Interface"
+                  alt="Copilot Laudos.AI"
                 />
               </div>
             </div>
@@ -283,33 +281,32 @@ export function Assistant() {
               <div className="flex items-center">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    Ask anything, get things done
+                    Pergunte e aja no fluxo
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Create and send invoices, categorize transactions, start
-                    timers, export data to your accountant, and search the web
-                    for prices or tax rates — all in natural language. No menus,
-                    no forms, just say what you need.
+                    Gere laudos, recupere contexto, acione o CRIT, revise
+                    anexos e pesquise referencias em linguagem natural. Sem
+                    menus, sem formularios, so diga o que precisa.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Create invoices
+                        Gerar laudos
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Manage transactions
+                        Consultar casos
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Track time
+                        Revisar anexos
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Export to accountant
+                        Acionar CRIT
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
@@ -340,12 +337,12 @@ export function Assistant() {
               <div className="flex items-center lg:order-2">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    Works with your tools
+                    Funciona com as suas ferramentas
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Connect Gmail, Slack, Google Calendar, Notion, GitHub,
-                    Linear, and more. Check your calendar, send a message, or
-                    look up an issue without leaving Midday.
+                    Conecte email, Slack, WhatsApp, agenda, docs internos e
+                    outras ferramentas. Consulte contexto, envie mensagem e siga
+                    o fluxo sem sair da Laudos.AI.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">

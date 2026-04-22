@@ -67,13 +67,14 @@ export function FileStorage() {
           <div className="flex flex-col justify-start items-center space-y-6 z-20 px-3 sm:px-4">
             <div className="space-y-4 text-center max-w-xl px-2 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Files
+                Arquivos
               </p>
               <h1 className="font-serif text-4xl sm:text-4xl md:text-5xl leading-tight">
-                <span className="text-foreground">Everything in one place</span>
+                <span className="text-foreground">Tudo ligado ao caso certo</span>
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto lg:hidden">
-                Files are organized and connected to your business activity.
+                Pedidos, anexos e documentos ficam organizados com contexto
+                clinico.
               </p>
             </div>
 
@@ -90,7 +91,7 @@ export function FileStorage() {
                 <HeroImage
                   lightSrc="/images/file-storage-light.svg"
                   darkSrc="/images/file-storage-dark.svg"
-                  alt="File Storage Interface"
+                  alt="Arquivos e contexto clinico"
                 />
               </div>
             </div>
@@ -103,18 +104,17 @@ export function FileStorage() {
             {/* Main Heading */}
             <div className="text-center space-y-8 2xl:space-y-12 3xl:space-y-12 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Files
+                Arquivos
               </p>
               <h1 className="font-serif text-8xl xl:text-9xl 2xl:text-[11rem] leading-tight text-center">
                 <span className="text-foreground block">
-                  Everything in one place
+                  Tudo ligado ao caso certo
                 </span>
               </h1>
 
               <p className="text-muted-foreground text-base leading-normal max-w-2xl mx-auto font-sans text-center">
-                Smart storage that automatically organizes and connects files to
-                transactions, invoices, and customers so you can always find
-                what you need.
+                Armazene pedidos, PDFs, anexos e documentos de apoio ja
+                conectados ao caso, instituicao e etapa certa.
               </p>
             </div>
 
@@ -131,7 +131,7 @@ export function FileStorage() {
                 <HeroImage
                   lightSrc="/images/file-storage-light.svg"
                   darkSrc="/images/file-storage-dark.svg"
-                  alt="File Storage Interface"
+                  alt="Arquivos e contexto clinico"
                 />
               </div>
             </div>
@@ -149,11 +149,11 @@ export function FileStorage() {
               <div className="flex items-center">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    Central file storage
+                    Central de documentos clinicos
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Store contracts, receipts, invoices, and other documents in
-                    one place connected to your business.
+                    Guarde pedidos, protocolos, laudos anteriores e anexos em
+                    um so lugar, sem depender de pasta solta.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
@@ -168,7 +168,7 @@ export function FileStorage() {
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Linked to transactions and invoices
+                        Ligado ao caso e instituicao
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
@@ -223,32 +223,32 @@ export function FileStorage() {
               <div className="flex items-center lg:order-2">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    One search across your entire business
+                    Busca unica em toda a operacao
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Find invoices, receipts, contracts, transactions, and
-                    documents instantly using a single search with no folders or
-                    manual organization.
+                    Encontre caso, anexo, pedido, laudo ou documento em
+                    segundos, com resultados orientados por contexto em vez de
+                    pastas.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Search transactions, invoices, files
+                        Buscar casos, laudos e anexos
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Open and act instantly
+                        Abrir e agir na hora
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Keyboard-first
+                        Atalhos
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Context-aware results
+                        Resultados com contexto
                       </span>
                     </div>
                   </div>

@@ -1,18 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { MCPCopilot } from "@/components/mcp-copilot";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Copilot Studio + Laudos.AI",
+  title: "Microsoft Copilot MCP Integration",
   description:
-    "Conecte a operação radiológica da Laudos.AI a copilotos institucionais com API e MCP.",
+    "Connect Midday to Microsoft Copilot Studio via MCP. Query invoices, transactions, and reports from Word, Excel, Outlook, or any Copilot-enabled app.",
   path: "/mcp/copilot",
   og: {
-    title: "Copilot Studio + Laudos.AI",
-    description: "Integração programática com governança institucional.",
+    title: "Copilot + Midday",
+    description: "Business data in Word, Excel, and Outlook",
   },
+  keywords: [
+    "Microsoft Copilot MCP",
+    "Copilot integration",
+    "Model Context Protocol",
+    "Microsoft 365",
+    "enterprise AI",
+  ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.mcp} />;
+  return <MCPCopilot />;
 }

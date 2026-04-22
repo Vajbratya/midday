@@ -1,12 +1,15 @@
 import path from "node:path";
 
+const workspaceRoot = path.join(__dirname, "../..");
+
 /** @type {import("next").NextConfig} */
 const config = {
   poweredByHeader: false,
   reactStrictMode: true,
   trailingSlash: true,
+  outputFileTracingRoot: workspaceRoot,
   turbopack: {
-    root: path.join(__dirname, "../.."),
+    root: workspaceRoot,
   },
   transpilePackages: [
     "@midday/ui",

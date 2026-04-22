@@ -1,24 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { FileStorage } from "@/components/file-storage";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Templates, mascaras e vocabulario",
+  title: "Arquivos e Contexto Clinico",
   description:
-    "Use templates pessoais ou institucionais para acelerar o laudo, reduzir repeticao e manter consistencia entre profissionais e equipes.",
+    "Centralize anexos, pedidos, PDFs e documentos de apoio ligados ao caso certo.",
   path: "/file-storage",
   og: {
-    title: "Templates Laudos.AI",
-    description: "Mascaras e descritores organizados dentro do produto.",
+    title: "Arquivos",
+    description: "Tudo conectado ao contexto certo",
   },
   keywords: [
-    "templates de laudo",
-    "mascaras radiologia",
-    "descritores institucionais",
-    "vocabulario medico",
+    "arquivos radiologia",
+    "anexos clinicos",
+    "documentos do caso",
+    "contexto clinico",
+    "gestao de anexos",
   ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages["file-storage"]} />;
+  return <FileStorage />;
 }

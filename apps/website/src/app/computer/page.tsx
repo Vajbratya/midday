@@ -1,24 +1,25 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { Computer } from "@/components/computer";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Automações para operação radiológica",
+  title: "Computer — Agentes Autonomos para a Operacao Clinica",
   description:
-    "A mesma infraestrutura que organiza laudos e comunicação crítica pode sustentar rotinas, auditorias e automações para operações radiológicas mais previsíveis.",
+    "Descreva o que precisa e a Laudos.AI monta um agente autonomo que roda com agenda, memoria e controle para sua operacao clinica.",
   path: "/computer",
   og: {
-    title: "Automações",
-    description: "Rotinas e auditorias para a operação radiológica.",
+    title: "Laudos.AI Computer",
+    description: "Sua operacao continua rodando quando voce sai da tela",
   },
   keywords: [
-    "automação radiologia",
-    "agentes clinicos",
-    "workflow enterprise",
-    "operação radiológica",
+    "autonomous agents",
+    "automacao clinica",
+    "AI agents",
+    "Laudos.AI Computer",
+    "workflow radiologico",
+    "scheduled agents",
   ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.computer} />;
+  return <Computer />;
 }

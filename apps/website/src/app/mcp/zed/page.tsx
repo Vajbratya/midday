@@ -1,18 +1,23 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { MCPZed } from "@/components/mcp-zed";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Zed + Laudos.AI",
+  title: "Zed MCP Integration",
   description:
-    "Integre a camada técnica da Laudos.AI ao ambiente de desenvolvimento com API e MCP.",
+    "Connect Zed to your Midday data via Model Context Protocol. Query transactions, invoices, and reports from the fastest code editor.",
   path: "/mcp/zed",
   og: {
-    title: "Zed + Laudos.AI",
-    description: "Contexto real do produto para times técnicos.",
+    title: "Zed + Midday",
+    description: "Transactions and invoices from Zed",
   },
+  keywords: [
+    "Zed MCP",
+    "Zed editor integration",
+    "Model Context Protocol",
+    "AI editor financial data",
+  ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.mcp} />;
+  return <MCPZed />;
 }

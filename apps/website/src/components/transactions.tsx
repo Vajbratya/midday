@@ -64,20 +64,19 @@ export function Transactions() {
           <div className="flex flex-col justify-start items-center space-y-6 z-20 px-3 sm:px-4">
             <div className="space-y-4 text-center max-w-xl px-2 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Transactions
+                Fluxo
               </p>
               <h1 className="font-serif text-4xl sm:text-4xl md:text-5xl leading-tight">
                 <span className="text-foreground">
-                  All transactions together
+                  Todo o fluxo junto
                 </span>
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto lg:hidden">
-                All money moving in and out of your business, in one place.
+                Exames, laudos e etapas críticas em um só fluxo.
               </p>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto hidden lg:block">
-                Every payment in and out of your business is automatically
-                collected, categorized, and kept in one place so nothing gets
-                lost across accounts.
+                Casos, pendências e produção ficam organizados no mesmo
+                ambiente para nada se perder entre sistemas.
               </p>
             </div>
 
@@ -94,7 +93,7 @@ export function Transactions() {
                 <HeroImage
                   lightSrc="/images/transactions-light.svg"
                   darkSrc="/images/transactions-dark.svg"
-                  alt="Transactions Interface"
+                  alt="Fluxo Laudos.AI"
                 />
               </div>
             </div>
@@ -107,18 +106,17 @@ export function Transactions() {
             {/* Main Heading */}
             <div className="text-center space-y-8 2xl:space-y-12 3xl:space-y-12 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Transactions
+                Fluxo
               </p>
               <h1 className="font-serif text-8xl xl:text-9xl 2xl:text-[11rem] leading-tight text-center">
                 <span className="text-foreground block">
-                  All transactions together
+                  Todo o fluxo junto
                 </span>
               </h1>
 
               <p className="text-muted-foreground text-base leading-normal max-w-2xl mx-auto font-sans text-center">
-                Every payment in and out of your business is automatically
-                collected, categorized, and kept in one place so nothing gets
-                lost across accounts.
+                Casos, pendências e produção ficam organizados no mesmo
+                ambiente para nada se perder entre sistemas.
               </p>
             </div>
 
@@ -135,7 +133,7 @@ export function Transactions() {
                 <HeroImage
                   lightSrc="/images/transactions-light.svg"
                   darkSrc="/images/transactions-dark.svg"
-                  alt="Transactions Interface"
+                  alt="Fluxo Laudos.AI"
                 />
               </div>
             </div>
@@ -153,94 +151,66 @@ export function Transactions() {
               <div className="flex items-center">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    All business transactions
+                    Toda a operacao em fila unica
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Every payment in and out of your business is automatically
-                    collected from connected accounts and kept in a single list.
+                    Tudo o que entra e sai da operacao aparece no mesmo fluxo:
+                    casos, etapas, anexos e eventos ligados ao contexto certo.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Automatic bank syncing
+                        Fila unificada
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Unified transaction list
+                        Eventos sincronizados
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Manual transactions
+                        Ajustes manuais
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        CSV import
+                        Importacao em lote
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Filters and search
+                        Filtros e busca
                       </span>
                     </div>
                     <Link
-                      href="/integrations/fortnox"
+                      href="/assistant"
                       className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
                     >
-                      <Image
-                        src="/images/fortnox.svg"
-                        alt="Fortnox"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
                       <span className="font-sans text-sm text-foreground">
-                        Fortnox
+                        Copilot
                       </span>
                     </Link>
                     <Link
-                      href="/integrations/xero"
+                      href="/inbox"
                       className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
                     >
-                      <Image
-                        src="/images/xero.svg"
-                        alt="Xero"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
                       <span className="font-sans text-sm text-foreground">
-                        Xero
+                        CRIT
                       </span>
                     </Link>
                     <Link
-                      href="/integrations/quickbooks"
+                      href="/file-storage"
                       className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
                     >
-                      <Image
-                        src="/images/quickbooks.svg"
-                        alt="QuickBooks"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
                       <span className="font-sans text-sm text-foreground">
-                        QuickBooks
+                        Arquivos
                       </span>
                     </Link>
                     <Link
-                      href="/integrations/slack"
+                      href="/chat/slack"
                       className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
                     >
-                      <Image
-                        src="/images/slack.svg"
-                        alt="Slack"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
                       <span className="font-sans text-sm text-foreground">
                         Slack
                       </span>
@@ -265,42 +235,41 @@ export function Transactions() {
               <div className="flex items-center lg:order-2">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    Categorized and reconciled at scale
+                    Organizado em escala
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Transactions are automatically categorized and matched in
-                    bulk, so you can review, fix, and export everything in
-                    minutes instead of one by one.
+                    Casos e anexos podem ser classificados, agrupados e
+                    revisitados em bloco, sem revisar item por item.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Automatic categorization
+                        Categorizacao automatica
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Custom categories
+                        Filas personalizadas
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Rules and patterns
+                        Regras e padroes
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        VAT and tax rates
+                        Prioridade e SLA
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Expense tags
+                        Tags operacionais
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Bulk drag and drop receipts
+                        Anexos em lote
                       </span>
                     </div>
                   </div>

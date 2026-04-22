@@ -1,18 +1,17 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { Customers } from "@/components/customers";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Instituicoes, equipes e governanca",
+  title: "Instituicoes, Equipes e Governanca",
   description:
-    "Padronize templates, perfis de acesso e governanca operacional para equipes, clinicas e hospitais no mesmo produto.",
+    "Organize hospitais, clinicas, equipes e permissoes com visao clara por instituicao.",
   path: "/customers",
   og: {
     title: "Instituicoes",
-    description: "Perfis, auditoria e padrao institucional em uma plataforma.",
+    description: "Times, unidades e contexto em um so lugar",
   },
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.customers} />;
+  return <Customers />;
 }

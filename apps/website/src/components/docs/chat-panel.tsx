@@ -224,14 +224,14 @@ export const ChatPanel = forwardRef<ChatPanelRef, ChatPanelProps>(
               <div className="h-full flex items-center justify-center">
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground mb-6">
-                    Ask anything about Midday
+                    Pergunte qualquer coisa sobre a Laudos.AI
                   </p>
                   <div className="flex flex-wrap gap-1.5 justify-center max-w-md">
                     {[
-                      "How do I create an invoice?",
-                      "Connect my bank",
-                      "Set up recurring invoices",
-                      "Track time on projects",
+                      "Como configuro o CRIT?",
+                      "Como uso o editor?",
+                      "Como integro via MCP?",
+                      "Como acompanho o TAT?",
                     ].map((suggestion) => (
                       <button
                         key={suggestion}

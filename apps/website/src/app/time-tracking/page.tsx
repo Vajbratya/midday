@@ -1,24 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { TimeTracking } from "@/components/time-tracking";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Ditado por voz natural para laudos",
+  title: "Produtividade e TAT",
   description:
-    "Dite os achados como faz normalmente. A IA organiza técnica, achados e impressão em um laudo estruturado pronto para revisar.",
+    "Acompanhe tempo por caso, fila, radiologista e plantao para entender produtividade real e cumprir SLA.",
   path: "/time-tracking",
   og: {
-    title: "Voz natural",
-    description: "Pare de ditar pontuação. Comece a laudar de verdade.",
+    title: "Produtividade",
+    description: "Tempo, volume e TAT com contexto",
   },
   keywords: [
-    "ditado médico",
-    "voz radiologia",
-    "laudo por voz",
-    "transcrição radiológica",
+    "tat radiologia",
+    "produtividade radiologista",
+    "tempo por caso",
+    "fila de laudos",
+    "sla radiologia",
   ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages["time-tracking"]} />;
+  return <TimeTracking />;
 }

@@ -34,7 +34,7 @@ export function ChatPlatformPage({ config }: { config: PlatformConfig }) {
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 font-sans text-sm"
             >
               <Icons.ArrowBack size={16} />
-              All platforms
+              Todos os canais
             </Link>
 
             <div className="flex items-center gap-4 mb-6">
@@ -55,7 +55,7 @@ export function ChatPlatformPage({ config }: { config: PlatformConfig }) {
             <div className="space-y-12">
               {/* Getting started */}
               <div className="space-y-6">
-                <SectionHeading>Getting started</SectionHeading>
+                <SectionHeading>Primeiros passos</SectionHeading>
                 <ol className="space-y-6">
                   {config.steps.map((step, i) => (
                     <li key={step.title} className="flex gap-4">
@@ -75,7 +75,7 @@ export function ChatPlatformPage({ config }: { config: PlatformConfig }) {
                                 href={step.href}
                                 className="text-foreground underline underline-offset-4 hover:text-foreground/80 transition-colors"
                               >
-                                Open in Midday
+                                Abrir no painel
                               </a>
                             </>
                           )}
@@ -88,9 +88,9 @@ export function ChatPlatformPage({ config }: { config: PlatformConfig }) {
 
               {/* Notifications */}
               <div className="space-y-4">
-                <SectionHeading>Notifications</SectionHeading>
+                <SectionHeading>Alertas</SectionHeading>
                 <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-                  Once connected, you'll receive notifications for:
+                  Depois de conectar, voce recebe alertas para:
                 </p>
                 <ul className="space-y-2">
                   {config.notifications.map((item) => (
@@ -106,15 +106,15 @@ export function ChatPlatformPage({ config }: { config: PlatformConfig }) {
                   ))}
                 </ul>
                 <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-                  All notifications are on by default. To manage them, go to{" "}
+                  Os alertas ficam ativos por padrao. Para ajustar, va em{" "}
                   <span className="text-foreground">{config.settingsPath}</span>{" "}
-                  in Midday.
+                  na Laudos.AI.
                 </p>
               </div>
 
               {/* Capabilities */}
               <div className="space-y-4">
-                <SectionHeading>What you can do</SectionHeading>
+                <SectionHeading>O que voce pode fazer</SectionHeading>
                 <ul className="space-y-2">
                   {config.capabilities.map((item) => (
                     <li

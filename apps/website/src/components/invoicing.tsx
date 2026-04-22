@@ -4,13 +4,32 @@ import { InvoicePaymentAnimation } from "@midday/ui/animations/invoice-payment";
 import { InvoicePromptAnimation } from "@midday/ui/animations/invoice-prompt";
 import Image from "next/image";
 import Link from "next/link";
-import { HeroImage } from "./hero-image";
 import { FeaturesGridSection } from "./sections/features-grid-section";
 import { IntegrationsSection } from "./sections/integrations-section";
 import { PreAccountingSection } from "./sections/pre-accounting-section";
 import { PricingSection } from "./sections/pricing-section";
 import { TestimonialsSection } from "./sections/testimonials-section";
 import { TimeSavingsSection } from "./sections/time-savings-section";
+
+function InvoicingHeroPreview() {
+  return (
+    <div className="w-full border border-border bg-background/90 backdrop-blur-sm overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="relative h-[320px] sm:h-[400px] lg:h-[460px] overflow-hidden border-b border-border lg:border-b-0 lg:border-r">
+          <div className="absolute left-1/2 top-1/2 h-[700px] w-[600px] -translate-x-1/2 -translate-y-1/2 scale-[0.50] sm:scale-[0.62] lg:scale-[0.76] origin-center">
+            <InvoicePaymentAnimation onComplete={undefined} />
+          </div>
+        </div>
+
+        <div className="relative h-[320px] sm:h-[400px] lg:h-[460px] overflow-hidden">
+          <div className="absolute left-1/2 top-1/2 h-[700px] w-[600px] -translate-x-1/2 -translate-y-1/2 scale-[0.50] sm:scale-[0.62] lg:scale-[0.76] origin-center">
+            <InvoicePromptAnimation onComplete={undefined} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function Invoicing() {
   return (
@@ -64,17 +83,17 @@ export function Invoicing() {
           <div className="flex flex-col justify-start items-center space-y-6 z-20 px-3 sm:px-4">
             <div className="space-y-4 text-center max-w-xl px-2 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Invoicing
+                Editor
               </p>
               <h1 className="font-serif text-4xl sm:text-4xl md:text-5xl leading-tight">
-                <span className="text-foreground">Get paid faster</span>
+                <span className="text-foreground">Laudo estruturado</span>
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto lg:hidden">
-                Create and send invoices and track their status.
+                Estruture, revise e finalize o laudo em um editor clínico.
               </p>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto hidden lg:block">
-                Create invoices, send them to customers, and track payments
-                while every update flows directly into your overview.
+                Texto, conclusão, templates e consistência institucional no
+                mesmo editor, pronto para integrar ao seu fluxo.
               </p>
             </div>
 
@@ -85,14 +104,10 @@ export function Invoicing() {
                   className="absolute bottom-0 left-0 right-0 h-[20%] z-10 pointer-events-none"
                   style={{
                     background:
-                      "linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background)) 20%, hsla(var(--background), 0.8) 40%, hsla(var(--background), 0.5) 60%, hsla(var(--background), 0.2) 80%, transparent 100%)",
+                    "linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background)) 20%, hsla(var(--background), 0.8) 40%, hsla(var(--background), 0.5) 60%, hsla(var(--background), 0.2) 80%, transparent 100%)",
                   }}
                 />
-                <HeroImage
-                  lightSrc="/images/invoicing-light.svg"
-                  darkSrc="/images/invoicing-dark.svg"
-                  alt="Invoicing Interface"
-                />
+                <InvoicingHeroPreview />
               </div>
             </div>
           </div>
@@ -104,15 +119,15 @@ export function Invoicing() {
             {/* Main Heading */}
             <div className="text-center space-y-8 2xl:space-y-12 3xl:space-y-12 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Invoicing
+                Editor
               </p>
               <h1 className="font-serif text-8xl xl:text-9xl 2xl:text-[11rem] leading-tight text-center">
-                <span className="text-foreground block">Get paid faster</span>
+                <span className="text-foreground block">Laudo estruturado</span>
               </h1>
 
               <p className="text-muted-foreground text-base leading-normal max-w-2xl mx-auto font-sans text-center">
-                Create invoices, send them to customers, and track payments
-                while every update flows directly into your overview.
+                Texto, conclusão, templates e consistência institucional no
+                mesmo editor, pronto para integrar ao seu fluxo.
               </p>
             </div>
 
@@ -123,14 +138,10 @@ export function Invoicing() {
                   className="absolute bottom-0 left-0 right-0 h-[20%] z-10 pointer-events-none"
                   style={{
                     background:
-                      "linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background)) 20%, hsla(var(--background), 0.8) 40%, hsla(var(--background), 0.5) 60%, hsla(var(--background), 0.2) 80%, transparent 100%)",
+                    "linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background)) 20%, hsla(var(--background), 0.8) 40%, hsla(var(--background), 0.5) 60%, hsla(var(--background), 0.2) 80%, transparent 100%)",
                   }}
                 />
-                <HeroImage
-                  lightSrc="/images/invoicing-light.svg"
-                  darkSrc="/images/invoicing-dark.svg"
-                  alt="Invoicing Interface"
-                />
+                <InvoicingHeroPreview />
               </div>
             </div>
           </div>
@@ -147,36 +158,36 @@ export function Invoicing() {
               <div className="flex items-center">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    Flexible invoicing setup
+                    Estruturas flexíveis para laudo
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Create one-off, recurring, scheduled, or web invoices
-                    depending on how you bill your customers.
+                    Monte laudos livres, estruturados, recorrentes ou guiados
+                    conforme a modalidade e o perfil da instituição.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        One-off invoices
+                        Laudo livre
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Recurring invoices
+                        Estruturado
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Scheduled invoices
+                        Modelos recorrentes
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Web invoices
+                        Fluxo guiado
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Invoice templates
+                        Templates
                       </span>
                     </div>
                   </div>
@@ -199,46 +210,39 @@ export function Invoicing() {
               <div className="flex items-center lg:order-2">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    Connected to your business
+                    Conectado ao contexto clínico
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Invoices stay linked to customers and revenue, with fast
-                    online payments built in.
+                    O editor fica ligado ao caso, aos anexos e ao histórico,
+                    com contexto sempre ao alcance durante a redação.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Invoice status tracking
+                        Status do laudo
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Overdue reminders
+                        Alertas de revisão
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Payment tracking
+                        Contexto clínico
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Revenue per customer
+                        Modelos por instituição
                       </span>
                     </div>
                     <Link
-                      href="/integrations/stripe-payments"
+                      href="/assistant"
                       className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background hover:bg-accent transition-colors"
                     >
-                      <Image
-                        src="/images/stripe.svg"
-                        alt="Stripe"
-                        width={16}
-                        height={16}
-                        className="object-contain"
-                      />
                       <span className="font-sans text-sm text-foreground">
-                        Stripe
+                        Copilot
                       </span>
                     </Link>
                   </div>

@@ -1,18 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { MCPPerplexity } from "@/components/mcp-perplexity";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Perplexity + Laudos.AI",
+  title: "Perplexity MCP Integration",
   description:
-    "Conecte copilotos e buscas assistidas ao contexto operacional da Laudos.AI com MCP.",
+    "Connect Perplexity to your Midday data via MCP. Query transactions, invoices, and financial reports with natural language AI search.",
   path: "/mcp/perplexity",
   og: {
-    title: "Perplexity + Laudos.AI",
-    description: "Busca assistida com contexto real do workflow radiológico.",
+    title: "Perplexity + Midday",
+    description: "Search your finances with natural language",
   },
+  keywords: [
+    "Perplexity MCP",
+    "Perplexity integration",
+    "Model Context Protocol",
+    "AI search",
+    "natural language queries",
+  ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.mcp} />;
+  return <MCPPerplexity />;
 }

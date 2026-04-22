@@ -1,24 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { Insights } from "@/components/insights";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Analises e auditoria para radiologia",
+  title: "Analises da Operacao",
   description:
-    "Acompanhe produtividade, uso e consistencia dos laudos com indicadores prontos para profissionais, equipes e operacoes enterprise.",
+    "Acompanhe produtividade, TAT, gargalos e evolucao da operacao com resumos automaticos e explicacoes claras.",
   path: "/insights",
   og: {
-    title: "Analises Laudos.AI",
-    description: "Volume, qualidade e auditoria em uma vista so.",
+    title: "Analises",
+    description: "Veja o que mudou na operacao",
   },
   keywords: [
-    "analytics radiologia",
-    "auditoria laudos",
-    "dashboard radiologico",
-    "metricas enterprise",
+    "analise radiologia",
+    "tat radiologia",
+    "produtividade radiologia",
+    "gargalos operacionais",
+    "analytics clinico",
   ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.insights} />;
+  return <Insights />;
 }

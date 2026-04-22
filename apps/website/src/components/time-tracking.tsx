@@ -2,7 +2,6 @@
 
 import { InvoicePromptAnimation } from "@midday/ui/animations/invoice-prompt";
 import Image from "next/image";
-import { HeroImage } from "./hero-image";
 import { FeaturesGridSection } from "./sections/features-grid-section";
 import { IntegrationsSection } from "./sections/integrations-section";
 import { PreAccountingSection } from "./sections/pre-accounting-section";
@@ -10,6 +9,26 @@ import { PricingSection } from "./sections/pricing-section";
 import { TestimonialsSection } from "./sections/testimonials-section";
 import { TimeSavingsSection } from "./sections/time-savings-section";
 import { TimeTrackingCalendarAnimation } from "./time-tracking-calendar-animation";
+
+function TimeTrackingHeroPreview() {
+  return (
+    <div className="w-full border border-border bg-background/90 backdrop-blur-sm overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="relative h-[320px] sm:h-[400px] lg:h-[460px] overflow-hidden border-b border-border lg:border-b-0 lg:border-r">
+          <div className="absolute left-1/2 top-1/2 h-[700px] w-[600px] -translate-x-1/2 -translate-y-1/2 scale-[0.50] sm:scale-[0.62] lg:scale-[0.76] origin-center">
+            <InvoicePromptAnimation onComplete={undefined} />
+          </div>
+        </div>
+
+        <div className="relative h-[320px] sm:h-[400px] lg:h-[460px] overflow-hidden">
+          <div className="absolute left-1/2 top-1/2 h-[700px] w-[860px] -translate-x-1/2 -translate-y-1/2 scale-[0.54] sm:scale-[0.66] lg:scale-[0.80] origin-center">
+            <TimeTrackingCalendarAnimation />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function TimeTracking() {
   return (
@@ -63,18 +82,18 @@ export function TimeTracking() {
           <div className="flex flex-col justify-start items-center space-y-6 z-20 px-3 sm:px-4">
             <div className="space-y-4 text-center max-w-xl px-2 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Time tracking
+                Produtividade
               </p>
               <h1 className="font-serif text-4xl sm:text-4xl md:text-5xl leading-tight">
-                <span className="text-foreground">See where time goes</span>
+                <span className="text-foreground">Veja onde o tempo gira</span>
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto lg:hidden">
-                Track time as you work across projects and customers and turn
-                hours into accurate invoices, so no billable work is missed.
+                Acompanhe TAT, tempo por etapa e carga por radiologista para
+                entender gargalos sem achismo.
               </p>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto hidden lg:block">
-                Track time as you work across projects and customers and turn
-                hours into accurate invoices, so no billable work is missed.
+                Acompanhe TAT, tempo por etapa e carga por radiologista para
+                entender gargalos sem achismo.
               </p>
             </div>
 
@@ -85,14 +104,10 @@ export function TimeTracking() {
                   className="absolute bottom-0 left-0 right-0 h-[20%] z-10 pointer-events-none"
                   style={{
                     background:
-                      "linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background)) 20%, hsla(var(--background), 0.8) 40%, hsla(var(--background), 0.5) 60%, hsla(var(--background), 0.2) 80%, transparent 100%)",
+                    "linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background)) 20%, hsla(var(--background), 0.8) 40%, hsla(var(--background), 0.5) 60%, hsla(var(--background), 0.2) 80%, transparent 100%)",
                   }}
                 />
-                <HeroImage
-                  lightSrc="/images/tracker-light.svg"
-                  darkSrc="/images/tracker-dark.svg"
-                  alt="Time Tracking Interface"
-                />
+                <TimeTrackingHeroPreview />
               </div>
             </div>
           </div>
@@ -104,17 +119,17 @@ export function TimeTracking() {
             {/* Main Heading */}
             <div className="text-center space-y-8 2xl:space-y-12 3xl:space-y-12 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Time tracking
+                Produtividade
               </p>
               <h1 className="font-serif text-8xl xl:text-9xl 2xl:text-[11rem] leading-tight text-center">
                 <span className="text-foreground block">
-                  See where time goes
+                  Veja onde o tempo gira
                 </span>
               </h1>
 
               <p className="text-muted-foreground text-base leading-normal max-w-2xl mx-auto font-sans text-center">
-                Track time as you work across projects and customers and turn
-                hours into accurate invoices, so no billable work is missed.
+                Acompanhe TAT, tempo por etapa e carga por radiologista para
+                entender gargalos sem achismo.
               </p>
             </div>
 
@@ -125,14 +140,10 @@ export function TimeTracking() {
                   className="absolute bottom-0 left-0 right-0 h-[20%] z-10 pointer-events-none"
                   style={{
                     background:
-                      "linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background)) 20%, hsla(var(--background), 0.8) 40%, hsla(var(--background), 0.5) 60%, hsla(var(--background), 0.2) 80%, transparent 100%)",
+                    "linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background)) 20%, hsla(var(--background), 0.8) 40%, hsla(var(--background), 0.5) 60%, hsla(var(--background), 0.2) 80%, transparent 100%)",
                   }}
                 />
-                <HeroImage
-                  lightSrc="/images/tracker-light.svg"
-                  darkSrc="/images/tracker-dark.svg"
-                  alt="Time Tracking Interface"
-                />
+                <TimeTrackingHeroPreview />
               </div>
             </div>
           </div>
@@ -143,43 +154,42 @@ export function TimeTracking() {
       <section className="bg-background py-12 sm:py-16 lg:pt-32 lg:pb-24">
         <div className="max-w-[1400px] mx-auto">
           <div className="space-y-16 sm:space-y-20 lg:space-y-32">
-            {/* First Animation - From time to invoices */}
+            {/* First Animation - Productivity */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-stretch">
               {/* Left: Title and Subtitle */}
               <div className="flex items-center">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    From time to invoices
+                    Do caso ao laudo
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Turn logged time directly into invoices per project or
-                    customer, without re-entering data or breaking your
-                    workflow.
+                    Transforme tempo por caso, etapa e modalidade em visão
+                    prática de produtividade sem consolidar nada manualmente.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Time to invoices
+                        Tempo por caso
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Billable hours
+                        TAT
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Rates per project
+                        Modalidade
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Client projects
+                        Plantão
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Invoice ready
+                        Radiologista
                       </span>
                     </div>
                   </div>
@@ -196,43 +206,42 @@ export function TimeTracking() {
               </div>
             </div>
 
-            {/* Second Animation - Time Tracking */}
+            {/* Second Animation - Team throughput */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-stretch">
               {/* Left: Title and Subtitle */}
               <div className="flex items-center lg:order-2">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    Time tracked by project
+                    Produtividade por fila
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Analyze and report on time tracked across projects with
-                    detailed breakdowns, client allocation, and profitability
-                    insights.
+                    Analise volume, tempo médio e distribuição de esforço por
+                    fila, equipe ou período.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Live tracking
+                        Fila ao vivo
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Calendar view
+                        Visão calendário
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Project overview
+                        Modalidades
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Time estimates
+                        Estimativa de TAT
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Team tracking
+                        Equipe
                       </span>
                     </div>
                   </div>

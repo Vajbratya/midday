@@ -37,7 +37,7 @@ function InfraDiagram() {
       {"│\n"}
       {" │"}
       {d("░░░░░░░░░░░░░░░░░░░░░░░░░░░")}
-      {"  Midday Computer  "}
+      {"  Laudos.AI Computer  "}
       {d("░░░░░░░░░░░░░░░░░░░░░░░")}
       {"│\n"}
       {" │"}
@@ -47,7 +47,7 @@ function InfraDiagram() {
       {"│\n"}
       {" │"}
       {d("░░░░░░░░░░░░░░░░░░")}
-      {"  generate · schedule · execute  "}
+      {"  gerar · agendar · executar  "}
       {d("░░░░░░░░░░░░░░░░░░")}
       {"│\n"}
       {" │"}
@@ -98,7 +98,7 @@ function CopyInstall() {
   const [copied, setCopied] = useState(false);
 
   const copyCommand = () => {
-    navigator.clipboard.writeText("npx @midday-ai/cli@latest computer");
+    navigator.clipboard.writeText("npx @laudos-ai/cli@latest computer");
     setCopied(true);
     setTimeout(() => setCopied(false), 1000);
   };
@@ -112,9 +112,9 @@ function CopyInstall() {
         backgroundImage:
           "repeating-linear-gradient(-60deg, hsla(var(--border), 0.4), hsla(var(--border), 0.4) 1px, transparent 1px, transparent 6px)",
       }}
-    >
-      <span className="text-foreground truncate">
-        $ npx @midday-ai/cli@latest computer
+      >
+        <span className="text-foreground truncate">
+        $ npx @laudos-ai/cli@latest computer
       </span>
 
       <div className="flex items-center space-x-2 ml-auto">
@@ -127,7 +127,7 @@ function CopyInstall() {
 
       {copied && (
         <div className="absolute left-1/2 -translate-x-1/2 -top-7 text-xs text-foreground animate-in fade-in slide-in-from-bottom-1">
-          Copied
+          Copiado
         </div>
       )}
     </button>
@@ -170,102 +170,101 @@ const g = (text: string) => <span className="text-foreground">{text}</span>;
 
 const SCENARIOS: Scenario[] = [
   {
-    label: "Create agent",
-    cmd1: 'midday computer create "close my books at the end of every month"',
-    cmd2: "midday computer confirm",
-    spin1: "Generating agent...",
-    spin2: "Deploying agent...",
-    done2: "Deploying agent...",
+    label: "Criar agente",
+    cmd1: 'laudos computer create "varra os achados críticos às 7h"',
+    cmd2: "laudos computer confirm",
+    spin1: "Gerando agente...",
+    spin2: "Publicando agente...",
+    done2: "Publicando agente...",
     result1: (
       <div className="relative mt-3 border-[0.5px] border-foreground/20 text-foreground text-[12px]">
         <span className="absolute -top-[10px] left-3 bg-background px-1.5 text-[11px] tracking-wide text-foreground">
-          Agent plan
+          Plano do agente
         </span>
         <div className="p-3 pt-2 space-y-0.5">
           <div>
-            Name: <span className="text-foreground">Month-End Close</span>
+            Nome: <span className="text-foreground">CRIT Morning Sweep</span>
           </div>
           <div>
-            Schedule:{" "}
-            <span className="text-foreground">28th–31st at 8:00 AM</span>
+            Agenda: <span className="text-foreground">Todos os dias às 7:00</span>
           </div>
           <div>
-            What it does:{" "}
+            O que faz:{" "}
             <span className="text-foreground">
-              Reviews transactions, flags issues, compares to last month
+              Revisa casos críticos, verifica pendências e propõe escalonamentos
             </span>
           </div>
           <div className="pt-1 text-[11px] text-muted-foreground">
-            Run `midday computer confirm` to deploy.
+            Rode `laudos computer confirm` para publicar.
           </div>
         </div>
       </div>
     ),
     result2Line: (
       <div className="mt-1 text-foreground text-[12px]">
-        {g("✓")} Agent deployed. First run: April 28th at 8:00 AM
+        {g("✓")} Agente publicado. Primeira execução: 28 de abril às 7:00
       </div>
     ),
   },
   {
-    label: "Weekly briefing",
-    cmd1: "midday computer run weekly-briefing --wait",
-    cmd2: "midday computer memory weekly-briefing",
-    spin1: "Running Weekly Briefing...",
-    spin2: "Fetching memory...",
-    done2: "Fetching memory...",
+    label: "Briefing",
+    cmd1: "laudos computer run briefing-semanal --wait",
+    cmd2: "laudos computer memory briefing-semanal",
+    spin1: "Executando briefing semanal...",
+    spin2: "Buscando memória...",
+    done2: "Buscando memória...",
     result1: (
       <div className="mt-2 text-foreground text-[12px] space-y-0.5">
-        <div>{g("✓")} Run complete</div>
-        <div> Cash position: $142,800 across 2 accounts</div>
-        <div> Revenue (MTD): $28,400 (+8.2% vs last week)</div>
-        <div> Overdue invoices: 2 totaling $4,200</div>
-        <div> Top expense: Software subscriptions $3,840</div>
-        <div> Action: Follow up on INV-0091, INV-0087</div>
+        <div>{g("✓")} Execução concluída</div>
+        <div> TAT médio: 18 min (-8% vs semana passada)</div>
+        <div> Laudos concluídos: 482</div>
+        <div> CRITs pendentes de ciência: 2</div>
+        <div> Maior fila: TC de tórax</div>
+        <div> Ação: revisar pendências do plantão noturno</div>
       </div>
     ),
     result2Line: (
       <div className="mt-1 text-foreground text-[12px] space-y-0.5">
-        <div> [Apr 7] Revenue trending +8% week over week</div>
-        <div> [Mar 31] Q1 close complete, 3 items flagged</div>
-        <div> [Mar 24] Contractor spend within budget</div>
+        <div> [7 Abr] TAT em queda de 8% semana contra semana</div>
+        <div> [31 Mar] Fechamento da operação com 3 alertas</div>
+        <div> [24 Mar] Plantão noturno dentro do alvo</div>
       </div>
     ),
   },
   {
-    label: "Chase invoices",
-    cmd1: "midday computer proposals invoice-chaser",
-    cmd2: "midday computer approve invoice-chaser run_182",
-    spin1: "Fetching proposals...",
-    spin2: "Sending reminders...",
-    done2: "Sending reminders...",
+    label: "Escalonar CRIT",
+    cmd1: "laudos computer proposals crit-escalation",
+    cmd2: "laudos computer approve crit-escalation run_182",
+    spin1: "Buscando propostas...",
+    spin2: "Enviando escalonamentos...",
+    done2: "Enviando escalonamentos...",
     result1: (
       <div className="relative mt-3 border-[0.5px] border-foreground/20 text-foreground text-[12px]">
         <span className="absolute -top-[10px] left-3 bg-background px-1.5 text-[11px] tracking-wide text-foreground">
-          Waiting for your approval
+          Aguardando sua aprovação
         </span>
         <table className="w-full mt-2 mb-1">
           <thead>
             <tr className="text-left border-b-[0.5px] border-foreground/20">
               <th className="font-normal pl-3 pr-2 pb-1 text-foreground">
-                ACTION
+                AÇÃO
               </th>
-              <th className="font-normal pr-2 pb-1 text-foreground">INVOICE</th>
+              <th className="font-normal pr-2 pb-1 text-foreground">CASO</th>
               <th className="font-normal pr-3 pb-1 text-right text-foreground">
-                AMOUNT
+                SLA
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="pl-3 pr-2 py-[3px]">Send reminder</td>
-              <td className="pr-2 py-[3px]">INV-0091 (Acme Corp)</td>
-              <td className="pr-3 py-[3px] text-right">$2,340.00</td>
+              <td className="pl-3 pr-2 py-[3px]">Escalonar</td>
+              <td className="pr-2 py-[3px]">Caso 4821 · TC crânio</td>
+              <td className="pr-3 py-[3px] text-right">12 min</td>
             </tr>
             <tr>
-              <td className="pl-3 pr-2 py-[3px]">Send reminder</td>
-              <td className="pr-2 py-[3px]">INV-0087 (Northwind)</td>
-              <td className="pr-3 py-[3px] text-right">$1,860.00</td>
+              <td className="pl-3 pr-2 py-[3px]">Reavisar</td>
+              <td className="pr-2 py-[3px]">Caso 4789 · RM encéfalo</td>
+              <td className="pr-3 py-[3px] text-right">18 min</td>
             </tr>
           </tbody>
         </table>
@@ -273,32 +272,32 @@ const SCENARIOS: Scenario[] = [
     ),
     result2Line: (
       <div className="mt-1 text-foreground text-[12px]">
-        {g("✓")} 2 reminders sent. $4,200 in overdue invoices followed up.
+        {g("✓")} 2 ações disparadas. Casos críticos seguiram para escalonamento.
       </div>
     ),
   },
   {
-    label: "Expense alert",
-    cmd1: "midday computer run expense-detector --wait",
-    cmd2: "midday computer logs expense-detector",
-    spin1: "Running Expense Detector...",
-    spin2: "Fetching run history...",
-    done2: "Fetching run history...",
+    label: "Alerta de TAT",
+    cmd1: "laudos computer run tat-detector --wait",
+    cmd2: "laudos computer logs tat-detector",
+    spin1: "Executando detector de TAT...",
+    spin2: "Buscando histórico...",
+    done2: "Buscando histórico...",
     result1: (
       <div className="mt-2 text-foreground text-[12px] space-y-0.5">
-        <div>{g("⚠")} Anomaly detected</div>
-        <div> Shopify: $4,120 (3.2x your daily average)</div>
-        <div> Possible duplicate: AWS $189 charged twice</div>
-        <div> New vendor: DesignStudio.co ($950)</div>
-        <div> Notification sent to your team</div>
+        <div>{g("⚠")} Anomalia detectada</div>
+        <div> Fila TC tórax: +31% acima da média</div>
+        <div> 2 casos críticos sem ciência em 15 min</div>
+        <div> Plantão noite com acúmulo em RM</div>
+        <div> Notificação enviada para a coordenação</div>
       </div>
     ),
     result2Line: (
       <div className="mt-1 text-foreground text-[12px] space-y-0.5">
-        <div> [Apr 15] 3 anomalies flagged (notified)</div>
-        <div> [Apr 14] No anomalies. All clear.</div>
-        <div> [Apr 13] No anomalies. All clear.</div>
-        <div> [Apr 12] 1 duplicate charge flagged</div>
+        <div> [15 Abr] 3 filas fora do alvo (avisadas)</div>
+        <div> [14 Abr] Sem anomalias. Tudo dentro do alvo.</div>
+        <div> [13 Abr] Sem anomalias. Tudo dentro do alvo.</div>
+        <div> [12 Abr] 1 gargalo crítico sinalizado</div>
       </div>
     ),
   },
@@ -440,7 +439,7 @@ function Terminal() {
             <span className="block w-2 h-2 rounded-full bg-[hsl(0,0%,25%)]" />
           </div>
           <span className="flex-1 text-center text-[10px] tracking-wide text-foreground -ml-10">
-            midday computer — zsh
+            laudos computer — zsh
           </span>
         </div>
 
@@ -468,7 +467,7 @@ function Terminal() {
           className="overflow-y-auto h-[380px] md:h-[460px] scroll-smooth p-5 bg-background text-[13px] leading-[1.7] text-foreground"
         >
           <div className="text-[hsl(0,0%,55%)] text-[10px] tracking-widest mb-5">
-            midday computer v0.1.0 · agent@acme.corp
+            laudos computer v0.1.0 · radiologia@laudos.ai
           </div>
 
           <div>
@@ -513,34 +512,34 @@ function Terminal() {
 
 const features = [
   {
-    title: "You describe, it builds",
+    title: "Você descreve, ele monta",
     description:
-      "Tell Midday what you need in plain English. It builds the agent, shows you the plan, and deploys when you're ready.",
+      "Descreva a rotina em linguagem natural. O sistema monta o agente, mostra o plano e só publica quando fizer sentido.",
   },
   {
-    title: "Ready-made agents",
+    title: "Agentes prontos",
     description:
-      "Month-End Close, Invoice Chaser, Weekly Briefing, Expense Detector. Enable in one click. Already tuned for real workflows.",
+      "CRIT Morning Sweep, Briefing semanal, Detector de TAT e outras rotinas já afinadas para a operação clínica.",
   },
   {
-    title: "Runs on your schedule",
+    title: "Roda no seu horário",
     description:
-      "Every Tuesday at 9 AM. Last day of the month. Daily at 10. Set it once and your agents handle the rest.",
+      "Toda terça às 9h. No fim do plantão. A cada hora. Configure uma vez e o agente cuida do restante.",
   },
   {
-    title: "Learns over time",
+    title: "Aprende com o tempo",
     description:
-      "Agents remember across runs. Trends compound weekly. Baselines sharpen. The longer they run, the more useful they get.",
+      "Agentes lembram execuções anteriores. Tendências ficam mais nítidas. Quanto mais rodam, mais úteis ficam.",
   },
   {
-    title: "You stay in control",
+    title: "Você continua no controle",
     description:
-      "Agents propose actions, you review and approve. Nothing happens without your say. Built for trust.",
+      "Os agentes propõem ações e você aprova. Nada acontece sem o seu aval. Feito para confiança.",
   },
   {
-    title: "Access to all your data",
+    title: "Acesso ao que importa",
     description:
-      "Invoices, transactions, customers, reports, bank accounts, and more. Agents work with everything Midday knows about your business.",
+      "Casos, laudos, anexos, instituições, filas e integrações. O agente trabalha com o contexto completo da operação.",
   },
   {
     title: "Thinks, not just executes",
@@ -558,65 +557,65 @@ const features = [
       "Full trace of every step. What data it read, what it decided, what actions it took. Nothing is a black box.",
   },
   {
-    title: "Connected to your tools",
+    title: "Conectado às suas ferramentas",
     description:
-      "Post results to Slack, send emails via Gmail, update Google Sheets. Agents deliver wherever your team works.",
+      "Poste no Slack, envie por email, atualize planilhas ou dispare fluxos onde a equipe já trabalha.",
   },
   {
-    title: "Works wherever you are",
+    title: "Funciona em qualquer superfície",
     description:
-      "Dashboard, iMessage, chat, or CLI. Create agents, approve proposals, and check results from any surface.",
+      "Dashboard, iMessage, chat ou CLI. Crie agentes, aprove ações e acompanhe resultados de qualquer lugar.",
   },
   {
-    title: "Up and running in seconds",
+    title: "Pronto em segundos",
     description:
-      "One command. Sign in with your browser. No API keys, no config files. Your first agent is live in under a minute.",
+      "Um comando. Login no navegador. Sem arquivos de configuração. Seu primeiro agente entra no ar em menos de um minuto.",
   },
 ];
 
 const catalogAgents = [
   {
-    name: "Month-End Close",
-    schedule: "Last days of month, 8 AM",
+    name: "CRIT Morning Sweep",
+    schedule: "Todos os dias, 7 AM",
     description:
-      "Runs through your books so you don't have to. Flags what needs attention before you close the month.",
+      "Passa pela fila crítica antes do plantão começar e marca o que precisa de ação imediata.",
     details: [
-      "Reviews every transaction for the current month",
-      "Flags uncategorized items and pending inbox documents",
-      "Compares spending to last month and gives you a health check",
+      "Revisa todos os casos críticos pendentes",
+      "Sinaliza ciência em atraso e anexos faltando",
+      "Propõe escalonamento quando o SLA já estourou",
     ],
   },
   {
-    name: "Invoice Chaser",
+    name: "Escalonamento CRIT",
     schedule: "Tuesdays 9 AM",
     description:
-      "Finds overdue invoices and proposes sending reminders. You approve before anything goes out.",
+      "Encontra comunicações críticas sem resposta e propõe a próxima ação. Nada sai sem aprovação.",
     details: [
-      "Prioritizes by amount and how long invoices have been outstanding",
-      "Tracks escalation history so repeat late payers get flagged",
-      "Proposes reminders for you to review. You decide what gets sent",
+      "Prioriza por tempo de atraso e criticidade clínica",
+      "Mantém histórico de escalonamento por caso",
+      "Propõe os próximos avisos para você revisar",
     ],
   },
   {
-    name: "Weekly Briefing",
+    name: "Weekly Ops Briefing",
     schedule: "Mondays 8 AM",
     description:
-      "Delivers a clear picture of your business every Monday. Cash, revenue, spending, and what needs your attention.",
+      "Entrega uma leitura clara da operação toda segunda. TAT, volume, gargalos e o que merece atenção.",
     details: [
-      "Summarizes cash position across all accounts",
-      "Tracks revenue and spending trends week over week",
-      "Lists action items like overdue invoices and large expenses",
+      "Resume TAT por modalidade e instituição",
+      "Acompanha tendências de produtividade semana contra semana",
+      "Lista ações como CRIT pendente e filas acima do alvo",
     ],
   },
   {
-    name: "Expense Detector",
-    schedule: "Daily 10 AM",
+    name: "Detector de TAT",
+    schedule: "A cada 60 min",
     description:
-      "Watches your expenses in the background. Learns what's normal and only alerts you when something looks off.",
+      "Vigia a operação no fundo e só chama quando o tempo começa a sair do normal.",
     details: [
-      "Builds spending baselines by category over 90 days",
-      "Catches duplicate charges, spikes, and unknown vendors",
-      "Stays completely silent on normal days",
+      "Aprende o baseline por fila e turno",
+      "Detecta picos, acúmulos e atrasos fora do padrão",
+      "Fica completamente silencioso quando tudo está saudável",
     ],
   },
 ];
@@ -624,36 +623,36 @@ const catalogAgents = [
 const howItWorks = [
   {
     step: "01",
-    title: "Describe",
+    title: "Descreva",
     description:
-      "Tell Midday what you need in plain English, or pick a ready-made agent from the catalog.",
+      "Descreva a rotina em linguagem natural ou escolha um agente pronto do catálogo.",
   },
   {
     step: "02",
-    title: "Review",
+    title: "Revise",
     description:
-      "Midday builds the agent and shows you the plan. You confirm when it looks right.",
+      "A Laudos.AI monta o agente e mostra o plano. Você confirma quando ficar certo.",
   },
   {
     step: "03",
-    title: "Automate",
+    title: "Automatize",
     description:
-      "It runs on your schedule, learns from every run, and gets more useful over time.",
+      "Ele roda no seu horário, aprende a cada execução e fica mais útil com o tempo.",
   },
   {
     step: "04",
-    title: "Control",
+    title: "Controle",
     description:
-      "See everything it does. Approve actions before they happen. You're always in the loop.",
+      "Veja tudo o que foi feito. Aprove ações antes de acontecerem. Você continua no comando.",
   },
 ];
 
 const PROMPTS = [
-  "Chase my overdue invoices every Tuesday",
-  "Alert me when expenses look unusual",
-  "Give me a weekly briefing every Monday morning",
-  "Flag contractor spend when it exceeds budget",
-  "Post my weekly revenue summary to Slack",
+  "Varra os achados críticos todos os dias às 7h",
+  "Me avise quando o TAT sair do alvo",
+  "Me dê um briefing da operação toda segunda de manhã",
+  "Escalone casos sem ciência depois de 15 minutos",
+  "Poste meu resumo semanal no Slack",
 ];
 
 function PromptShowcase() {
@@ -702,12 +701,12 @@ function PromptShowcase() {
             "repeating-linear-gradient(-60deg, hsla(var(--border), 0.4), hsla(var(--border), 0.4) 1px, transparent 1px, transparent 6px)",
         }}
       >
-        <span className="text-muted-foreground">$ midday computer create </span>
+        <span className="text-muted-foreground">$ laudos computer create </span>
         &quot;{displayed}
         {cursor}&quot;
       </div>
       <p className="text-center mt-4 text-sm text-muted-foreground">
-        One sentence. That&apos;s all it takes.
+        Uma frase. Só isso.
       </p>
     </div>
   );
@@ -721,15 +720,15 @@ export function Computer() {
         <div className="lg:max-w-[590px] space-y-8 w-full">
           <div>
             <span className="inline-block text-[10px] tracking-widest uppercase border border-border px-2 py-0.5 mb-6 text-muted-foreground">
-              Private Beta
+              Private beta
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight font-sans">
-              The operating system for your business.
+              O sistema operacional da operação clínica.
             </h1>
             <p className="text-base leading-normal mt-4 md:mt-8 text-muted-foreground">
-              Midday Computer puts your business on autopilot. Agents that run
-              on your schedule, learn over time, and take care of the work you
-              keep putting off.
+              Laudos.AI Computer coloca o pós-laudo em piloto assistido.
+              Agentes que rodam no seu ritmo, aprendem com a rotina e cuidam do
+              trabalho que sempre volta para a sua mesa.
             </p>
           </div>
 
@@ -742,15 +741,15 @@ export function Computer() {
               asChild
               className="h-11 px-6 text-sm font-mono hover:!bg-[hsl(0,0%,85%)]"
             >
-              <Link href="https://app.midday.ai">Get started</Link>
+              <Link href="https://copilot.laudos.ai">Começar</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="hidden md:inline-flex h-11 px-6 text-sm font-mono hover:!bg-[hsl(0,0%,15%)] hover:!text-foreground"
             >
-              <Link href="https://github.com/midday-ai/midday/tree/main/packages/cli">
-                View documentation
+              <Link href="https://api.laudos.ai">
+                Ver documentação
               </Link>
             </Button>
           </div>
@@ -762,7 +761,7 @@ export function Computer() {
       <div className="space-y-16 max-w-screen-lg mx-auto">
         {/* Features */}
         <div className="mt-12">
-          <h3 className="font-sans text-2xl text-foreground">What you get</h3>
+          <h3 className="font-sans text-2xl text-foreground">O que você recebe</h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4">
             {features.map((feature) => (
@@ -788,10 +787,10 @@ export function Computer() {
         {/* Catalog agents */}
         <div>
           <h3 className="font-sans text-2xl text-foreground">
-            Pre-built agents
+            Agentes prontos
           </h3>
           <p className="text-sm mt-2 text-muted-foreground">
-            Enable in one click. Already tuned for real business workflows.
+            Ative com um clique. Já afinados para fluxos reais de radiologia.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 mt-4">
@@ -830,9 +829,9 @@ export function Computer() {
 
         <SectionDivider />
 
-        {/* How it works */}
+        {/* Como funciona */}
         <div>
-          <h3 className="font-sans text-2xl text-foreground">How it works</h3>
+          <h3 className="font-sans text-2xl text-foreground">Como funciona</h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-4">
             {howItWorks.map((item) => (
@@ -868,13 +867,13 @@ export function Computer() {
               <h2 className="text-sm">Dashboard</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="text-sm">
-                  ◇ &quot;Enable the invoice chaser&quot;
+                  ◇ &quot;Ative o escalonador de CRIT&quot;
                 </li>
                 <li className="text-sm">
-                  ◇ &quot;Create an agent that monitors expenses&quot;
+                  ◇ &quot;Crie um agente para vigiar o TAT&quot;
                 </li>
-                <li className="text-sm">◇ Manage agents from chat</li>
-                <li className="text-sm">◇ View run history and results</li>
+                <li className="text-sm">◇ Gerencie agentes pelo chat</li>
+                <li className="text-sm">◇ Veja histórico e resultados</li>
               </ul>
             </div>
           </div>
@@ -887,10 +886,10 @@ export function Computer() {
                   ◇ iMessage, WhatsApp, Slack, Telegram
                 </li>
                 <li className="text-sm">
-                  ◇ Get notified and approve on the go
+                  ◇ Receba alertas e aprove em movimento
                 </li>
-                <li className="text-sm">◇ Check agent results from any chat</li>
-                <li className="text-sm">◇ No app to install</li>
+                <li className="text-sm">◇ Veja resultados de qualquer chat</li>
+                <li className="text-sm">◇ Sem app para instalar</li>
               </ul>
             </div>
           </div>
@@ -899,10 +898,10 @@ export function Computer() {
             <div className="p-4 space-y-4">
               <h2 className="text-sm">CLI</h2>
               <ul className="space-y-2 text-muted-foreground">
-                <li className="text-sm">◇ Create, run, and manage agents</li>
-                <li className="text-sm">◇ Approve proposals from terminal</li>
-                <li className="text-sm">◇ Inspect memory and run history</li>
-                <li className="text-sm">◇ Sign in with your browser</li>
+                <li className="text-sm">◇ Crie, execute e gerencie agentes</li>
+                <li className="text-sm">◇ Aprove propostas pelo terminal</li>
+                <li className="text-sm">◇ Inspecione memória e histórico</li>
+                <li className="text-sm">◇ Faça login no navegador</li>
               </ul>
             </div>
           </div>
@@ -911,10 +910,10 @@ export function Computer() {
             <div className="p-4 space-y-4">
               <h2 className="text-sm">API</h2>
               <ul className="space-y-2 text-muted-foreground">
-                <li className="text-sm">◇ Build your own integrations</li>
-                <li className="text-sm">◇ Trigger runs programmatically</li>
-                <li className="text-sm">◇ Manage proposals and approvals</li>
-                <li className="text-sm">◇ Full step trace access</li>
+                <li className="text-sm">◇ Monte integrações próprias</li>
+                <li className="text-sm">◇ Dispare execuções por código</li>
+                <li className="text-sm">◇ Gerencie propostas e aprovações</li>
+                <li className="text-sm">◇ Acesso completo à trilha</li>
               </ul>
             </div>
           </div>
@@ -925,7 +924,7 @@ export function Computer() {
             asChild
             className="h-11 px-6 text-sm font-mono hover:!bg-[hsl(0,0%,85%)]"
           >
-            <Link href="https://app.midday.ai">Get started</Link>
+            <Link href="https://copilot.laudos.ai">Começar</Link>
           </Button>
         </div>
 
@@ -933,14 +932,14 @@ export function Computer() {
           <SectionDivider />
         </div>
 
-        {/* Infrastructure diagram */}
+        {/* Infraestrutura */}
         <div className="hidden md:block text-center">
           <h2 className="font-sans text-2xl sm:text-3xl text-foreground">
-            How it works
+            Como funciona
           </h2>
           <p className="text-base leading-normal mt-4 max-w-md mx-auto text-muted-foreground">
-            You describe what you need. Midday builds the agent, runs it on your
-            schedule, and delivers results.
+            Você descreve a rotina. A Laudos.AI monta o agente, roda no horário
+            certo e devolve resultado com rastreabilidade.
           </p>
 
           <div className="hidden md:flex flex-col items-center justify-center mt-2">
@@ -962,7 +961,7 @@ export function Computer() {
         {/* Prompt showcase */}
         <div className="text-center">
           <h2 className="font-sans text-2xl sm:text-3xl text-foreground mb-8">
-            What would your agent do?
+            O que o seu agente faria?
           </h2>
           <PromptShowcase />
         </div>
@@ -973,26 +972,26 @@ export function Computer() {
         <div className="bg-background border border-border p-8 lg:p-12 text-center relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-60deg,hsla(var(--border),0.4),hsla(var(--border),0.4)_1px,transparent_1px,transparent_6px)] before:pointer-events-none">
           <div className="relative z-10">
             <h2 className="font-sans text-2xl sm:text-3xl text-foreground mb-4">
-              Get started
+              Comece
             </h2>
             <p className="font-sans text-base mb-6 max-w-lg mx-auto text-muted-foreground">
-              Midday Computer puts your business on autopilot. Describe what you
-              need and it takes care of the rest.
+              Descreva a rotina clínica que precisa ganhar escala. O restante
+              vira plano, execução e trilha.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 asChild
                 className="h-11 px-6 text-sm font-mono hover:!bg-[hsl(0,0%,85%)]"
               >
-                <Link href="https://app.midday.ai">Get started</Link>
+                <Link href="https://copilot.laudos.ai">Começar</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 className="h-11 px-6 text-sm font-mono border-primary bg-background hover:!bg-[hsl(0,0%,15%)] hover:!text-foreground"
               >
-                <Link href="https://github.com/midday-ai/midday/tree/main/packages/cli">
-                  View documentation
+                <Link href="https://api.laudos.ai">
+                  Ver documentação
                 </Link>
               </Button>
             </div>

@@ -1,24 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { Invoicing } from "@/components/invoicing";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Editor de laudos com IA",
+  title: "Editor Estruturado para Laudos",
   description:
-    "Abra o editor, dite ou digite o exame e veja a IA estruturar, complementar e ajustar o texto sem quebrar o seu fluxo.",
+    "Redija, revise e padronize laudos com templates, blocos e contexto clinico no mesmo editor.",
   path: "/invoicing",
   og: {
-    title: "Editor Laudos.AI",
-    description: "IA, voz e refinamento no mesmo editor.",
+    title: "Editor",
+    description: "Laudos estruturados, sem atrito",
   },
   keywords: [
-    "editor de laudos",
-    "laudo estruturado",
-    "radiologia ia",
-    "autocomplete medico",
+    "editor de laudo",
+    "template radiologia",
+    "padronizacao de laudos",
+    "ia para laudo",
+    "editor medico",
   ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.invoicing} />;
+  return <Invoicing />;
 }

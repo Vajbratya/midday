@@ -15,30 +15,30 @@ interface Project {
   id: string;
   name: string;
   time: string;
-  amount: string;
+  output: string;
 }
 
 const calendarEvents: CalendarEvent[] = [
-  { id: "1", day: 1, label: "Acme Corp Website (4h)" },
-  { id: "2", day: 2, label: "Mobile App Redesign (3h)" },
-  { id: "3", day: 3, label: "Acme Corp Website (6h)" },
-  { id: "4", day: 6, label: "E-commerce Platform (6h)" },
-  { id: "5", day: 8, label: "Brand Identity Design (3h)" },
-  { id: "6", day: 10, label: "Dashboard Analytics (3h)" },
-  { id: "7", day: 13, label: "Acme Corp Website (5h)" },
-  { id: "8", day: 15, label: "Mobile App Redesign (3h)" },
-  { id: "9", day: 20, label: "E-commerce Platform (5h)" },
+  { id: "1", day: 1, label: "Plantão noturno · TC tórax (4h)" },
+  { id: "2", day: 2, label: "Hospital Norte · RX tórax (3h)" },
+  { id: "3", day: 3, label: "Plantão noturno · TC crânio (6h)" },
+  { id: "4", day: 6, label: "Clínica Atlas · RM joelho (6h)" },
+  { id: "5", day: 8, label: "Instituto Alfa · US abdome (3h)" },
+  { id: "6", day: 10, label: "Hospital Sul · RX coluna (3h)" },
+  { id: "7", day: 13, label: "Plantão noturno · TC abdome (5h)" },
+  { id: "8", day: 15, label: "Clínica Prisma · TC face (3h)" },
+  { id: "9", day: 20, label: "Hospital Norte · RM lombar (5h)" },
 ];
 
 const projects: Project[] = [
-  { id: "1", name: "Acme Corp Website", time: "24h", amount: "€12,500" },
-  { id: "2", name: "Mobile App Redesign", time: "18h", amount: "€8,900" },
-  { id: "3", name: "E-commerce Platform", time: "32h", amount: "€15,200" },
-  { id: "4", name: "Brand Identity Design", time: "14h", amount: "€6,500" },
-  { id: "5", name: "Dashboard Analytics", time: "20h", amount: "€9,800" },
+  { id: "1", name: "Plantão noturno", time: "24h", output: "148 laudos" },
+  { id: "2", name: "Hospital Norte", time: "18h", output: "96 laudos" },
+  { id: "3", name: "Hospital Sul", time: "32h", output: "182 laudos" },
+  { id: "4", name: "Clínica Atlas", time: "14h", output: "64 laudos" },
+  { id: "5", name: "Instituto Alfa", time: "20h", output: "101 laudos" },
 ];
 
-const weekDays = ["MON", "TUE", "WED", "THU", "FRI"];
+const weekDays = ["SEG", "TER", "QUA", "QUI", "SEX"];
 
 interface CalendarDay {
   day: number | null;
@@ -84,18 +84,18 @@ export function TimeTrackingCalendarAnimation() {
   const calendarDays = generateCalendarDays();
 
   const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
   ];
   const currentMonthName = monthNames[currentDate.getMonth()];
   const currentYear = currentDate.getFullYear();
@@ -199,7 +199,7 @@ export function TimeTrackingCalendarAnimation() {
                 zIndex: selectedView === "week" ? 10 : 1,
               }}
             >
-              <span>Week</span>
+              <span>Semana</span>
             </button>
             <button
               type="button"
@@ -216,7 +216,7 @@ export function TimeTrackingCalendarAnimation() {
                 zIndex: selectedView === "month" ? 10 : 1,
               }}
             >
-              <span>Month</span>
+              <span>Mês</span>
             </button>
           </div>
         </div>
@@ -309,13 +309,13 @@ export function TimeTrackingCalendarAnimation() {
           <thead className="sticky top-0 z-10 bg-secondary border-b border-border">
             <tr className="h-[28px] md:h-[32px]">
               <th className="min-w-[140px] md:min-w-[180px] px-1.5 md:px-2 text-left text-[10px] md:text-[11px] font-medium text-muted-foreground border-r border-border">
-                Project
+                Fila
               </th>
               <th className="min-w-[90px] md:min-w-[100px] px-1.5 md:px-2 text-left text-[10px] md:text-[11px] font-medium text-muted-foreground border-r border-border">
-                Time
+                Tempo
               </th>
               <th className="min-w-[100px] md:min-w-[120px] px-1.5 md:px-2 text-left text-[10px] md:text-[11px] font-medium text-muted-foreground">
-                Amount
+                Produção
               </th>
             </tr>
           </thead>
@@ -337,7 +337,7 @@ export function TimeTrackingCalendarAnimation() {
                   index < projects.length - 1 ? "border-b border-border" : ""
                 }`}
               >
-                {/* Project */}
+                {/* Queue */}
                 <td className="min-w-[140px] md:min-w-[180px] px-1.5 md:px-2 text-[10px] md:text-[11px] border-r border-border">
                   <span className="text-foreground truncate block">
                     {project.name}
@@ -349,9 +349,9 @@ export function TimeTrackingCalendarAnimation() {
                   {project.time}
                 </td>
 
-                {/* Amount */}
+                {/* Output */}
                 <td className="min-w-[100px] md:min-w-[120px] px-1.5 md:px-2 text-[10px] md:text-[11px] text-foreground">
-                  {project.amount}
+                  {project.output}
                 </td>
               </motion.tr>
             ))}

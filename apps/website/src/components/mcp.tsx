@@ -26,119 +26,119 @@ const clients = [
   {
     id: "cursor",
     name: "Cursor",
-    description: "Track time for clients while you code",
+    description: "Consultar contexto do caso no editor",
     href: "/mcp/cursor",
   },
   {
     id: "claude",
     name: "Claude",
-    description: "Analyze trends and get insights",
+    description: "Discutir achados e contexto",
     href: "/mcp/claude",
   },
   {
     id: "perplexity",
     name: "Perplexity",
-    description: "AI search with your real data",
+    description: "Pesquisar literatura com contexto",
     href: "/mcp/perplexity",
   },
   {
     id: "raycast",
     name: "Raycast",
-    description: "Quick answers, one shortcut away",
+    description: "Atalhos para casos e filas",
     href: "/mcp/raycast",
   },
   {
     id: "chatgpt",
     name: "ChatGPT",
-    description: "Build custom integrations",
+    description: "Construir copilots clinicos",
     href: "/mcp/chatgpt",
   },
   {
     id: "gemini",
     name: "Gemini",
-    description: "Financial data from your terminal",
+    description: "Analisar producao no terminal",
     href: "/mcp/gemini",
   },
   {
     id: "windsurf",
     name: "Windsurf",
-    description: "Financial data in your AI IDE",
+    description: "Contexto clinico na IDE",
     href: "/mcp/windsurf",
   },
   {
     id: "cline",
     name: "Cline",
-    description: "Financial data in VS Code",
+    description: "Ferramentas Laudos no VS Code",
     href: "/mcp/cline",
   },
   {
     id: "zed",
     name: "Zed",
-    description: "Financial data in the fastest editor",
+    description: "Consultas rapidas de operacao",
     href: "/mcp/zed",
   },
   {
     id: "opencode",
     name: "OpenCode",
-    description: "Track time for clients from your terminal",
+    description: "Automacao no terminal",
     href: "/mcp/opencode",
   },
   {
     id: "zapier",
     name: "Zapier",
-    description: "Automate workflows with 7,000+ apps",
+    description: "Conectar alertas e rotinas",
     href: "/mcp/zapier",
   },
   {
     id: "copilot",
     name: "Microsoft Copilot",
-    description: "Query data from Microsoft 365",
+    description: "Fluxos em Microsoft 365",
     href: "/mcp/copilot",
   },
   {
     id: "n8n",
     name: "n8n",
-    description: "Automate workflows with AI agents",
+    description: "Orquestracao visual com agentes",
     href: "/mcp/n8n",
   },
   {
     id: "make",
     name: "Make",
-    description: "Visual automations with 1,500+ apps",
+    description: "Automacao visual entre sistemas",
     href: "/mcp/make",
   },
   {
     id: "manus",
     name: "Manus",
-    description: "Automate workflows with AI agents",
+    description: "Operacao clinica autonoma",
     href: "/mcp/manus",
   },
 ];
 
 const questions = [
-  "How much runway do we have?",
-  "Which invoices are overdue?",
-  "What did we spend on software?",
-  "Create an invoice for Acme Corp",
-  "Export January transactions to my accountant",
-  "What's my burn rate?",
-  "Push last month's expenses to QuickBooks",
-  "Show me expense breakdown",
-  "Start a timer on Project X",
-  "How is my revenue trending?",
-  "Send a reminder for overdue invoices",
-  "What's my profit margin?",
-  "Log 3 hours for the client meeting",
-  "Download all Q1 transactions as CSV",
-  "Give me a balance sheet as of today",
+  "Quais casos romperam SLA hoje?",
+  "Existe achado critico pendente de ciencia?",
+  "Mostre os gargalos por modalidade",
+  "Busque os anexos do caso 4821",
+  "Quais radiologistas estao acima do TAT alvo?",
+  "Resuma a producao da semana",
+  "Abra o historico do caso da UTI",
+  "Quantos CRITs foram confirmados hoje?",
+  "Liste filas paradas ha mais de 30 minutos",
+  "Quais instituicoes mais cresceram este mes?",
+  "Exporte a producao do plantao noturno",
+  "Mostre anomalias de produtividade",
+  "Crie um briefing da coordenacao",
+  "Baixe os casos sem anexo",
+  "Quais filas precisam de escalonamento?",
 ];
 
 const capabilities = [
-  "80+ tools — transactions, invoices, time tracking, exports, reports, and more",
-  "Full invoice lifecycle — create, send, remind, and mark paid from any AI client",
-  "Export to accountant via email or push directly to Xero, QuickBooks, or Fortnox",
-  "Granular permissions — read-only or full access, you choose",
-  "Works with Cursor, Claude, Perplexity, Raycast, Zapier, n8n, Make, and more",
+  "80+ ferramentas para laudo, CRIT, contexto, producao e integracoes",
+  "Fluxo completo de laudo e comunicacao critica a partir de qualquer cliente AI",
+  "Envio para email, planilhas, sistemas internos ou automacoes externas",
+  "Permissoes granulares: somente leitura ou acao completa, voce escolhe",
+  "Funciona com Cursor, Claude, Perplexity, Raycast, Zapier, n8n, Make e mais",
 ];
 
 function ClientLogo({
@@ -236,15 +236,15 @@ export function MCP() {
             {/* Title and Description */}
             <div className="space-y-4 text-center max-w-xl w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                AI Integrations
+                MCP
               </p>
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-foreground">
-                Midday, everywhere
+                Laudos.AI, em qualquer agente
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto">
-                Connect Claude, ChatGPT, Gemini, Cursor, Windsurf, Zed, and more
-                to your Midday account. Create invoices, export transactions,
-                track time, and run your business from any AI tool.
+                Conecte Claude, ChatGPT, Gemini, Cursor, Windsurf, Zed e outros
+                ao contexto da Laudos.AI. Consulte casos, laudos, CRIT e
+                operacao sem sair do seu cliente favorito.
               </p>
             </div>
 
@@ -277,15 +277,15 @@ export function MCP() {
             {/* Title and Description */}
             <div className="text-center space-y-4 w-full mb-16">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                AI Integrations
+                MCP
               </p>
               <h1 className="font-serif text-6xl xl:text-7xl 2xl:text-8xl leading-tight text-foreground">
-                Midday, everywhere
+                Laudos.AI, em qualquer agente
               </h1>
               <p className="text-muted-foreground text-sm xl:text-base leading-normal max-w-2xl mx-auto font-sans text-center">
-                Connect Claude, ChatGPT, Gemini, Cursor, Windsurf, Zed, and more
-                to your Midday account. Create invoices, export transactions,
-                track time, and run your business from any AI tool.
+                Conecte Claude, ChatGPT, Gemini, Cursor, Windsurf, Zed e outros
+                ao contexto da Laudos.AI. Consulte casos, laudos, CRIT e
+                operacao sem sair do seu cliente favorito.
               </p>
             </div>
 
@@ -318,10 +318,10 @@ export function MCP() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-12">
             <h2 className="font-serif text-2xl sm:text-2xl text-foreground">
-              Skip the dashboards
+              Pule a tela
             </h2>
             <p className="font-sans text-base text-muted-foreground leading-normal max-w-xl mx-auto">
-              Just ask.
+              Pergunte.
             </p>
           </div>
 
@@ -385,10 +385,11 @@ export function MCP() {
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="font-serif text-2xl sm:text-3xl text-foreground">
-              Secure by design
+              Controle por design
             </h2>
             <p className="font-sans text-base text-muted-foreground leading-normal max-w-xl mx-auto">
-              Full control over what your AI can access and modify.
+              Escolha exatamente o que cada agente pode ver, consultar ou
+              alterar.
             </p>
           </div>
 
@@ -425,16 +426,16 @@ export function MCP() {
         <div className="bg-background border border-border p-8 lg:p-12 text-center relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-60deg,rgba(219,219,219,0.4),rgba(219,219,219,0.4)_1px,transparent_1px,transparent_6px)] dark:before:bg-[repeating-linear-gradient(-60deg,rgba(44,44,44,0.4),rgba(44,44,44,0.4)_1px,transparent_1px,transparent_6px)] before:pointer-events-none">
           <div className="relative z-10">
             <h2 className="font-serif text-2xl sm:text-2xl text-foreground mb-4">
-              Get started
+              Comece pelo seu cliente favorito
             </h2>
             <p className="font-sans text-base text-muted-foreground mb-6 max-w-lg mx-auto">
-              Choose your AI client above. You'll need an API key from your
-              Midday dashboard.
+              Escolha um cliente AI acima. Voce vai precisar da sua chave de
+              API da Laudos.AI.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild className="h-11 px-6 text-sm font-sans">
-                <Link href="https://app.midday.ai/settings/developer">
-                  Get API key
+                <Link href="https://api.laudos.ai">
+                  Ver API
                 </Link>
               </Button>
             </div>

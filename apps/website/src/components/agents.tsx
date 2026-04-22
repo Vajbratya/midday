@@ -35,7 +35,7 @@ function InfraDiagram() {
       {"│\n"}
       {" │"}
       {d("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")}
-      {"  Midday  "}
+      {"  Laudos.AI  "}
       {d("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")}
       {"│\n"}
       {" │"}
@@ -45,7 +45,7 @@ function InfraDiagram() {
       {"│\n"}
       {" │"}
       {d("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")}
-      {"  The backbone for your business  "}
+      {"  A base da operação clínica  "}
       {d("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")}
       {"│\n"}
       {" │"}
@@ -67,7 +67,7 @@ function InfraDiagram() {
         "   ┌──────────┐  ┌──────────────┐  ┌──────────┐  ┌──────────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐\n"
       }
       {
-        "   │ Invoices │  │ Transactions │  │ Tracker  │  │  Customers   │  │ Reports  │  │ Banking  │  │ Exports  │\n"
+        "   │  Laudos  │  │    Fluxo     │  │   TAT    │  │ Instituições │  │ Briefings │  │  Canais  │  │ Integra  │\n"
       }
       {
         "   └──────────┘  └──────────────┘  └──────────┘  └──────────────┘  └──────────┘  └──────────┘  └──────────┘"
@@ -94,7 +94,7 @@ function CopyInstall() {
   const [copied, setCopied] = useState(false);
 
   const copyCommand = () => {
-    navigator.clipboard.writeText("npx @midday-ai/cli@latest");
+    navigator.clipboard.writeText("npx @laudos-ai/cli@latest");
     setCopied(true);
     setTimeout(() => setCopied(false), 1000);
   };
@@ -108,9 +108,9 @@ function CopyInstall() {
         backgroundImage:
           "repeating-linear-gradient(-60deg, hsla(var(--border), 0.4), hsla(var(--border), 0.4) 1px, transparent 1px, transparent 6px)",
       }}
-    >
-      <span className="text-foreground truncate">
-        $ npx @midday-ai/cli@latest
+      >
+        <span className="text-foreground truncate">
+        $ npx @laudos-ai/cli@latest
       </span>
 
       <div className="flex items-center space-x-2 ml-auto">
@@ -123,7 +123,7 @@ function CopyInstall() {
 
       {copied && (
         <div className="absolute left-1/2 -translate-x-1/2 -top-7 text-xs text-foreground animate-in fade-in slide-in-from-bottom-1">
-          Copied
+          Copiado
         </div>
       )}
     </button>
@@ -164,186 +164,186 @@ type Scenario = {
 
 const SCENARIOS: Scenario[] = [
   {
-    label: "Bill from time",
-    cmd1: 'midday invoices create --from-tracker "Website Redesign" --period 2026-03',
-    cmd2: "midday invoices send inv_0048",
-    spin1: "Creating invoice from time entries...",
-    spin2: "Sending invoice...",
-    done2: "Sending invoice...",
+    label: "Laudo por fluxo",
+    cmd1: 'laudos reports create --from-worklist "Plantão Noturno" --case 4821',
+    cmd2: "laudos reports push case_4821",
+    spin1: "Montando laudo a partir da fila...",
+    spin2: "Enviando para o fluxo...",
+    done2: "Enviando para o fluxo...",
     result1: (
       <div className="relative mt-3 border-[0.5px] border-primary text-foreground text-[12px]">
         <span className="absolute -top-[10px] left-3 bg-background px-1.5 text-[11px] tracking-wide text-foreground">
-          INV-0048 created from tracker
+          LD-4821 criado a partir da fila
         </span>
         <table className="w-full mt-2 mb-1">
           <thead>
             <tr className="text-left border-b-[0.5px] border-primary">
               <th className="font-normal pl-3 pr-2 pb-1 text-foreground">
-                ENTRY
+                ETAPA
               </th>
               <th className="font-normal pr-2 pb-1 text-right text-foreground">
-                HOURS
+                TEMPO
               </th>
               <th className="font-normal pr-2 pb-1 text-right text-foreground">
-                RATE
+                FILA
               </th>
               <th className="font-normal pr-3 pb-1 text-right text-foreground">
-                AMOUNT
+                STATUS
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="pl-3 pr-2 py-[3px]">Design system</td>
-              <td className="pr-2 py-[3px] text-right">24h</td>
-              <td className="pr-2 py-[3px] text-right">$150</td>
-              <td className="pr-3 py-[3px] text-right">$3,600.00</td>
+              <td className="pl-3 pr-2 py-[3px]">Coleta de contexto</td>
+              <td className="pr-2 py-[3px] text-right">2m</td>
+              <td className="pr-2 py-[3px] text-right">TC crânio</td>
+              <td className="pr-3 py-[3px] text-right">OK</td>
             </tr>
             <tr>
-              <td className="pl-3 pr-2 py-[3px]">Frontend build</td>
-              <td className="pr-2 py-[3px] text-right">38h</td>
-              <td className="pr-2 py-[3px] text-right">$150</td>
-              <td className="pr-3 py-[3px] text-right">$5,700.00</td>
+              <td className="pl-3 pr-2 py-[3px]">Estruturação</td>
+              <td className="pr-2 py-[3px] text-right">1m</td>
+              <td className="pr-2 py-[3px] text-right">TC crânio</td>
+              <td className="pr-3 py-[3px] text-right">OK</td>
             </tr>
             <tr>
-              <td className="pl-3 pr-2 py-[3px]">Code review</td>
-              <td className="pr-2 py-[3px] text-right">8h</td>
-              <td className="pr-2 py-[3px] text-right">$150</td>
-              <td className="pr-3 py-[3px] text-right">$1,200.00</td>
+              <td className="pl-3 pr-2 py-[3px]">Revisão assistida</td>
+              <td className="pr-2 py-[3px] text-right">45s</td>
+              <td className="pr-2 py-[3px] text-right">TC crânio</td>
+              <td className="pr-3 py-[3px] text-right">Pendente</td>
             </tr>
             <tr className="border-t-[0.5px] border-primary">
               <td className="pl-3 pr-2 py-[3px]">Total</td>
-              <td className="pr-2 py-[3px] text-right">70h</td>
+              <td className="pr-2 py-[3px] text-right">3m45s</td>
               <td className="pr-2 py-[3px]" />
-              <td className="pr-3 py-[3px] text-right">$10,500.00</td>
+              <td className="pr-3 py-[3px] text-right">Pronto</td>
             </tr>
           </tbody>
         </table>
         <div className="px-3 pb-2 text-[11px] text-foreground">
-          Customer: Acme Corp
+          Caso: 4821 · TC crânio
         </div>
       </div>
     ),
-    result2Line: "  Sent INV-0048 to billing@acme.corp",
+    result2Line: "  Laudo LD-4821 enviado para revisão final.",
   },
   {
-    label: "Reconcile",
-    cmd1: "midday inbox list --unmatched",
-    cmd2: "midday inbox match --all --auto",
-    spin1: "Fetching unmatched items...",
-    spin2: "Matching 3 receipts to transactions...",
-    done2: "Matching 3 receipts to transactions...",
+    label: "Conectar anexos",
+    cmd1: "laudos inbox list --unmatched",
+    cmd2: "laudos inbox match --all --auto",
+    spin1: "Buscando anexos sem caso...",
+    spin2: "Conectando 3 anexos aos casos...",
+    done2: "Conectando 3 anexos aos casos...",
     result1: (
       <div className="relative mt-3 border-[0.5px] border-primary text-foreground text-[12px]">
         <span className="absolute -top-[10px] left-3 bg-background px-1.5 text-[11px] tracking-wide text-foreground">
-          Unmatched [3]
+          Sem vínculo [3]
         </span>
         <table className="w-full mt-2 mb-1">
           <thead>
             <tr className="text-left border-b-[0.5px] border-primary">
               <th className="font-normal pl-3 pr-2 pb-1 text-foreground">ID</th>
-              <th className="font-normal pr-2 pb-1 text-foreground">FILE</th>
+              <th className="font-normal pr-2 pb-1 text-foreground">ARQUIVO</th>
               <th className="font-normal pr-2 pb-1 text-right text-foreground">
-                AMOUNT
+                FILA
               </th>
               <th className="font-normal pr-3 pb-1 text-foreground">
-                SUGGESTED
+                SUGERIDO
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td className="pl-3 pr-2 py-[3px]">inb_0091</td>
-              <td className="pr-2 py-[3px]">aws-march.pdf</td>
-              <td className="pr-2 py-[3px] text-right">$2,340.00</td>
-              <td className="pr-3 py-[3px]">txn_7720</td>
+              <td className="pr-2 py-[3px]">pedido-neuro.pdf</td>
+              <td className="pr-2 py-[3px] text-right">TC</td>
+              <td className="pr-3 py-[3px]">case_4821</td>
             </tr>
             <tr>
               <td className="pl-3 pr-2 py-[3px]">inb_0089</td>
-              <td className="pr-2 py-[3px]">figma-receipt.pdf</td>
-              <td className="pr-2 py-[3px] text-right">$45.00</td>
-              <td className="pr-3 py-[3px]">txn_7718</td>
+              <td className="pr-2 py-[3px]">laudo-anterior.pdf</td>
+              <td className="pr-2 py-[3px] text-right">RM</td>
+              <td className="pr-3 py-[3px]">case_4789</td>
             </tr>
             <tr>
               <td className="pl-3 pr-2 py-[3px]">inb_0087</td>
-              <td className="pr-2 py-[3px]">vercel-inv.pdf</td>
-              <td className="pr-2 py-[3px] text-right">$20.00</td>
-              <td className="pr-3 py-[3px]">txn_7715</td>
+              <td className="pr-2 py-[3px]">protocolo-uti.pdf</td>
+              <td className="pr-2 py-[3px] text-right">UTI</td>
+              <td className="pr-3 py-[3px]">case_4904</td>
             </tr>
           </tbody>
         </table>
       </div>
     ),
-    result2Line: "  Matched 3/3 receipts. All transactions reconciled.",
+    result2Line: "  3/3 anexos conectados. Contexto pronto para revisão.",
   },
   {
-    label: "Export",
-    cmd1: "midday transactions export --to quickbooks --period 2026-Q1",
-    cmd2: "midday export status job_4401",
-    spin1: "Exporting 142 transactions to QuickBooks...",
-    spin2: "Checking export status...",
-    done2: "Checking export status...",
+    label: "Exportar produção",
+    cmd1: "laudos reports export --to csv --period 2026-W16",
+    cmd2: "laudos export status job_4401",
+    spin1: "Exportando 142 laudos para CSV...",
+    spin2: "Checando status da exportação...",
+    done2: "Checando status da exportação...",
     result1: (
       <div className="mt-2 text-foreground text-[12px] space-y-0.5">
-        <div> Export started</div>
-        <div> Provider: QuickBooks</div>
-        <div> Period: Jan 1 - Mar 31, 2026</div>
-        <div> Transactions: 142</div>
+        <div> Exportação iniciada</div>
+        <div> Destino: CSV</div>
+        <div> Período: 13 Abr - 19 Abr 2026</div>
+        <div> Laudos: 142</div>
         <div> Job ID: job_4401</div>
       </div>
     ),
-    result2Line: "  Export complete. 142 transactions synced to QuickBooks.",
+    result2Line: "  Exportação concluída. 142 laudos disponíveis para download.",
   },
   {
-    label: "Forecast",
-    cmd1: "midday reports revenue-forecast",
-    cmd2: "midday reports cash-flow --period 2026-Q2",
-    spin1: "Generating revenue forecast...",
-    spin2: "Calculating cash flow...",
-    done2: "Calculating cash flow...",
+    label: "Briefing",
+    cmd1: "laudos insights weekly-briefing",
+    cmd2: "laudos insights tat-overview --period 2026-W16",
+    spin1: "Gerando briefing semanal...",
+    spin2: "Calculando visão de TAT...",
+    done2: "Calculando visão de TAT...",
     result1: (
       <div className="relative mt-3 border-[0.5px] border-primary text-foreground text-[12px]">
         <span className="absolute -top-[10px] left-3 bg-background px-1.5 text-[11px] tracking-wide text-foreground">
-          Revenue Forecast
+          Weekly Briefing
         </span>
         <table className="w-full mt-2 mb-1">
           <thead>
             <tr className="text-left border-b-[0.5px] border-primary">
               <th className="font-normal pl-3 pr-2 pb-1 text-foreground">
-                MONTH
+                FILA
               </th>
               <th className="font-normal pr-2 pb-1 text-right text-foreground">
-                PROJECTED
+                VOLUME
               </th>
               <th className="font-normal pr-3 pb-1 text-right text-foreground">
-                RECURRING
+                TAT
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="pl-3 pr-2 py-[3px]">Apr 2026</td>
-              <td className="pr-2 py-[3px] text-right">$28,400.00</td>
-              <td className="pr-3 py-[3px] text-right">$19,500.00</td>
+              <td className="pl-3 pr-2 py-[3px]">TC</td>
+              <td className="pr-2 py-[3px] text-right">214</td>
+              <td className="pr-3 py-[3px] text-right">16 min</td>
             </tr>
             <tr>
-              <td className="pl-3 pr-2 py-[3px]">May 2026</td>
-              <td className="pr-2 py-[3px] text-right">$31,200.00</td>
-              <td className="pr-3 py-[3px] text-right">$19,500.00</td>
+              <td className="pl-3 pr-2 py-[3px]">RM</td>
+              <td className="pr-2 py-[3px] text-right">97</td>
+              <td className="pr-3 py-[3px] text-right">23 min</td>
             </tr>
             <tr>
-              <td className="pl-3 pr-2 py-[3px]">Jun 2026</td>
-              <td className="pr-2 py-[3px] text-right">$29,800.00</td>
-              <td className="pr-3 py-[3px] text-right">$19,500.00</td>
+              <td className="pl-3 pr-2 py-[3px]">USG</td>
+              <td className="pr-2 py-[3px] text-right">171</td>
+              <td className="pr-3 py-[3px] text-right">11 min</td>
             </tr>
           </tbody>
         </table>
         <div className="px-3 pb-2 text-[11px] text-foreground">
-          Growth rate: +8.2% MoM
+          Tendência: TAT -8% semana contra semana
         </div>
       </div>
     ),
-    result2Line: "  Q2 net cash flow: +$47,200.00",
+    result2Line: "  Briefing gerado. Gargalo principal: RM encéfalo.",
   },
 ];
 
@@ -523,7 +523,7 @@ function Terminal({ pixelFontClass }: { pixelFontClass?: string }) {
             midday
           </div>
           <div className="text-[hsl(225,60%,75%)] text-[10px] tracking-widest mt-1.5 mb-5">
-            v0.1.0 · agent@acme.corp · Midday Labs AB
+            v0.1.0 · radiologia@laudos.ai · Laudos.AI
           </div>
 
           <div>
@@ -571,54 +571,54 @@ function Terminal({ pixelFontClass }: { pixelFontClass?: string }) {
 
 const features = [
   {
-    title: "Automate invoices",
+    title: "Automatize o pós-laudo",
     description:
-      "Agents create, send, and follow up on invoices without manual steps. From draft to paid, hands-free.",
+      "Agentes fecham o que vem depois da imagem sem passos manuais: revisar filas, mover contexto e empurrar a operação para frente.",
   },
   {
-    title: "Reconcile transactions",
+    title: "Orquestre filas",
     description:
-      "Let agents categorize and match transactions as they come in. No more end-of-month cleanup.",
+      "Deixe agentes agrupar, priorizar e reorganizar casos conforme a rotina muda. Sem limpeza manual no fim do turno.",
   },
   {
-    title: "Track time automatically",
+    title: "Monitore TAT automaticamente",
     description:
-      "Agents start and stop timers based on your workflow. Time entries flow straight to projects and reports.",
+      "Agentes acompanham tempo por fila, plantão e modalidade sem depender de planilha paralela.",
   },
   {
-    title: "Pull reports on demand",
+    title: "Puxe briefings sob demanda",
     description:
-      "Revenue, burn rate, runway. Your agent has the numbers. Ask for a report and get structured data back.",
+      "TAT, produtividade, CRIT pendente, gargalos. Peça um briefing e receba resposta estruturada.",
   },
   {
-    title: "Chase overdue payments",
+    title: "Escalone o que é crítico",
     description:
-      "Agents check for overdue invoices and send reminders on a schedule. Escalate automatically at 7, 30, and 60 days.",
+      "Agentes revisam achados críticos sem ciência e propõem os próximos passos no tempo certo.",
   },
   {
-    title: "Categorize spending",
+    title: "Classifique a operação",
     description:
-      "New transactions get categorized instantly based on vendor history. No manual tagging, no rules to maintain.",
+      "Novos casos entram já com fila, prioridade e contexto operacional quando isso puder ser inferido com segurança.",
   },
   {
-    title: "Match receipts",
+    title: "Conecte anexos",
     description:
-      "Receipts land in your inbox and get matched to the right transaction automatically. Zero manual reconciliation.",
+      "Pedidos, PDFs e histórico podem cair no caso certo sem busca manual e sem pasta solta.",
   },
   {
-    title: "Close the books",
+    title: "Feche o ciclo",
     description:
-      "End-of-month on autopilot. Categorize remaining transactions, match receipts, flag discrepancies, generate reports.",
+      "Rotinas de revisão, comunicação e auditoria podem rodar em série e deixar a pendência pronta para decisão.",
   },
   {
-    title: "Monitor cash flow",
+    title: "Monitore gargalos",
     description:
-      "Get alerted when your balance drops below a threshold or when runway shrinks. No surprises.",
+      "Receba alerta quando o TAT sair do alvo, quando uma fila travar ou quando o CRIT ficar sem resposta.",
   },
   {
-    title: "Sync to your stack",
+    title: "Conecte ao seu stack",
     description:
-      "Export transactions to QuickBooks, Xero, or your ERP on a schedule. Always in sync, never behind.",
+      "Exporte produção, mova contexto para planilhas ou integre com os sistemas que a operação já usa.",
   },
   {
     title: "Works with any MCP client",
@@ -635,57 +635,57 @@ const features = [
 const possibilities = [
   {
     agent: "Claude",
-    title: "Ask about your runway",
+    title: "Pedir um briefing da operação",
     description:
-      "Ask Claude how much runway you have and get a structured financial breakdown with trends. No spreadsheets, no dashboards.",
+      "Peça ao Claude um resumo de TAT, filas, CRIT pendente e tendências sem abrir dashboard ou planilha.",
   },
   {
     agent: "Cursor",
-    title: "Bill clients while you code",
+    title: "Consultar contexto sem sair da IDE",
     description:
-      "Cursor tracks your time per project as you work. At the end of the week, it drafts and sends invoices automatically.",
+      "Cursor pode puxar contexto de caso, templates e dados operacionais enquanto sua equipe integra sistemas ou automações.",
   },
   {
     agent: "OpenClaw",
-    title: "A 24/7 finance assistant",
+    title: "Um operador 24/7",
     description:
-      "OpenClaw monitors overdue invoices overnight, sends reminders, categorizes transactions, and briefs you every morning.",
+      "OpenClaw vigia TAT, propõe escalonamentos e deixa o briefing pronto quando o time acorda.",
   },
   {
     agent: "Zapier",
-    title: "Weekly P&L on autopilot",
+    title: "Resumo semanal no automático",
     description:
-      "Every Monday, Zapier pulls your profit and loss report and drops it in Slack. No one has to ask.",
+      "Toda segunda, Zapier puxa o resumo da operação e entrega no Slack sem ninguém pedir.",
   },
   {
     agent: "Your agent",
-    title: "Build a custom workflow",
+    title: "Monte um fluxo sob medida",
     description:
-      "Use the REST API or TypeScript SDK to build exactly the agent you need. Pull transactions, create invoices, push to your ERP. Your logic, your rules.",
+      "Use a API ou o SDK para montar o agente exato que a sua operação precisa. Sua lógica, suas regras.",
   },
   {
     agent: "Any MCP client",
-    title: "One protocol, every tool",
+    title: "Um protocolo, qualquer ferramenta",
     description:
-      "Any app that speaks MCP gets instant access to 80+ Midday tools. No custom integration code, no API wrangling.",
+      "Qualquer app que fale MCP ganha acesso imediato às ferramentas da Laudos.AI. Sem integração sob medida para cada cliente.",
   },
   {
     agent: "Raycast",
-    title: "Invoice in a keystroke",
+    title: "Buscar um caso em um atalho",
     description:
-      "Hit a shortcut, type a customer name and amount. The invoice is created and sent before you finish your coffee.",
+      "Aperte um atalho, digite o número do caso e puxe contexto, anexos ou status antes mesmo de trocar de janela.",
   },
   {
     agent: "Manus",
-    title: "Reconcile while you sleep",
+    title: "Organizar enquanto você dorme",
     description:
-      "Manus matches transactions to invoices, flags anomalies, and categorizes everything. Ready for review when you wake up.",
+      "Manus varre a operação, destaca anomalias e deixa tudo pronto para revisão quando você voltar para a tela.",
   },
   {
     agent: "Custom scripts",
-    title: "Automate with a cron job",
+    title: "Automatize com um cron job",
     description:
-      "A 20-line script that runs nightly: fetch uncategorized transactions, classify them with your own rules, push updates back. No UI needed.",
+      "Um script curto que roda à noite, busca filas fora do alvo, aplica suas regras e devolve o resultado. Sem UI.",
   },
 ];
 
@@ -721,12 +721,12 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
         <div className="lg:max-w-[590px] space-y-8 w-full">
           <div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight font-sans">
-              Let agents run your business.
+              Deixe agentes rodarem a operação.
             </h1>
             <p className="text-[hsl(225,60%,75%)] text-base leading-normal mt-4 md:mt-8">
-              One CLI. 80+ tools. Your agent can send invoices, reconcile
-              transactions, track time, pull reports. Anything you do in Midday,
-              it can do too.
+              Um CLI. 80+ ferramentas. Seu agente pode varrer filas, acionar
+              CRIT, consolidar produção e buscar contexto. Tudo o que acontece
+              depois da imagem pode ganhar escala aqui.
             </p>
           </div>
 
@@ -739,15 +739,15 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
               asChild
               className="h-11 px-6 text-sm font-mono hover:!bg-[hsl(225,50%,92%)]"
             >
-              <Link href="https://app.midday.ai">Start automating</Link>
+              <Link href="https://copilot.laudos.ai">Começar</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="hidden md:inline-flex h-11 px-6 text-sm font-mono hover:!bg-[hsl(225,70%,28%)] hover:!text-foreground"
             >
-              <Link href="https://github.com/midday-ai/midday/tree/main/packages/cli">
-                Read documentation
+              <Link href="https://api.laudos.ai">
+                Ver documentação
               </Link>
             </Button>
           </div>
@@ -758,7 +758,7 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
 
       <div className="space-y-16 max-w-screen-lg mx-auto">
         <div className="mt-12">
-          <h3 className="font-sans text-2xl text-foreground">Features</h3>
+          <h3 className="font-sans text-2xl text-foreground">Recursos</h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4">
             {features.map((feature) => (
@@ -782,7 +782,7 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
         <SectionDivider />
 
         <div>
-          <h3 className="font-sans text-2xl text-foreground">Possibilities</h3>
+          <h3 className="font-sans text-2xl text-foreground">Possibilidades</h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4">
             {possibilities.map((item) => (
@@ -814,7 +814,7 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
               <h2 className="text-sm">CLI</h2>
               <ul className="text-[hsl(225,60%,75%)] space-y-2">
                 <li className="text-sm">
-                  ◇ Invoices, transactions, customers, and time tracking
+                  ◇ Casos, laudos, anexos e produtividade
                 </li>
                 <li className="text-sm">◇ Structured output for agents</li>
                 <li className="text-sm">◇ OAuth login via browser</li>
@@ -828,7 +828,7 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
             <div className="p-4 space-y-4">
               <h2 className="text-sm">MCP</h2>
               <ul className="text-[hsl(225,60%,75%)] space-y-2">
-                <li className="text-sm">◇ 80+ tools for business operations</li>
+                <li className="text-sm">◇ 80+ ferramentas para operação clínica</li>
                 <li className="text-sm">
                   ◇ Works with Cursor, Claude, Raycast, and more
                 </li>
@@ -845,11 +845,11 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
             <div className="p-4 space-y-4">
               <h2 className="text-sm">Developer experience</h2>
               <ul className="text-[hsl(225,60%,75%)] space-y-2">
-                <li className="text-sm">◇ Single npx command to start</li>
-                <li className="text-sm">◇ No configuration files</li>
-                <li className="text-sm">◇ TypeScript and Go SDKs</li>
-                <li className="text-sm">◇ REST API access</li>
-                <li className="text-sm">◇ Open-source</li>
+                <li className="text-sm">◇ Um único comando npx para começar</li>
+                <li className="text-sm">◇ Sem arquivos de configuração</li>
+                <li className="text-sm">◇ SDKs em TypeScript e Go</li>
+                <li className="text-sm">◇ Acesso por API REST</li>
+                <li className="text-sm">◇ Superfície pronta para agentes</li>
               </ul>
             </div>
           </div>
@@ -860,7 +860,7 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
             asChild
             className="h-11 px-6 text-sm font-mono hover:!bg-[hsl(225,50%,92%)]"
           >
-            <Link href="https://app.midday.ai">Start automating</Link>
+            <Link href="https://copilot.laudos.ai">Começar</Link>
           </Button>
         </div>
 
@@ -873,8 +873,8 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
             Infrastructure
           </h2>
           <p className="text-[hsl(225,60%,75%)] text-base leading-normal mt-4 max-w-md mx-auto">
-            Midday is the backbone. Agents connect via MCP, CLI, or API. Every
-            operation syncs back to your dashboard.
+            Laudos.AI é a base. Agentes entram por MCP, CLI ou API. Cada ação
+            volta para a operação com contexto e rastreabilidade.
           </p>
 
           <div className="hidden md:flex flex-col items-center justify-center mt-2">
@@ -896,26 +896,26 @@ export function Agents({ pixelFontClass }: { pixelFontClass?: string }) {
         <div className="bg-background border border-border p-8 lg:p-12 text-center relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-60deg,hsla(var(--border),0.4),hsla(var(--border),0.4)_1px,transparent_1px,transparent_6px)] before:pointer-events-none">
           <div className="relative z-10">
             <h2 className="font-sans text-2xl sm:text-3xl text-foreground mb-4">
-              Get started
+              Comece
             </h2>
             <p className="font-sans text-base text-[hsl(225,60%,75%)] mb-6 max-w-lg mx-auto">
-              One CLI. One MCP server. Every business operation your agent
-              needs.
+              Um CLI. Um servidor MCP. A camada que faltava para agentes
+              trabalharem no pós-laudo.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 asChild
                 className="h-11 px-6 text-sm font-mono hover:!bg-[hsl(225,50%,92%)]"
               >
-                <Link href="https://app.midday.ai">Start automating</Link>
+                <Link href="https://copilot.laudos.ai">Começar</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 className="h-11 px-6 text-sm font-mono border-primary bg-background hover:!bg-[hsl(225,70%,45%)] hover:!text-foreground"
               >
-                <Link href="https://github.com/midday-ai/midday/tree/main/packages/cli">
-                  Read documentation
+                <Link href="https://api.laudos.ai">
+                  Ver documentação
                 </Link>
               </Button>
             </div>

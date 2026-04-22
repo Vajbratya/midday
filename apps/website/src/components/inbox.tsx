@@ -64,19 +64,19 @@ export function Inbox() {
           <div className="flex flex-col justify-start items-center space-y-6 z-20 px-3 sm:px-4">
             <div className="space-y-4 text-center max-w-xl px-2 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Inbox
+                CRIT
               </p>
               <h1 className="font-serif text-4xl sm:text-4xl md:text-5xl leading-tight">
-                <span className="text-foreground">Receipts matched</span>
+                <span className="text-foreground">Achados críticos sob controle</span>
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto lg:hidden">
-                Midday auto-matches obvious receipts and asks for review only
-                when needed.
+                Notifique, registre ciência e feche o ciclo sem depender de
+                improviso.
               </p>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto hidden lg:block">
-                Receipts and invoices are pulled in from email, uploads, and
-                payments, then matched to transactions so reconciliation doesn't
-                require manual work.
+                O CRIT centraliza alerta, confirmação e rastreabilidade para que
+                a comunicação de achados críticos seja auditável do início ao
+                fim.
               </p>
             </div>
 
@@ -93,7 +93,7 @@ export function Inbox() {
                 <HeroImage
                   lightSrc="/images/inbox-light.svg"
                   darkSrc="/images/inbox-dark.svg"
-                  alt="Inbox Interface"
+                  alt="CRIT Laudos.AI"
                 />
               </div>
             </div>
@@ -106,17 +106,16 @@ export function Inbox() {
             {/* Main Heading */}
             <div className="text-center space-y-8 2xl:space-y-12 3xl:space-y-12 w-full">
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
-                Inbox
+                CRIT
               </p>
               <h1 className="font-serif text-8xl xl:text-9xl 2xl:text-[11rem] leading-tight text-center">
-                <span className="text-foreground block">Receipts matched</span>
+                <span className="text-foreground block">Achados críticos sob controle</span>
               </h1>
 
               <p className="text-muted-foreground text-base leading-normal max-w-2xl mx-auto font-sans text-center">
-                Receipts and invoices are pulled in from email, uploads, and
-                payments, then matched to transactions. Obvious matches are
-                handled automatically, and edge cases are surfaced for quick
-                review.
+                O CRIT centraliza alerta, confirmação e rastreabilidade para que
+                a comunicação de achados críticos seja auditável do início ao
+                fim.
               </p>
             </div>
 
@@ -133,7 +132,7 @@ export function Inbox() {
                 <HeroImage
                   lightSrc="/images/inbox-light.svg"
                   darkSrc="/images/inbox-dark.svg"
-                  alt="Inbox Interface"
+                  alt="CRIT Laudos.AI"
                 />
               </div>
             </div>
@@ -151,31 +150,31 @@ export function Inbox() {
               <div className="flex items-center">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    Receipts and invoices collected
+                    Alertas saem pelo canal certo
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Upload receipts and invoices manually, connect existing
-                    folders, or pull them in from connected email accounts.
+                    Dispare a comunicação crítica com registro consistente e
+                    integração aos canais que a operação realmente usa.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Personal Midday inbox email
+                        SLA configurável
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Manual uploads
+                        Registro de envio
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Bulk uploads
+                        Escalonamento
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        OCR scanning
+                        Trilhas de auditoria
                       </span>
                     </div>
                     <Link
@@ -190,7 +189,7 @@ export function Inbox() {
                         className="object-contain"
                       />
                       <span className="font-sans text-sm text-foreground">
-                        Gmail
+                        Email
                       </span>
                     </Link>
                     <Link
@@ -205,7 +204,7 @@ export function Inbox() {
                         className="object-contain"
                       />
                       <span className="font-sans text-sm text-foreground">
-                        Outlook
+                        Plantão
                       </span>
                     </Link>
                     <Link
@@ -258,27 +257,27 @@ export function Inbox() {
               <div className="flex items-center lg:order-2">
                 <div className="space-y-3 lg:space-y-5 text-center lg:text-left w-full">
                   <h2 className="font-sans text-2xl sm:text-2xl text-foreground">
-                    Matched to transactions
+                    Ciência documentada
                   </h2>
                   <p className="font-sans text-base text-muted-foreground leading-normal max-w-lg mx-auto lg:mx-0">
-                    Documents are matched to the right transactions
-                    automatically when confidence is high. Lower-confidence
-                    cases are surfaced as suggestions so you stay in control.
+                    Cada comunicação pode registrar envio, leitura, confirmação
+                    e pendência para o serviço manter prova jurídica e controle
+                    operacional.
                   </p>
                   <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Suggested matches
+                        Leitura registrada
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        Missing receipt detection
+                        Pendências abertas
                       </span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-background">
                       <span className="font-sans text-sm text-foreground">
-                        One-click approval
+                        Confirmação com um clique
                       </span>
                     </div>
                   </div>

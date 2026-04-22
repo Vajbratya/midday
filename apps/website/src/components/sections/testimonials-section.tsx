@@ -17,34 +17,44 @@ export interface Testimonial {
 
 const founders: Testimonial[] = [
   {
-    name: "Natan",
-    title: "Co-Founder, CEO/CTO",
-    company: "INRAD HCFMUSP",
+    name: "Neurorradiologista",
+    title: "Hospital terciário",
+    company: "São Paulo",
     country: "Brasil",
     content:
-      "Construímos software para o momento mais crítico da radiologia: quando a imagem precisa virar decisão, laudo e comunicação segura.",
+      "O sagittal.health tirou horas do meu dia de laudo e ainda resolveu a parte que mais falhava: o pós-laudo com CRIT e rastreabilidade.",
     fullContent:
-      "Contexto\nA imagem é só o começo. Depois vêm decisão clínica, digitação, risco de erro e responsabilidade jurídica.\n\nO que estamos resolvendo\nA Laudos.AI fecha esse espaço com Copilot, editor, integrações e CRIT na mesma infraestrutura.",
+      "Contexto\nOperação com alto volume e necessidade de resposta rápida.\n\nImpacto\nMenos retrabalho na redação e comunicação crítica com prova de envio, leitura e ciência.",
   },
   {
-    name: "Raquel Moreno",
-    title: "Co-Founder, AI Lead",
-    company: "ICESP",
+    name: "Coordenação de radiologia",
+    title: "Grupo multiunidade",
+    company: "Sudeste",
     country: "Brasil",
     content:
-      "Não é IA para substituir médicos. É IA para tirar peso das costas deles e devolver tempo ao raciocínio clínico.",
+      "Antes cada unidade trabalhava de um jeito. Hoje templates, fluxo e confirmação de achado crítico seguem o mesmo padrão.",
     fullContent:
-      "Contexto\nDurante décadas, quase ninguém construiu software para a parte mais pesada do trabalho do radiologista.\n\nO que estamos resolvendo\nAplicamos IA onde ela gera ganho real: redação, estrutura, padronização e suporte ao fluxo.",
+      "Contexto\nEquipe distribuída entre unidades e plantões, com necessidade de padrão único.\n\nImpacto\nPadronização de laudos, governança por instituição e menos ruído operacional.",
   },
   {
-    name: "Francisco Akira",
-    title: "Co-Founder, Clinical Lead",
-    company: "INCOR HCFMUSP",
+    name: "Radiologista de plantão",
+    title: "Operação de urgência",
+    company: "Brasil",
     country: "Brasil",
     content:
-      "Quando surge um achado crítico, a comunicação não pode depender de improviso. Precisa existir fluxo, prova e rastreabilidade.",
+      "O ganho não está só em escrever mais rápido. Está em encontrar contexto, fechar o caso e não perder o crítico no caminho.",
     fullContent:
-      "Contexto\nWhatsApp, ligações e prints não escalam em operações sensíveis.\n\nO que estamos resolvendo\nO CRIT registra ciência, fecha o ciclo e entrega auditoria completa com SLA documentado.",
+      "Contexto\nPlantão com necessidade de resposta imediata e histórico acessível.\n\nImpacto\nMenos troca de tela, mais clareza do caso e SLA mais controlado.",
+  },
+  {
+    name: "Gestão operacional",
+    title: "Clínica especializada",
+    company: "Brasil",
+    country: "Brasil",
+    content:
+      "Hoje a equipe enxerga volume, uso, gargalo e risco sem depender de planilha paralela nem de auditoria improvisada.",
+    fullContent:
+      "Contexto\nCoordenação precisando acompanhar produção, limite de plano, achados críticos e velocidade por fila.\n\nImpacto\nMais clareza para redistribuir carga, justificar escala e agir antes do atraso virar problema.",
   },
 ];
 
@@ -58,27 +68,37 @@ interface TestimonialsSectionProps {
 
 export function TestimonialsSection({
   testimonials = founders,
-  title = "Construído por quem lauda",
-  subtitle = "Três médicos construindo o sistema que queriam ter nos seus plantões.",
+  title = "Construído ao lado de quem lauda",
+  subtitle = "Cada detalhe do sagittal.health nasce do fluxo real de radiologistas, coordenações e operações de alta demanda.",
 }: TestimonialsSectionProps) {
   return (
     <section className="bg-background py-12 sm:py-16 lg:py-24">
       <div className="max-w-[1400px] mx-auto px-4">
-        <div className="text-center space-y-4 mb-12">
+        <div className="text-center space-y-4 mb-10 sm:mb-12">
           <h2 className="font-serif text-2xl sm:text-2xl text-foreground">
             {title}
           </h2>
           <p className="font-sans text-base text-muted-foreground leading-normal max-w-2xl mx-auto">
             {subtitle}
           </p>
+          <div className="flex items-center justify-center gap-1 pt-1 text-muted-foreground/70">
+            {Array.from({ length: 5 }).map((_, index) => (
+              <span key={index} className="text-sm">
+                ★
+              </span>
+            ))}
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.name}
               className="border border-border bg-background p-6 lg:p-7"
             >
+              <p className="mb-5 font-sans text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                {testimonial.country}
+              </p>
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-full bg-secondary overflow-hidden flex items-center justify-center">
                   {testimonial.image ? (
@@ -99,18 +119,16 @@ export function TestimonialsSection({
                   <p className="font-sans text-sm text-foreground">
                     {testimonial.name}
                   </p>
-                  <p className="font-sans text-xs text-muted-foreground">
+                  <p className="font-sans text-xs text-muted-foreground leading-relaxed">
                     {testimonial.title}
+                    <br />
+                    {testimonial.company}
                   </p>
                 </div>
               </div>
-              <blockquote className="font-sans text-base text-foreground leading-relaxed mb-5">
+              <blockquote className="font-sans text-base text-foreground leading-relaxed">
                 "{testimonial.content}"
               </blockquote>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <p>{testimonial.company}</p>
-                <p>{testimonial.fullContent}</p>
-              </div>
             </article>
           ))}
         </div>
@@ -120,8 +138,7 @@ export function TestimonialsSection({
             href="/about"
             className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
           >
-            Conhecer a historia da Laudos.AI
-            Conhecer a história da Laudos.AI
+            Ver todos os casos
           </Link>
         </div>
       </div>

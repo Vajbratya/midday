@@ -1,18 +1,17 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { Download } from "@/components/download";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Editor mobile e acesso em qualquer tela",
+  title: "Laudos.AI para Mac",
   description:
-    "A experiencia da Laudos.AI acompanha o radiologista no desktop, tablet e celular, sem instalacao obrigatoria.",
+    "Baixe o app da Laudos.AI para Mac e acesse casos, laudos, anexos e contexto clinico com um atalho global.",
   path: "/download",
   og: {
-    title: "Editor mobile",
-    description: "No navegador, no tablet e agora tambem no celular.",
+    title: "Laudos.AI para Mac",
+    description: "Seu contexto clinico, a um atalho de distancia",
   },
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.download} />;
+  return <Download />;
 }

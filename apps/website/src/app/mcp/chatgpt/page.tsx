@@ -1,18 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { MCPChatGPT } from "@/components/mcp-chatgpt";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "ChatGPT + Laudos.AI via MCP",
+  title: "ChatGPT MCP Integration",
   description:
-    "Conecte copilotos e agentes ao contexto operacional da Laudos.AI com MCP e API.",
+    "Build custom ChatGPT integrations with Midday using the MCP SDK. Connect OpenAI-powered apps to your business financial data.",
   path: "/mcp/chatgpt",
   og: {
-    title: "ChatGPT + Laudos.AI",
-    description: "Copilotos com contexto real do fluxo radiológico.",
+    title: "ChatGPT + Midday",
+    description: "Build custom integrations with your business data",
   },
+  keywords: [
+    "ChatGPT MCP",
+    "ChatGPT integration",
+    "Model Context Protocol",
+    "OpenAI integration",
+    "GPT financial data",
+  ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.mcp} />;
+  return <MCPChatGPT />;
 }

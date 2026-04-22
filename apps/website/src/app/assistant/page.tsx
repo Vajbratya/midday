@@ -1,25 +1,26 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { Assistant } from "@/components/assistant";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Copilot radiologico com IA e voz",
+  title: "Copilot para Radiologia",
   description:
-    "Descreva os achados com naturalidade. A Laudos.AI organiza o conteudo em um laudo estruturado, pronto para revisar e assinar.",
+    "Use linguagem natural para gerar laudos, recuperar contexto, revisar casos e acionar o fluxo clinico sem trocar de tela.",
   path: "/assistant",
   og: {
-    title: "Copilot Laudos.AI",
-    description: "Fale como voce pensa. Receba o laudo estruturado.",
+    title: "Copilot",
+    description: "Uma conversa para tocar o fluxo inteiro",
   },
   keywords: [
-    "laudos com IA",
-    "ditado radiologico",
-    "laudo estruturado",
     "copilot radiologia",
-    "voz natural",
+    "ia para laudo",
+    "assistente clinico",
+    "contexto radiologico",
+    "workflow de radiologia",
+    "copilot medico",
+    "ia para radiologistas",
   ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.assistant} />;
+  return <Assistant />;
 }

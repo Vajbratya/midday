@@ -5,39 +5,39 @@ import { MaterialIcon } from "./homepage/icon-mapping";
 
 export function HeaderCommandPanelPreview() {
   const transaction = {
-    name: "Acme Corporation",
+    name: "Caso 4821 · TC cranio",
   };
 
   const invoices = [
     {
       id: 1,
-      name: "Invoice #INV-2025-001",
+      name: "Laudo #LD-2025-001",
     },
     {
       id: 2,
-      name: "Invoice #INV-2024-089",
+      name: "Laudo #LD-2025-089",
     },
   ];
 
   const receipts = [
     {
       id: 1,
-      name: "Receipt - Acme Services",
+      name: "Anexo - Pedido medico",
     },
     {
       id: 2,
-      name: "Receipt - Acme Subscription",
+      name: "Anexo - Laudo anterior",
     },
   ];
 
   const files = [
     {
       id: 1,
-      name: "Acme_Contract_Q1_2025.pdf",
+      name: "Caso_4821_protocolo.pdf",
     },
     {
       id: 2,
-      name: "Invoice_Acme_2025-001.pdf",
+      name: "Caso_4821_anexo_urgencia.pdf",
     },
   ];
 
@@ -59,9 +59,9 @@ export function HeaderCommandPanelPreview() {
             <div className="relative w-full">
               <input
                 type="text"
-                value="Acme"
+                value="Caso 4821"
                 readOnly
-                placeholder="Type a command or search..."
+                placeholder="Digite um comando ou busque..."
                 className="w-full bg-background px-2 py-1 text-[11px] text-foreground placeholder:text-muted-foreground focus:outline-none rounded-none pr-7"
               />
               <MaterialIcon
@@ -77,7 +77,7 @@ export function HeaderCommandPanelPreview() {
             {/* Transaction Section */}
             <div className="mb-3">
               <div className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1.5 px-1">
-                Transaction
+                Caso
               </div>
               <div className="flex items-center gap-2 pr-2 py-1">
                 <MaterialIcon
@@ -93,10 +93,10 @@ export function HeaderCommandPanelPreview() {
               </div>
             </div>
 
-            {/* Invoice Section */}
+            {/* Report Section */}
             <div className="mb-3">
               <div className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1.5 px-1">
-                Invoice
+                Laudos
               </div>
               <div className="space-y-0.5">
                 {invoices.map((invoice) => (
@@ -119,10 +119,10 @@ export function HeaderCommandPanelPreview() {
               </div>
             </div>
 
-            {/* Receipts Section */}
+            {/* Attachments Section */}
             <div className="mb-3">
               <div className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1.5 px-1">
-                Receipt
+                Anexos
               </div>
               <div className="space-y-0.5">
                 {receipts.map((receipt) => (
@@ -148,7 +148,7 @@ export function HeaderCommandPanelPreview() {
             {/* Files Section */}
             <div className="mb-3">
               <div className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1.5 px-1">
-                Files
+                Arquivos
               </div>
               <div className="space-y-0.5">
                 {files.map((file) => (

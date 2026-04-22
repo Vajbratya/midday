@@ -19,8 +19,9 @@ export function PreAccountingSection() {
             Pronto para instituições que não podem improvisar
           </h2>
           <p className="font-sans text-base text-muted-foreground leading-normal max-w-2xl mx-auto">
-            O Enterprise da Laudos.AI foi pensado para hospitais e operações de
-            maior porte que precisam de padrão, auditoria e integração real.
+            O Enterprise do sagittal.health foi pensado para hospitais e
+            operações de maior porte que precisam de padrão, auditoria e
+            integração real.
           </p>
         </div>
 

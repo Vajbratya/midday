@@ -1,24 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { PreAccounting } from "@/components/pre-accounting";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Integração PACS/RIS e API",
+  title: "Operacao Auditavel",
   description:
-    "Integre a Laudos.AI a PACS, RIS e sistemas internos para reduzir retrabalho e encaixar o produto na infraestrutura que sua operação já usa.",
+    "Organize o que acontece depois do laudo com trilha, confirmacao, anexos e contexto pronto para revisao e auditoria.",
   path: "/pre-accounting",
   og: {
-    title: "Integrações clínicas",
-    description: "PACS, RIS, API e implantação enterprise sem retrabalho.",
+    title: "Operacao auditavel",
+    description: "Fluxo pos-laudo sem planilha nem improviso",
   },
   keywords: [
-    "pacs ris",
-    "integração radiologia",
-    "api laudos",
-    "enterprise radiologia",
+    "auditoria radiologia",
+    "operacao clinica",
+    "fluxo pos laudo",
+    "rastreabilidade",
+    "governanca clinica",
   ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages["pre-accounting"]} />;
+  return <PreAccounting />;
 }

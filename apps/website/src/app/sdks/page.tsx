@@ -1,18 +1,17 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { SDKs } from "@/components/sdks";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "API, SDKs e integrações técnicas",
+  title: "SDKs",
   description:
-    "A camada técnica da Laudos.AI permite integrações, conectores, automações e copilotos em cima do workflow radiológico.",
+    "SDKs tipados para integrar casos, laudos, CRIT e contexto operacional da Laudos.AI nas suas aplicacoes.",
   path: "/sdks",
   og: {
-    title: "API e SDKs",
-    description: "Integração técnica com o workflow radiológico da Laudos.AI.",
+    title: "SDKs",
+    description: "Client libraries tipadas para a API da Laudos.AI",
   },
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.mcp} />;
+  return <SDKs />;
 }

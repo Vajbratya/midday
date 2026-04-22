@@ -9,33 +9,33 @@ type HeroChatInputProps = {
 };
 
 const suggestionsRow1 = [
-  "How do I create an invoice?",
-  "Connect my bank account",
-  "Set up recurring invoices",
-  "Track time on projects",
-  "Export transactions to CSV",
-  "Create a new customer",
-  "View my dashboard",
+  "Como configuro o CRIT?",
+  "Como funciona o editor?",
+  "Como conecto um canal?",
+  "Como busco anexos por caso?",
+  "Como exporto a producao?",
+  "Como crio templates?",
+  "Como acompanho o TAT?",
 ];
 
 const suggestionsRow2 = [
-  "What's my runway?",
-  "Show burn rate analysis",
-  "View profit margins",
-  "Match receipts automatically",
-  "Send invoice reminder",
-  "Add a new project",
-  "Check account balances",
+  "Quais canais o CRIT suporta?",
+  "Como confirmar ciencia?",
+  "Como organizar filas?",
+  "Como integrar via MCP?",
+  "Como revisar um laudo?",
+  "Como configurar instituicoes?",
+  "Como usar o Copilot?",
 ];
 
 const suggestionsRow3 = [
-  "Revenue vs last quarter",
-  "Categorize my expenses",
-  "Upload to document vault",
-  "Track billable hours",
-  "Generate financial report",
-  "View overdue invoices",
-  "Export for accountant",
+  "Como subir anexos?",
+  "Como usar a busca?",
+  "Como criar um briefing?",
+  "Como funciona a auditoria?",
+  "Como medir produtividade?",
+  "Como ver escalonamentos?",
+  "Como integrar ao meu sistema?",
 ];
 
 export function HeroChatInput({ onSubmit }: HeroChatInputProps) {
@@ -91,7 +91,7 @@ export function HeroChatInput({ onSubmit }: HeroChatInputProps) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Ask anything"
+            placeholder="Pergunte qualquer coisa"
             className="w-full bg-transparent px-4 py-3.5 md:py-4 pr-12 text-sm outline-none placeholder:text-[rgba(102,102,102,0.5)]"
           />
           <button
@@ -106,7 +106,7 @@ export function HeroChatInput({ onSubmit }: HeroChatInputProps) {
 
       {/* Mobile Suggestions - simple grid */}
       <div className="mt-5 flex flex-wrap gap-1.5 justify-center md:hidden">
-        {["Create invoice", "Connect bank", "Track time", "View reports"].map(
+        {["CRIT", "Editor", "MCP", "Analises"].map(
           (suggestion) => (
             <SuggestionButton key={suggestion} suggestion={suggestion} />
           ),

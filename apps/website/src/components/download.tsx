@@ -58,10 +58,11 @@ export function Download() {
             {/* Title and Description */}
             <div className="space-y-4 text-center max-w-xl w-full">
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-foreground">
-                Midday for Mac
+                Laudos.AI para Mac
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto">
-                Quick access to your business data in a native Mac experience.
+                Acesso rapido a casos, laudos, anexos e contexto clinico em uma
+                experiencia nativa no Mac.
               </p>
             </div>
 
@@ -122,10 +123,11 @@ export function Download() {
             {/* Title and Description */}
             <div className="text-center space-y-4 w-full">
               <h1 className="font-serif text-6xl xl:text-7xl 2xl:text-8xl leading-tight text-foreground">
-                Midday for Mac
+                Laudos.AI para Mac
               </h1>
               <p className="text-muted-foreground text-sm xl:text-base leading-normal max-w-xl mx-auto font-sans text-center">
-                Quick access to your business data in a native Mac experience.
+                Acesso rapido a casos, laudos, anexos e contexto clinico em uma
+                experiencia nativa no Mac.
               </p>
             </div>
 
@@ -157,11 +159,11 @@ export function Download() {
             <div className="flex flex-col gap-8 lg:gap-12 p-8 lg:p-10 flex-1">
               <div className="space-y-2 text-center">
                 <h2 className="font-serif text-xl sm:text-2xl text-foreground">
-                  Native performance
+                  Nativo no Mac
                 </h2>
                 <p className="font-sans text-base text-muted-foreground leading-normal">
-                  Midday runs fast and light on Apple silicon, so everything
-                  stays responsive and out of your way.
+                  Laudos.AI roda leve em Apple Silicon para deixar busca,
+                  consulta e contexto sempre a um atalho de distancia.
                 </p>
               </div>
 
@@ -198,12 +200,12 @@ export function Download() {
             <div className="flex flex-col gap-8 lg:gap-12 p-8 lg:p-10 flex-1 lg:justify-between">
               <div className="space-y-2 text-center">
                 <h2 className="font-serif text-xl sm:text-2xl text-foreground">
-                  Universal search anywhere
+                  Busca global em qualquer lugar
                 </h2>
                 <p className="font-sans text-base text-muted-foreground leading-normal">
                   Press <span className="text-foreground font-mono">⇧⌥K</span>{" "}
-                  to search Midday from anywhere on your Mac. Instantly find
-                  receipts, invoices, transactions, customers, and files.
+                  para buscar casos, laudos, anexos e instituicoes sem voltar
+                  para a janela principal.
                 </p>
               </div>
 

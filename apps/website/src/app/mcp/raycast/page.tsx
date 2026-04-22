@@ -1,18 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { MCPRaycast } from "@/components/mcp-raycast";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Raycast + Laudos.AI",
+  title: "Raycast MCP Integration",
   description:
-    "Aproxime sinais operacionais, automações e dados do produto de atalhos e fluxos rápidos da equipe.",
+    "Access Midday financial data directly from Raycast via MCP. Keyboard-first access to invoices, transactions, and business reports.",
   path: "/mcp/raycast",
   og: {
-    title: "Raycast + Laudos.AI",
-    description: "Fluxos rápidos em cima da camada técnica da plataforma.",
+    title: "Raycast + Midday",
+    description: "Keyboard-first access to your business data",
   },
+  keywords: [
+    "Raycast MCP",
+    "Raycast integration",
+    "Model Context Protocol",
+    "Raycast extension",
+    "productivity tools",
+  ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.mcp} />;
+  return <MCPRaycast />;
 }

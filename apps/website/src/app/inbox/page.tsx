@@ -1,24 +1,24 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { Inbox } from "@/components/inbox";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Entrada unificada de voz, texto e anexos",
+  title: "CRIT para comunicação de achados críticos",
   description:
-    "Voz, texto e documentos entram no mesmo fluxo para manter a producao organizada e reduzir dispersao operacional.",
+    "Comunique achados críticos com SLA, confirmação de ciência, trilha de auditoria e rastreabilidade institucional.",
   path: "/inbox",
   og: {
-    title: "Entrada Laudos.AI",
-    description: "Voz, texto e anexos organizados no mesmo fluxo.",
+    title: "CRIT",
+    description: "Achados críticos com prova jurídica e rastreabilidade.",
   },
   keywords: [
-    "entrada de ditado",
-    "anexos radiologia",
-    "workflow de laudo",
-    "organizacao clinica",
+    "crit radiologia",
+    "achados críticos",
+    "comunicação crítica",
+    "sla radiologia",
+    "auditoria médica",
   ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.inbox} />;
+  return <Inbox />;
 }

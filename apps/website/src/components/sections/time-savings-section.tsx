@@ -32,8 +32,8 @@ export function TimeSavingsSection() {
             Menos digitação. Mais raciocínio clínico.
           </h2>
           <p className="hidden sm:block font-sans text-base text-muted-foreground leading-normal max-w-2xl mx-auto">
-            A Laudos.AI foi desenhada para devolver tempo no plantão e reduzir o
-            custo operacional do que vem depois da imagem.
+            O sagittal.health foi desenhado para devolver tempo no plantão e
+            reduzir o custo operacional do que vem depois da imagem.
           </p>
         </div>
 

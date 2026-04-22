@@ -34,23 +34,23 @@ const hedvigSerif = Hedvig_Letters_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Laudos.AI — Laudos radiológicos com IA e voz natural",
-    template: "%s | Laudos.AI",
+    default: "sagittal.health by laudosai — Laudos radiológicos com IA e voz natural",
+    template: "%s | sagittal.health",
   },
   description:
-    "Descreva os achados com naturalidade. A Laudos.AI organiza o conteúdo em um laudo estruturado, pronto para revisar e assinar.",
+    "Descreva os achados com naturalidade. O sagittal.health organiza o conteúdo em um laudo estruturado, pronto para revisar e assinar.",
   openGraph: {
-    title: "Laudos.AI — Laudos radiológicos com IA e voz natural",
+    title: "sagittal.health by laudosai — Laudos radiológicos com IA e voz natural",
     description:
       "Pare de ditar pontuação. Comece a laudar de verdade com voz natural, IA assistiva e integração PACS/RIS.",
     url: baseUrl,
-    siteName: "Laudos.AI",
+    siteName: "sagittal.health",
     locale: "pt_BR",
     type: "website",
     images: [{ url: `${baseUrl}/api/og`, width: 1200, height: 630 }],
   },
   twitter: {
-    title: "Laudos.AI — Laudos radiológicos com IA e voz natural",
+    title: "sagittal.health by laudosai — Laudos radiológicos com IA e voz natural",
     description:
       "IA aplicada ao fluxo real da radiologia: voz natural, editor estruturado, CRIT e integração institucional.",
     images: [{ url: `${baseUrl}/api/og`, width: 1200, height: 630 }],
@@ -78,13 +78,13 @@ export const viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Laudos.AI",
+  name: "sagittal.health by laudosai",
   url: baseUrl,
   logo: `${baseUrl}/favicon.ico`,
   sameAs: [
-    "https://www.laudos.ai/sobre",
-    "https://www.laudos.ai/precos",
-    "https://www.laudos.ai/crit",
+    `${baseUrl}/story`,
+    `${baseUrl}/pricing`,
+    `${baseUrl}/chat`,
   ],
   description:
     "Software para o momento mais crítico da radiologia: quando a imagem precisa virar decisão, laudo e comunicação segura.",
@@ -92,7 +92,7 @@ const jsonLd = {
 
 export default function Layout({ children }: { children: ReactElement }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning className="dark">
       <head>
         <script
           type="application/ld+json"
@@ -110,8 +110,9 @@ export default function Layout({ children }: { children: ReactElement }) {
         <NuqsAdapter>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="dark"
+            enableSystem={false}
+            storageKey="laudos-website-theme"
             disableTransitionOnChange
           >
             <Header />

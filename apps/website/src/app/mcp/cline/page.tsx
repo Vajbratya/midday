@@ -1,18 +1,23 @@
-import { PublicFeaturePage } from "@/components/public-feature-page";
-import { featurePages } from "@/content/feature-pages";
+import { MCPCline } from "@/components/mcp-cline";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Cline + Laudos.AI via MCP",
+  title: "Cline MCP Integration",
   description:
-    "Use a camada técnica da Laudos.AI em fluxos assistidos, automações e cenários de desenvolvimento.",
+    "Connect Cline to your Midday data via Model Context Protocol. Query transactions, invoices, and reports from VS Code.",
   path: "/mcp/cline",
   og: {
-    title: "Cline + Laudos.AI",
-    description: "Fluxos técnicos conectados ao workflow radiológico.",
+    title: "Cline + Midday",
+    description: "Query your business data from VS Code",
   },
+  keywords: [
+    "Cline MCP",
+    "Cline integration",
+    "Model Context Protocol",
+    "VS Code financial data",
+  ],
 });
 
 export default function Page() {
-  return <PublicFeaturePage content={featurePages.mcp} />;
+  return <MCPCline />;
 }

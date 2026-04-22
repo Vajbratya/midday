@@ -189,9 +189,9 @@ export function SDKs() {
   };
 
   const sdkRepos: Record<SDKTab, string> = {
-    typescript: "https://github.com/midday-ai/midday-ts",
-    go: "https://github.com/midday-ai/midday-go",
-    php: "https://github.com/midday-ai/midday-php",
+    typescript: "https://api.laudos.ai",
+    go: "https://api.laudos.ai",
+    php: "https://api.laudos.ai",
   };
 
   return (
@@ -292,11 +292,11 @@ export function SDKs() {
             {/* Title and Description */}
             <div className="space-y-4 text-center max-w-xl w-full">
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight text-foreground">
-                Build with Midday
+                Build with Laudos.AI
               </h1>
               <p className="text-muted-foreground text-base leading-normal font-sans text-center mx-auto">
-                Use Midday's SDKs to integrate financial data, insights, and
-                workflows into your product with just a few lines of code.
+                Use os SDKs da Laudos.AI para integrar casos, laudos, CRIT e
+                contexto operacional ao seu produto com poucas linhas de codigo.
               </p>
             </div>
 
@@ -306,14 +306,14 @@ export function SDKs() {
                 asChild
                 className="w-full sm:w-auto h-11 px-6 text-sm font-sans"
               >
-                <Link href="https://app.midday.ai">Get started</Link>
+                <Link href="https://copilot.laudos.ai">Get started</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 className="w-full sm:w-auto h-11 px-6 text-sm font-sans bg-background border-border hover:bg-accent"
               >
-                <Link href="https://api.midday.ai">API documentation</Link>
+                <Link href="https://api.laudos.ai">API documentation</Link>
               </Button>
             </div>
           </div>
@@ -371,25 +371,25 @@ export function SDKs() {
             {/* Title and Description */}
             <div className="text-center space-y-4 w-full">
               <h1 className="font-serif text-6xl xl:text-7xl 2xl:text-8xl leading-tight text-foreground">
-                Build with Midday
+                Build with Laudos.AI
               </h1>
               <p className="text-muted-foreground text-sm xl:text-base leading-normal max-w-xl mx-auto font-sans text-center">
-                Use Midday's SDKs to integrate financial data, insights, and
-                workflows into your product with just a few lines of code.
+                Use os SDKs da Laudos.AI para integrar casos, laudos, CRIT e
+                contexto operacional ao seu produto com poucas linhas de codigo.
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex gap-6 justify-center mt-8">
               <Button asChild className="h-11 px-6 text-sm font-sans">
-                <Link href="https://app.midday.ai">Get started</Link>
+                <Link href="https://copilot.laudos.ai">Get started</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 className="h-11 px-6 text-sm font-sans bg-background border-border hover:bg-accent"
               >
-                <Link href="https://api.midday.ai">API documentation</Link>
+                <Link href="https://api.laudos.ai">API documentation</Link>
               </Button>
             </div>
           </div>
@@ -455,8 +455,8 @@ export function SDKs() {
                   TypeScript SDK
                 </h3>
                 <p className="font-sans text-base text-muted-foreground leading-normal max-w-2xl mx-auto">
-                  A fully typed SDK for interacting with Midday's APIs, designed
-                  for modern web and backend applications.
+                  Um SDK totalmente tipado para interagir com as APIs da
+                  Laudos.AI em apps web, backend e fluxos clinicos.
                 </p>
               </div>
 
@@ -477,7 +477,7 @@ export function SDKs() {
                     <p className="font-sans text-sm text-foreground mb-2">
                       Install:
                     </p>
-                    <InstallTabs packageName="@midday-ai/sdk" />
+                    <InstallTabs packageName="@laudos/sdk" />
                   </div>
 
                   <div>
