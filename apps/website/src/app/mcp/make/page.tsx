@@ -1,24 +1,18 @@
-import { MCPMake } from "@/components/mcp-make";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Make MCP Integration",
+  title: "Make + Laudos.AI",
   description:
-    "Connect Midday to Make scenarios via MCP. Build visual automations with your financial data and connect to 1,500+ apps.",
+    "Crie automações visuais em cima da API e dos conectores da Laudos.AI.",
   path: "/mcp/make",
   og: {
-    title: "Make + Midday",
-    description: "Visual automations for your financial data",
+    title: "Make + Laudos.AI",
+    description: "Automações visuais conectadas ao workflow radiológico.",
   },
-  keywords: [
-    "Make MCP",
-    "Make integration",
-    "Model Context Protocol",
-    "visual automation",
-    "no-code workflows",
-  ],
 });
 
 export default function Page() {
-  return <MCPMake />;
+  return <PublicFeaturePage content={featurePages.mcp} />;
 }

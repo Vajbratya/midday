@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const getAuthor = (id: string) =>
   ({
-    pontus: {
-      name: "Pontus",
-      src: "https://pbs.twimg.com/profile_images/1755611130368770048/JwLEqyeo_400x400.jpg",
-      tagline: "Engineering",
+    natan: {
+      name: "Natan",
+      src: "https://www.laudos.ai/favicon.ico",
+      tagline: "Laudos.AI",
     },
   })[id];
 

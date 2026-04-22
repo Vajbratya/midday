@@ -1,26 +1,24 @@
-import { Chat } from "@/components/chat";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Run your business from iMessage, WhatsApp, Slack & Telegram",
+  title: "CRIT para achados criticos com SLA e prova juridica",
   description:
-    "Get invoices paid, track time, manage expenses — right from iMessage, WhatsApp, Slack, or Telegram. Run your business from any chat app.",
+    "O CRIT fecha o ciclo de comunicacao de achados criticos com notificacao segura, registro de ciencia, auditoria completa e rastreabilidade institucional.",
   path: "/chat",
   og: {
-    title: "Chat",
-    description: "Run your business from any messaging app",
+    title: "CRIT",
+    description: "Achado critico comunicado. Vida salva.",
   },
   keywords: [
-    "iMessage business",
-    "WhatsApp invoicing",
-    "Slack time tracking",
-    "Telegram bookkeeping",
-    "chat assistant",
-    "conversational finance",
-    "business messaging",
+    "achados criticos",
+    "crit radiologia",
+    "comunicacao segura",
+    "sla radiologia",
   ],
 });
 
 export default function Page() {
-  return <Chat />;
+  return <PublicFeaturePage content={featurePages.chat} />;
 }

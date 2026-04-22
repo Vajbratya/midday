@@ -2,119 +2,71 @@
 
 import { useState } from "react";
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-const faqs: FAQItem[] = [
+const faqs = [
   {
-    question: "What is Midday?",
+    question: "A IA vai substituir o radiologista?",
     answer:
-      "Midday is a business workspace for one-person companies. It brings transactions, receipts, invoices, time tracking, and files into one connected system so you always know what's going on in your business.",
+      "Não. A IA da Laudos.AI é aplicada à redação e estruturação do laudo, não ao diagnóstico. A decisão clínica e a assinatura continuam 100% com o médico.",
   },
   {
-    question: "Who is Midday for?",
+    question: "A transcrição por voz funciona bem com termos médicos?",
     answer:
-      "Midday is built for founders running their company on their own who want clarity and control over their business without spending time on manual admin or spreadsheets.",
+      "Sim. O modelo foi pensado para radiologia e trabalha com vocabulário, estrutura e contexto do laudo em português.",
   },
   {
-    question: "Do I need financial or accounting knowledge to use Midday?",
+    question: "Preciso instalar algum software?",
     answer:
-      "No. Midday is designed for day-to-day use by non-financial users. It helps you stay organized, informed, and in control without requiring accounting expertise.",
+      "Não. Tudo funciona no navegador, em computador, tablet ou celular. O editor mobile está em rollout.",
   },
   {
-    question: "How does Midday connect to my bank?",
+    question: "Funciona para clínicas pequenas?",
     answer:
-      "Midday connects to over 25,000 banks worldwide. Once connected, transactions are imported automatically and kept up to date.",
+      "Sim. O ganho de produtividade individual costuma ser ainda mais visível em operações menores, sem perder o caminho para crescer.",
   },
   {
-    question: "How do receipts and invoices get into Midday?",
+    question: "O que está incluso no Enterprise?",
     answer:
-      "Receipts and invoices can be pulled automatically from connected email accounts, synced from existing folders, or uploaded manually. They are then matched to transactions so everything stays organized.",
+      "Integrações PACS/RIS, CRIT com SLA e auditoria, SSO/SAML, suporte dedicado, onboarding e customização institucional de máscaras, vocabulário e descritores.",
   },
   {
-    question: "What does the Assistant do?",
+    question: "Meus dados e laudos ficam seguros?",
     answer:
-      "The Assistant helps you understand your business. You can ask questions about revenue, expenses, cash flow, customers, or recent changes and get clear answers, summaries, and reports based on your real data.",
-  },
-  {
-    question: "What are weekly updates?",
-    answer:
-      "Weekly updates are automatic summaries that highlight what changed in your business and what's worth paying attention to, so you don't have to check everything constantly.",
-  },
-  {
-    question: "Can I create invoices in Midday?",
-    answer:
-      "Yes. You can create one-off, recurring, scheduled, and web invoices. Invoice activity is reflected directly in your overview.",
-  },
-  {
-    question: "Does time tracking connect to invoicing?",
-    answer:
-      "Yes. Tracked time can be linked to projects and customers and turned into invoices, keeping work, revenue, and customers connected.",
-  },
-  {
-    question: "Can I export my data?",
-    answer:
-      "Yes. Your data is always yours. You can export transactions, receipts, invoices, and reports whenever you need, or share them with external tools or collaborators.",
-  },
-  {
-    question: "Is Midday secure?",
-    answer:
-      "Yes. Midday uses industry-standard security practices to protect your data. You control what gets connected and shared at all times.",
-  },
-  {
-    question: "Can I switch between monthly and yearly?",
-    answer:
-      "Yes. You can switch between monthly and yearly billing at any time. Save 20% with annual billing.",
-  },
-  {
-    question: "Is there a free trial?",
-    answer:
-      "Yes. All plans include a 14-day free trial. A credit card is required to get started, and you won't be charged until the trial ends.",
+      "A plataforma foi desenhada para ambientes sensíveis, com trilha de auditoria, controle de acesso e suporte a cenários enterprise.",
   },
 ];
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
     <section className="bg-background py-12 sm:py-16 lg:py-24">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1000px] mx-auto px-4">
         <div className="text-center space-y-4 mb-12">
           <h2 className="font-serif text-2xl sm:text-2xl text-foreground">
-            Frequently asked questions
+            Perguntas frequentes
           </h2>
-          <p className="hidden sm:block font-sans text-base text-muted-foreground leading-normal max-w-2xl mx-auto">
-            Everything you need to know before getting started.
+          <p className="font-sans text-base text-muted-foreground max-w-2xl mx-auto">
+            O que costuma aparecer antes da implantação ou do primeiro plantão.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div
-              key={faq.question}
-              className="border border-border bg-background"
-            >
+            <div key={faq.question} className="border border-border bg-background">
               <button
                 type="button"
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-3 sm:p-4 text-left hover:bg-muted/50 transition-colors"
-                style={{ WebkitTapHighlightColor: "transparent" }}
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/40 transition-colors"
               >
                 <span className="font-sans text-sm text-foreground pr-6">
                   {faq.question}
                 </span>
-                <span className="flex-shrink-0 text-muted-foreground text-base">
+                <span className="text-muted-foreground">
                   {openIndex === index ? "−" : "+"}
                 </span>
               </button>
               {openIndex === index && (
-                <div className="px-3 sm:px-4 pb-3 sm:pb-4">
+                <div className="px-4 pb-4">
                   <p className="font-sans text-sm text-muted-foreground leading-relaxed">
                     {faq.answer}
                   </p>

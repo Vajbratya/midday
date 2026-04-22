@@ -1,24 +1,24 @@
-import { TimeTracking } from "@/components/time-tracking";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Time Tracking for Freelancers & Consultants",
+  title: "Ditado por voz natural para laudos",
   description:
-    "Track billable hours with ease. Get monthly breakdowns, link time to projects and customers, and generate invoices. Built for consultants and small business owners.",
+    "Dite os achados como faz normalmente. A IA organiza técnica, achados e impressão em um laudo estruturado pronto para revisar.",
   path: "/time-tracking",
   og: {
-    title: "Time Tracking",
-    description: "Billable hours, monthly breakdowns, and invoices",
+    title: "Voz natural",
+    description: "Pare de ditar pontuação. Comece a laudar de verdade.",
   },
   keywords: [
-    "time tracking",
-    "billable hours",
-    "time tracker",
-    "project time tracking",
-    "small business time management",
+    "ditado médico",
+    "voz radiologia",
+    "laudo por voz",
+    "transcrição radiológica",
   ],
 });
 
 export default function Page() {
-  return <TimeTracking />;
+  return <PublicFeaturePage content={featurePages["time-tracking"]} />;
 }

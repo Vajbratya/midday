@@ -34,48 +34,26 @@ const hedvigSerif = Hedvig_Letters_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Midday — The business stack for modern founders",
-    template: "%s | Midday",
+    default: "Laudos.AI — Laudos radiológicos com IA e voz natural",
+    template: "%s | Laudos.AI",
   },
   description:
-    "Invoicing, automatic reconciliation, time tracking, documents, and financial exports in one place. The business stack that replaces the tools you've outgrown.",
+    "Descreva os achados com naturalidade. A Laudos.AI organiza o conteúdo em um laudo estruturado, pronto para revisar e assinar.",
   openGraph: {
-    title: "Midday — The business stack for modern founders",
+    title: "Laudos.AI — Laudos radiológicos com IA e voz natural",
     description:
-      "Invoicing, automatic reconciliation, time tracking, documents, and financial exports in one place. The business stack that replaces the tools you've outgrown.",
+      "Pare de ditar pontuação. Comece a laudar de verdade com voz natural, IA assistiva e integração PACS/RIS.",
     url: baseUrl,
-    siteName: "Midday",
-    locale: "en_US",
+    siteName: "Laudos.AI",
+    locale: "pt_BR",
     type: "website",
-    images: [
-      {
-        url: "https://cdn.midday.ai/opengraph-image-v1.jpg",
-        width: 800,
-        height: 600,
-      },
-      {
-        url: "https://cdn.midday.ai/opengraph-image-v1.jpg",
-        width: 1800,
-        height: 1600,
-      },
-    ],
+    images: [{ url: `${baseUrl}/api/og`, width: 1200, height: 630 }],
   },
   twitter: {
-    title: "Midday — The business stack for modern founders",
+    title: "Laudos.AI — Laudos radiológicos com IA e voz natural",
     description:
-      "Invoicing, automatic reconciliation, time tracking, documents, and financial exports in one place. The business stack that replaces the tools you've outgrown.",
-    images: [
-      {
-        url: "https://cdn.midday.ai/opengraph-image-v1.jpg",
-        width: 800,
-        height: 600,
-      },
-      {
-        url: "https://cdn.midday.ai/opengraph-image-v1.jpg",
-        width: 1800,
-        height: 1600,
-      },
-    ],
+      "IA aplicada ao fluxo real da radiologia: voz natural, editor estruturado, CRIT e integração institucional.",
+    images: [{ url: `${baseUrl}/api/og`, width: 1200, height: 630 }],
   },
   robots: {
     index: true,
@@ -100,24 +78,22 @@ export const viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Midday",
-  url: "https://midday.ai",
-  logo: "https://cdn.midday.ai/logo.png",
+  name: "Laudos.AI",
+  url: baseUrl,
+  logo: `${baseUrl}/favicon.ico`,
   sameAs: [
-    "https://x.com/middayai",
-    "https://github.com/midday-ai/midday",
-    "https://linkedin.com/company/midday-ai",
+    "https://www.laudos.ai/sobre",
+    "https://www.laudos.ai/precos",
+    "https://www.laudos.ai/crit",
   ],
   description:
-    "Invoicing, automatic reconciliation, time tracking, documents, and financial exports in one place. The business stack that replaces the tools you've outgrown.",
+    "Software para o momento mais crítico da radiologia: quando a imagem precisa virar decisão, laudo e comunicação segura.",
 };
 
 export default function Layout({ children }: { children: ReactElement }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://cdn.midday.ai" />
-        <link rel="dns-prefetch" href="https://cdn.midday.ai" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

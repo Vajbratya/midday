@@ -13,12 +13,12 @@ export async function GET(request: NextRequest) {
   ).then((res) => res.arrayBuffer());
 
   const title = competitorName
-    ? `${competitorName} Alternative`
-    : "Compare Alternatives";
+    ? `Laudos.AI vs ${competitorName}`
+    : "Compare alternativas";
 
   const subtitle = competitorName
-    ? `See why founders are switching from ${competitorName} to Midday`
-    : "Built for founders, not accountants";
+    ? `Veja por que serviços de radiologia estão migrando de ${competitorName} para Laudos.AI`
+    : "Voz natural, editor estruturado e operação radiológica";
 
   return new ImageResponse(
     <div
@@ -42,22 +42,22 @@ export async function GET(request: NextRequest) {
         <div tw="flex mt-auto">
           <div tw="flex flex-col mr-16">
             <span tw="text-[#606060] text-lg mb-1">For</span>
-            <span tw="text-white text-2xl">Founders</span>
+            <span tw="text-white text-2xl">Radiologia</span>
           </div>
 
           <div tw="flex flex-col mr-16">
             <span tw="text-[#606060] text-lg mb-1">Interface</span>
-            <span tw="text-white text-2xl">Modern</span>
+            <span tw="text-white text-2xl">Editor com IA</span>
           </div>
 
           <div tw="flex flex-col mr-16">
             <span tw="text-[#606060] text-lg mb-1">AI</span>
-            <span tw="text-white text-2xl">Built-in</span>
+            <span tw="text-white text-2xl">Voz natural</span>
           </div>
 
           <div tw="flex flex-col">
-            <span tw="text-[#606060] text-lg mb-1">Trial</span>
-            <span tw="text-white text-2xl">14 days free</span>
+            <span tw="text-[#606060] text-lg mb-1">CRIT</span>
+            <span tw="text-white text-2xl">Com SLA</span>
           </div>
         </div>
       </div>

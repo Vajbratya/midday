@@ -18,31 +18,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!competitor) {
     return {
-      title: "Comparison Not Found",
+      title: "Comparação não encontrada",
     };
   }
 
   const year = new Date().getFullYear();
-  const title = `Best ${competitor.name} Alternative for Founders (${year}) | Midday`;
-  const description = `Looking for a ${competitor.name} alternative? Switch to Midday - built for founders, not accountants. Compare features, pricing, and see why teams are making the switch. Free trial available.`;
+  const title = `Laudos.AI vs ${competitor.name} (${year})`;
+  const description = `Compare a Laudos.AI com ${competitor.name} e veja por que voz natural, editor estruturado, CRIT e integração institucional resolvem melhor o fluxo radiológico real.`;
   const url = `${baseUrl}/compare/${slug}`;
 
   return {
     title,
     description,
     keywords: [
-      `${competitor.name.toLowerCase()} alternative`,
-      `${competitor.name.toLowerCase()} alternative ${year}`,
-      `${competitor.name.toLowerCase()} vs midday`,
-      `switch from ${competitor.name.toLowerCase()}`,
-      `${competitor.name.toLowerCase()} pricing`,
-      `${competitor.name.toLowerCase()} competitor`,
-      "business finance software",
-      "invoicing software for founders",
-      "expense tracking",
-      "time tracking software",
-      "founder tools",
-      "small business software",
+      `${competitor.name.toLowerCase()} radiologia`,
+      `${competitor.name.toLowerCase()} vs laudos.ai`,
+      `alternativa a ${competitor.name.toLowerCase()}`,
+      `${competitor.name.toLowerCase()} comparação`,
+      "software radiologia",
+      "laudo por voz",
+      "editor de laudos",
+      "achados críticos",
+      "fluxo radiológico",
+      "ia para radiologia",
     ],
     openGraph: {
       title,
@@ -54,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: `${baseUrl}/api/og/compare?name=${encodeURIComponent(competitor.name)}`,
           width: 1200,
           height: 630,
-          alt: `Midday vs ${competitor.name} comparison`,
+          alt: `Laudos.AI vs ${competitor.name}`,
         },
       ],
     },
@@ -86,22 +84,21 @@ export default async function Page({ params }: Props) {
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: `Best ${competitor.name} Alternative for Founders (${year})`,
-    description: `Looking for a ${competitor.name} alternative? Switch to Midday - built for founders, not accountants.`,
+    name: `Laudos.AI vs ${competitor.name} (${year})`,
+    description: `Compare a Laudos.AI com ${competitor.name} no fluxo radiológico real.`,
     url: `${baseUrl}/compare/${slug}`,
     mainEntity: {
       "@type": "SoftwareApplication",
-      name: "Midday",
-      applicationCategory: "BusinessApplication",
-      operatingSystem: "Web, macOS",
+      name: "Laudos.AI",
+      applicationCategory: "MedicalBusinessApplication",
+      operatingSystem: "Web, mobile browser",
       description:
-        "Business finance software for invoicing, expense tracking, time tracking, and financial insights. Built for founders, not accountants.",
+        "Software radiológico com voz natural, editor estruturado, CRIT e integração institucional.",
       offers: {
         "@type": "Offer",
-        price: "23",
-        priceCurrency: "USD",
-        description:
-          "Starting at $23/month billed yearly with 14-day free trial",
+        price: "49",
+        priceCurrency: "BRL",
+        description: "Plano inicial para uso individual e residente",
       },
       aggregateRating: {
         "@type": "AggregateRating",
@@ -112,7 +109,7 @@ export default async function Page({ params }: Props) {
     about: {
       "@type": "SoftwareApplication",
       name: competitor.name,
-      applicationCategory: "BusinessApplication",
+      applicationCategory: "MedicalBusinessApplication",
     },
   };
 

@@ -3,13 +3,13 @@ import { apps } from "@/data/apps";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Integrations",
+  title: "Integracoes da Laudos.AI",
   description:
-    "Connect Midday with your favorite tools. Explore integrations for email, accounting, productivity, and more.",
+    "Explore integracoes com PACS/RIS, canais de comunicacao, armazenamento, API e MCP para levar a Laudos.AI ao seu fluxo real.",
   path: "/integrations",
   og: {
-    title: "Integrations",
-    description: "Connect Midday with your favorite tools",
+    title: "Integracoes",
+    description: "PACS, RIS, API, MCP, chat e storage no mesmo ecossistema.",
   },
 });
 

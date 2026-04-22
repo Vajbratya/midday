@@ -99,7 +99,7 @@ export default async function Page({ params }: Props) {
           href="/updates"
           className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block"
         >
-          ← Go back
+          ← Voltar
         </Link>
 
         <h2 className="font-medium text-2xl mb-6">{post.metadata.title}</h2>
@@ -118,7 +118,7 @@ export default async function Page({ params }: Props) {
         </div>
 
         <div className="mt-10">
-          <PostAuthor author="pontus" />
+          <PostAuthor author="natan" />
         </div>
       </article>
     </div>

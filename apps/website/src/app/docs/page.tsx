@@ -3,135 +3,73 @@ import { DocsHomeHero } from "@/components/docs/docs-home-hero";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Documentation",
+  title: "Documentação Laudos.AI",
   description:
-    "Learn how to use Midday to run your business. Get answers about invoicing, banking, time tracking, reports, and more.",
+    "Aprenda a usar o editor com IA, voz natural, templates institucionais, CRIT e integrações da Laudos.AI.",
   path: "/docs",
   og: {
-    title: "Documentation",
-    description: "Everything you need to know about Midday",
+    title: "Documentação",
+    description: "Tudo o que você precisa para implantar e usar a Laudos.AI.",
   },
 });
 
 const popularGuides = [
   {
-    title: "Getting Started",
-    href: "/docs/introduction",
-    description: "What is Midday and how it helps you",
+    title: "Introdução",
+    href: "/docs/introducao",
+    description: "O que a plataforma resolve",
   },
   {
-    title: "Quick Start",
-    href: "/docs/quick-start",
-    description: "Get running in 5 minutes",
+    title: "Começar rápido",
+    href: "/docs/comecar-rapido",
+    description: "Primeiros passos no editor",
   },
   {
-    title: "Create Invoice",
-    href: "/docs/create-invoice",
-    description: "Send professional invoices",
+    title: "Voz natural",
+    href: "/docs/voz-natural",
+    description: "Como ditar do seu jeito",
   },
   {
-    title: "Connect Bank",
-    href: "/docs/connect-bank-account",
-    description: "Link your accounts",
+    title: "Integração PACS/RIS",
+    href: "/docs/integracao-pacs-ris",
+    description: "Implantação no fluxo existente",
   },
   {
-    title: "Receipt Matching",
-    href: "/docs/receipt-matching",
-    description: "AI-powered matching",
+    title: "CRIT",
+    href: "/docs/crit-achados",
+    description: "Achados críticos com prova e SLA",
   },
   {
-    title: "Understanding Metrics",
-    href: "/docs/understanding-metrics",
-    description: "How your numbers work",
+    title: "API e MCP",
+    href: "/docs/api-mcp",
+    description: "Integração programática",
   },
 ];
 
 const sections = [
   {
-    title: "Getting Started",
+    title: "Começar",
     links: [
-      { title: "Introduction", href: "/docs/introduction" },
-      { title: "Quick Start", href: "/docs/quick-start" },
-      { title: "Desktop App", href: "/docs/desktop-app" },
-      { title: "Troubleshooting", href: "/docs/troubleshooting" },
+      { title: "Introdução", href: "/docs/introducao" },
+      { title: "Começar rápido", href: "/docs/comecar-rapido" },
+      { title: "Voz natural", href: "/docs/voz-natural" },
+      { title: "Editor com IA", href: "/docs/editor-com-ia" },
     ],
   },
   {
-    title: "Banking",
+    title: "Produto",
     links: [
-      { title: "Connect Bank", href: "/docs/connect-bank-account" },
-      { title: "Categorization", href: "/docs/auto-categorization" },
-      { title: "Multi-Currency", href: "/docs/multi-currency" },
-      { title: "Categories Reference", href: "/docs/categories-reference" },
+      { title: "Templates institucionais", href: "/docs/templates-institucionais" },
+      { title: "Planos", href: "/docs/planos" },
+      { title: "Segurança e LGPD", href: "/docs/seguranca-lgpd" },
     ],
   },
   {
-    title: "Inbox & Vault",
+    title: "Institucional",
     links: [
-      { title: "Receipt Matching", href: "/docs/receipt-matching" },
-      { title: "Connect Gmail", href: "/docs/connect-gmail" },
-      { title: "Connect Slack", href: "/docs/connect-slack" },
-      { title: "File Storage", href: "/docs/vault-file-storage" },
-    ],
-  },
-  {
-    title: "Invoicing",
-    links: [
-      { title: "Create Invoice", href: "/docs/create-invoice" },
-      { title: "Recurring Invoices", href: "/docs/set-up-recurring-invoice" },
-      { title: "Accept Payments", href: "/docs/accept-online-payments" },
-      { title: "Invoice Settings", href: "/docs/invoice-settings" },
-    ],
-  },
-  {
-    title: "Time Tracking",
-    links: [
-      { title: "Create Project", href: "/docs/create-project" },
-      { title: "Track Time", href: "/docs/track-time-timer" },
-      { title: "Invoice Time", href: "/docs/invoice-tracked-time" },
-    ],
-  },
-  {
-    title: "Reports",
-    links: [
-      { title: "Understanding Metrics", href: "/docs/understanding-metrics" },
-      { title: "Revenue & Profit", href: "/docs/view-revenue-profit" },
-      { title: "Burn Rate", href: "/docs/view-burn-rate" },
-      { title: "Runway", href: "/docs/check-runway" },
-    ],
-  },
-  {
-    title: "Integrations",
-    links: [
-      { title: "Apps Overview", href: "/docs/apps-overview" },
-      { title: "Xero", href: "/docs/connect-xero" },
-      { title: "QuickBooks", href: "/docs/connect-quickbooks" },
-      { title: "Fortnox", href: "/docs/connect-fortnox" },
-    ],
-  },
-  {
-    title: "Assistant",
-    links: [
-      { title: "Using Assistant", href: "/docs/using-assistant" },
-      { title: "AI Tools (MCP)", href: "/docs/assistant-mcp" },
-      { title: "Connected Apps", href: "/docs/assistant-connectors" },
-    ],
-  },
-  {
-    title: "Developer",
-    links: [
-      { title: "API Reference", href: "/docs/api-reference" },
-      { title: "Build OAuth Apps", href: "/docs/build-oauth-app" },
-      { title: "OAuth Scopes", href: "/docs/oauth-scopes" },
-      { title: "App Review", href: "/docs/app-review-process" },
-    ],
-  },
-  {
-    title: "Team",
-    links: [
-      { title: "Team Members", href: "/docs/invite-team-member" },
-      { title: "Notifications", href: "/docs/notification-settings" },
-      { title: "Billing", href: "/docs/manage-subscription" },
+      { title: "Integração PACS/RIS", href: "/docs/integracao-pacs-ris" },
+      { title: "CRIT", href: "/docs/crit-achados" },
+      { title: "API e MCP", href: "/docs/api-mcp" },
     ],
   },
 ];
@@ -145,7 +83,7 @@ export default function DocsPage() {
       {/* Popular guides */}
       <div className="max-w-4xl mx-auto px-4 mb-16">
         <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">
-          Popular guides
+          Guias principais
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
           {popularGuides.map((guide) => (
@@ -168,7 +106,7 @@ export default function DocsPage() {
       {/* All sections */}
       <div className="max-w-4xl mx-auto px-4">
         <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">
-          Browse by topic
+          Navegar por tema
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {sections.map((section) => (

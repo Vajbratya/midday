@@ -1,24 +1,24 @@
-import { Transactions } from "@/components/transactions";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Business Transaction Tracking & Bank Sync",
+  title: "Fluxo de exames e prioridades",
   description:
-    "Track all your business expenses in one place. Automatically sync and categorize transactions from your bank accounts. Built for small business owners.",
+    "Organize estudos, prioridades e contexto do trabalho com um fluxo mais claro entre aquisicao, redacao, revisao e entrega.",
   path: "/transactions",
   og: {
-    title: "Transactions",
-    description: "Every expense, automatically synced and sorted",
+    title: "Fluxo operacional",
+    description: "Exames, prioridade e contexto organizados no mesmo sistema.",
   },
   keywords: [
-    "expense tracking",
-    "business expenses",
-    "transaction management",
-    "expense categorization",
-    "small business accounting",
+    "fila de exames",
+    "workflow radiologia",
+    "priorizacao radiologica",
+    "operacao de laudos",
   ],
 });
 
 export default function Page() {
-  return <Transactions />;
+  return <PublicFeaturePage content={featurePages.transactions} />;
 }

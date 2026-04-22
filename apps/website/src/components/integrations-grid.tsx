@@ -19,12 +19,11 @@ export function IntegrationsGrid({
       <div className="max-w-[1400px] mx-auto mb-16">
         <div className="max-w-2xl mx-auto text-center">
           <h1 className="font-serif text-3xl lg:text-4xl text-foreground mb-4">
-            Integrations
+            Integrações
           </h1>
           <p className="font-sans text-base text-muted-foreground leading-normal">
-            Connect Midday with the tools you already use. From email and
-            messaging to accounting software, our integrations help you
-            streamline your financial workflow.
+            Leve a Laudos.AI para a infraestrutura que a sua operação já usa.
+            De PACS/RIS e canais de comunicação a armazenamento, API e MCP.
           </p>
         </div>
       </div>
@@ -82,7 +81,7 @@ export function IntegrationsGrid({
                   )}
                   {!app.active && (
                     <span className="font-sans text-xs text-muted-foreground bg-muted px-2 py-1">
-                      Coming soon
+                      Em breve
                     </span>
                   )}
                 </div>
@@ -108,17 +107,17 @@ export function IntegrationsGrid({
         <div className="bg-background border border-border p-8 lg:p-12 text-center relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-60deg,rgba(219,219,219,0.4),rgba(219,219,219,0.4)_1px,transparent_1px,transparent_6px)] dark:before:bg-[repeating-linear-gradient(-60deg,rgba(44,44,44,0.4),rgba(44,44,44,0.4)_1px,transparent_1px,transparent_6px)] before:pointer-events-none">
           <div className="relative z-10">
             <h2 className="font-serif text-2xl sm:text-2xl text-foreground mb-4">
-              Don't see what you need?
+              Não encontrou a integração que precisa?
             </h2>
             <p className="font-sans text-base text-muted-foreground mb-6 max-w-lg mx-auto">
-              We're always adding new integrations. Let us know what tools you'd
-              like to connect with Midday.
+              A stack clínica muda de instituição para instituição. Fale com a
+              gente se a sua operação precisa de um conector específico.
             </p>
             <Link
               href="/support"
               className="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background font-sans text-sm hover:opacity-90 transition-opacity"
             >
-              Request an integration
+              Solicitar integração
             </Link>
           </div>
         </div>

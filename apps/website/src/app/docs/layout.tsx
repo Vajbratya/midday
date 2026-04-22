@@ -3,8 +3,8 @@ import { Suspense } from "react";
 import { DocsChatProvider } from "@/components/docs/docs-chat-provider";
 
 export const metadata = {
-  title: "Documentation",
-  description: "Learn how to use Midday to run your business",
+  title: "Documentação",
+  description: "Aprenda a usar a Laudos.AI no fluxo radiológico",
 };
 
 export default function DocsLayout({ children }: { children: ReactNode }) {

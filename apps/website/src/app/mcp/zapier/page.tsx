@@ -1,24 +1,18 @@
-import { MCPZapier } from "@/components/mcp-zapier";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Zapier MCP Integration",
+  title: "Zapier + Laudos.AI",
   description:
-    "Connect Midday to 7,000+ apps through Zapier via MCP. Automate financial reports, alerts, and workflows without writing code.",
+    "Use a API e os conectores da Laudos.AI para automatizar partes da operação sem desmontar o fluxo clínico.",
   path: "/mcp/zapier",
   og: {
-    title: "Zapier + Midday",
-    description: "Connect your business to 7,000+ apps",
+    title: "Zapier + Laudos.AI",
+    description: "Automações conectadas ao workflow radiológico.",
   },
-  keywords: [
-    "Zapier MCP",
-    "Zapier integration",
-    "Model Context Protocol",
-    "workflow automation",
-    "no-code automation",
-  ],
 });
 
 export default function Page() {
-  return <MCPZapier />;
+  return <PublicFeaturePage content={featurePages.mcp} />;
 }

@@ -5,21 +5,19 @@ import { baseUrl } from "@/app/sitemap";
 import { competitors } from "@/data/competitors";
 
 const year = new Date().getFullYear();
-const title = `Compare Midday to QuickBooks, Xero, FreshBooks & More (${year})`;
+const title = `Compare a Laudos.AI com alternativas do fluxo radiológico (${year})`;
 const description =
-  "Looking for QuickBooks, Xero, or FreshBooks alternatives? Compare Midday to popular accounting and finance tools. Built for founders, not accountants. Free 14-day trial.";
+  "Compare a Laudos.AI com ditado tradicional, IA genérica, templates manuais e fluxos críticos improvisados. Voz natural, editor estruturado e operação radiológica completa.";
 
 export const metadata: Metadata = {
   title,
   description,
   keywords: [
-    "quickbooks alternative",
-    "xero alternative",
-    "freshbooks alternative",
-    "accounting software comparison",
-    "business finance software",
-    "invoicing software for founders",
-    "small business tools",
+    "comparar laudos ai",
+    "ditado radiologia",
+    "ia genérica radiologia",
+    "templates manuais radiologia",
+    "achados críticos whatsapp",
   ],
   openGraph: {
     title,
@@ -31,7 +29,7 @@ export const metadata: Metadata = {
         url: `${baseUrl}/api/og/compare`,
         width: 1200,
         height: 630,
-        alt: "Compare Midday to alternatives",
+        alt: "Compare a Laudos.AI com alternativas",
       },
     ],
   },
@@ -53,12 +51,13 @@ export default function ComparePage() {
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
           <h1 className="font-serif text-3xl lg:text-4xl text-foreground mb-4">
-            Compare Midday to alternatives
+            Compare a Laudos.AI com as alternativas reais do fluxo radiológico
           </h1>
           <p className="font-sans text-base text-muted-foreground max-w-2xl mx-auto">
-            Midday is built for founders and small teams who want clarity over
-            their finances without the complexity of traditional accounting
-            software.
+            Compare voz natural, IA aplicada ao laudo, templates institucionais
+            e CRIT com as abordagens que ainda dominam grande parte da rotina:
+            ditado antigo, IA genérica, copiar e colar e comunicação sem
+            rastreabilidade.
           </p>
         </div>
 
@@ -71,7 +70,7 @@ export default function ComparePage() {
               className="border border-border p-6 hover:border-foreground/20 transition-all duration-200"
             >
               <h2 className="font-sans text-lg text-foreground mb-2">
-                {competitor.name} Alternative
+                Laudos.AI vs {competitor.name}
               </h2>
               <p className="font-sans text-sm text-muted-foreground mb-4 line-clamp-2">
                 {competitor.description}
@@ -94,18 +93,17 @@ export default function ComparePage() {
         <div className="bg-background border border-border p-8 lg:p-12 text-center relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-60deg,rgba(219,219,219,0.4),rgba(219,219,219,0.4)_1px,transparent_1px,transparent_6px)] dark:before:bg-[repeating-linear-gradient(-60deg,rgba(44,44,44,0.4),rgba(44,44,44,0.4)_1px,transparent_1px,transparent_6px)] before:pointer-events-none">
           <div className="relative z-10">
             <h2 className="font-serif text-2xl text-foreground mb-4">
-              Ready to try Midday?
+              Pronto para ver a diferença no plantão?
             </h2>
             <p className="font-sans text-base text-muted-foreground mb-6 max-w-xl mx-auto">
-              Start your 14-day free trial and see why founders are switching to
-              Midday.
+              Abra o editor, dite um exame e compare o fluxo na prática.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild className="btn-inverse h-11 px-6">
-                <a href="https://app.midday.ai/">Start your free trial</a>
+                <a href="https://copilot.laudos.ai/">Testar grátis</a>
               </Button>
               <Button asChild variant="outline" className="h-11 px-6">
-                <Link href="/pricing">View pricing</Link>
+                <Link href="/pricing">Ver planos</Link>
               </Button>
             </div>
           </div>

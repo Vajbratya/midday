@@ -1,24 +1,18 @@
-import { MCPGemini } from "@/components/mcp-gemini";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Gemini MCP Integration",
+  title: "Gemini + Laudos.AI via MCP",
   description:
-    "Connect Gemini CLI to your Midday data via Model Context Protocol. Query transactions, invoices, and reports from your terminal.",
+    "Use agentes e conectores com contexto operacional da Laudos.AI em cenários técnicos e institucionais.",
   path: "/mcp/gemini",
   og: {
-    title: "Gemini + Midday",
-    description: "Business data from your terminal",
+    title: "Gemini + Laudos.AI",
+    description: "MCP para agentes e copilotos conectados ao fluxo radiológico.",
   },
-  keywords: [
-    "Gemini MCP",
-    "Gemini CLI integration",
-    "Model Context Protocol",
-    "Google Gemini",
-    "AI financial assistant",
-  ],
 });
 
 export default function Page() {
-  return <MCPGemini />;
+  return <PublicFeaturePage content={featurePages.mcp} />;
 }

@@ -1,26 +1,25 @@
-import { Assistant } from "@/components/assistant";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "AI Assistant for Small Business",
+  title: "Copilot radiologico com IA e voz",
   description:
-    "Manage your finances, invoices, time tracking, and connected tools from a single conversation. An AI assistant that knows your business and gets things done.",
+    "Descreva os achados com naturalidade. A Laudos.AI organiza o conteudo em um laudo estruturado, pronto para revisar e assinar.",
   path: "/assistant",
   og: {
-    title: "AI Assistant",
-    description: "One conversation to run your entire business",
+    title: "Copilot Laudos.AI",
+    description: "Fale como voce pensa. Receba o laudo estruturado.",
   },
   keywords: [
-    "AI assistant",
-    "small business assistant",
-    "AI bookkeeping",
-    "invoice assistant",
-    "business finance AI",
-    "connected apps",
-    "AI time tracking",
+    "laudos com IA",
+    "ditado radiologico",
+    "laudo estruturado",
+    "copilot radiologia",
+    "voz natural",
   ],
 });
 
 export default function Page() {
-  return <Assistant />;
+  return <PublicFeaturePage content={featurePages.assistant} />;
 }

@@ -1,25 +1,24 @@
-import { Computer } from "@/components/computer";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Computer — Autonomous AI agents for your business",
+  title: "Automações para operação radiológica",
   description:
-    "Describe what you need, and Midday deploys an autonomous agent that runs on your schedule, learns over time, and delivers results while you sleep.",
+    "A mesma infraestrutura que organiza laudos e comunicação crítica pode sustentar rotinas, auditorias e automações para operações radiológicas mais previsíveis.",
   path: "/computer",
   og: {
-    title: "Midday Computer",
-    description: "Your business runs even when you don't",
+    title: "Automações",
+    description: "Rotinas e auditorias para a operação radiológica.",
   },
   keywords: [
-    "autonomous agents",
-    "business automation",
-    "AI agents",
-    "Midday Computer",
-    "business workflows",
-    "scheduled agents",
+    "automação radiologia",
+    "agentes clinicos",
+    "workflow enterprise",
+    "operação radiológica",
   ],
 });
 
 export default function Page() {
-  return <Computer />;
+  return <PublicFeaturePage content={featurePages.computer} />;
 }

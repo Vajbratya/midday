@@ -1,23 +1,18 @@
-import { MCPWindsurf } from "@/components/mcp-windsurf";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Windsurf MCP Integration",
+  title: "Windsurf + Laudos.AI",
   description:
-    "Connect Windsurf to your Midday data via Model Context Protocol. Query transactions, invoices, and reports from your AI IDE.",
+    "Conecte o stack técnico da Laudos.AI a agentes, copilotos e fluxos de desenvolvimento.",
   path: "/mcp/windsurf",
   og: {
-    title: "Windsurf + Midday",
-    description: "Business data from your AI IDE",
+    title: "Windsurf + Laudos.AI",
+    description: "Infraestrutura radiológica acessível para times técnicos.",
   },
-  keywords: [
-    "Windsurf MCP",
-    "Windsurf integration",
-    "Model Context Protocol",
-    "AI IDE financial data",
-  ],
 });
 
 export default function Page() {
-  return <MCPWindsurf />;
+  return <PublicFeaturePage content={featurePages.mcp} />;
 }

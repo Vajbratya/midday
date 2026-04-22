@@ -1,24 +1,18 @@
-import { MCPCursor } from "@/components/mcp-cursor";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Cursor MCP Integration",
+  title: "Cursor + Laudos.AI via MCP",
   description:
-    "Connect Cursor to your Midday data via MCP. Track time, query finances, and access business data directly from your AI-powered code editor.",
+    "Aproxime a stack técnica da Laudos.AI do ambiente de desenvolvimento da sua equipe.",
   path: "/mcp/cursor",
   og: {
-    title: "Cursor + Midday",
-    description: "Track time and query finances from your editor",
+    title: "Cursor + Laudos.AI",
+    description: "API, MCP e contexto real do produto para times técnicos.",
   },
-  keywords: [
-    "Cursor MCP",
-    "Cursor integration",
-    "Model Context Protocol",
-    "AI coding assistant",
-    "time tracking Cursor",
-  ],
 });
 
 export default function Page() {
-  return <MCPCursor />;
+  return <PublicFeaturePage content={featurePages.mcp} />;
 }

@@ -19,6 +19,19 @@ type DocSection = {
   }>;
 };
 
+const publicDocSlugs = [
+  "introducao",
+  "comecar-rapido",
+  "voz-natural",
+  "editor-com-ia",
+  "templates-institucionais",
+  "integracao-pacs-ris",
+  "crit-achados",
+  "api-mcp",
+  "planos",
+  "seguranca-lgpd",
+];
+
 function parseFrontmatter(fileContent: string) {
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
   const match = frontmatterRegex.exec(fileContent);
@@ -68,19 +81,25 @@ export function getDocsData() {
   }
 
   const mdxFiles = getMDXFiles(docsDir);
-  return mdxFiles.map((file) => {
-    const { metadata, content } = readMDXFile(path.join(docsDir, file));
-    const slug = path.basename(file, path.extname(file));
+  return mdxFiles
+    .filter((file) => publicDocSlugs.includes(path.basename(file, path.extname(file))))
+    .map((file) => {
+      const { metadata, content } = readMDXFile(path.join(docsDir, file));
+      const slug = path.basename(file, path.extname(file));
 
-    return {
-      metadata,
-      slug,
-      content,
-    };
-  });
+      return {
+        metadata,
+        slug,
+        content,
+      };
+    });
 }
 
 export function getDocBySlug(slug: string) {
+  if (!publicDocSlugs.includes(slug)) {
+    return null;
+  }
+
   const docsDir = path.join(process.cwd(), "src", "app", "docs", "content");
   const filePath = path.join(docsDir, `${slug}.mdx`);
 
@@ -104,349 +123,93 @@ export function getAllDocSlugs(): string[] {
   }
 
   const mdxFiles = getMDXFiles(docsDir);
-  return mdxFiles.map((file) => path.basename(file, path.extname(file)));
+  return mdxFiles
+    .map((file) => path.basename(file, path.extname(file)))
+    .filter((slug) => publicDocSlugs.includes(slug));
 }
 
 // Navigation structure for the sidebar
 export const docsNavigation: DocSection[] = [
   {
-    title: "Getting Started",
-    slug: "getting-started",
+    title: "Começar",
+    slug: "comecar",
     docs: [
       {
-        slug: "introduction",
-        title: "Introduction",
-        description: "What is Midday?",
+        slug: "introducao",
+        title: "Introdução",
+        description: "O que a plataforma resolve",
         order: 1,
       },
       {
-        slug: "quick-start",
-        title: "Quick Start",
-        description: "Get running in 5 minutes",
+        slug: "comecar-rapido",
+        title: "Começar rápido",
+        description: "Primeiros passos no editor",
         order: 2,
       },
       {
-        slug: "desktop-app",
-        title: "Desktop App",
-        description: "Native macOS & Windows app",
-        order: 3,
-      },
-      {
-        slug: "troubleshooting",
-        title: "Troubleshooting",
-        description: "Common issues & FAQ",
-        order: 4,
-      },
-    ],
-  },
-  {
-    title: "Banking",
-    slug: "banking",
-    docs: [
-      {
-        slug: "connect-bank-account",
-        title: "Connect Bank",
-        description: "Link your bank accounts",
-        order: 1,
-      },
-      {
-        slug: "import-transactions-csv",
-        title: "Import CSV",
-        description: "Import from any source",
-        order: 2,
-      },
-      {
-        slug: "auto-categorization",
-        title: "Categorization",
-        description: "Automatic categories",
-        order: 3,
-      },
-      {
-        slug: "categories-reference",
-        title: "Categories Reference",
-        description: "All categories explained",
-        order: 4,
-      },
-      {
-        slug: "use-tags",
-        title: "Tags",
-        description: "Organize transactions",
-        order: 5,
-      },
-      {
-        slug: "account-settings",
-        title: "Account Settings",
-        description: "Manage bank accounts",
-        order: 6,
-      },
-      {
-        slug: "multi-currency",
-        title: "Multi-Currency",
-        description: "Multiple currencies & exchange",
-        order: 7,
-      },
-    ],
-  },
-  {
-    title: "Receipts & Inbox",
-    slug: "inbox",
-    docs: [
-      {
-        slug: "receipt-matching",
-        title: "Receipt Matching",
-        description: "AI-powered matching",
-        order: 1,
-      },
-      {
-        slug: "forward-receipts-email",
-        title: "Email Forwarding",
-        description: "Forward receipts",
-        order: 2,
-      },
-      {
-        slug: "connect-gmail",
-        title: "Gmail",
-        description: "Auto-capture from Gmail",
-        order: 3,
-      },
-      {
-        slug: "connect-outlook",
-        title: "Outlook",
-        description: "Auto-capture from Outlook",
-        order: 4,
-      },
-      {
-        slug: "connect-slack",
-        title: "Slack",
-        description: "Share from Slack",
-        order: 5,
-      },
-    ],
-  },
-  {
-    title: "Vault",
-    slug: "vault",
-    docs: [
-      {
-        slug: "vault-file-storage",
-        title: "File Storage",
-        description: "Store documents",
-        order: 1,
-      },
-    ],
-  },
-  {
-    title: "Invoicing",
-    slug: "invoicing",
-    docs: [
-      {
-        slug: "create-invoice",
-        title: "Create Invoice",
-        description: "Send professional invoices",
-        order: 1,
-      },
-      {
-        slug: "customize-invoice-template",
-        title: "Templates",
-        description: "Brand your invoices",
-        order: 2,
-      },
-      {
-        slug: "set-up-recurring-invoice",
-        title: "Recurring",
-        description: "Automate billing",
-        order: 3,
-      },
-      {
-        slug: "accept-online-payments",
-        title: "Online Payments",
-        description: "Accept card payments",
-        order: 4,
-      },
-      {
-        slug: "track-invoice-status",
-        title: "Track Status",
-        description: "Payment tracking",
-        order: 5,
-      },
-      {
-        slug: "invoice-settings",
-        title: "Invoice Settings",
-        description: "Configure invoices",
-        order: 6,
-      },
-    ],
-  },
-  {
-    title: "Time Tracking",
-    slug: "time-tracking",
-    docs: [
-      {
-        slug: "create-project",
-        title: "Projects",
-        description: "Set up projects",
-        order: 1,
-      },
-      {
-        slug: "track-time-timer",
-        title: "Track Time",
-        description: "Timer and entries",
-        order: 2,
-      },
-      {
-        slug: "invoice-tracked-time",
-        title: "Bill Time",
-        description: "Turn time into invoices",
+        slug: "voz-natural",
+        title: "Voz natural",
+        description: "Como ditar do seu jeito",
         order: 3,
       },
     ],
   },
   {
-    title: "Customers",
-    slug: "customers",
+    title: "Produto",
+    slug: "produto",
     docs: [
       {
-        slug: "add-customer",
-        title: "Add Customer",
-        description: "Create customer profiles",
+        slug: "editor-com-ia",
+        title: "Editor com IA",
+        description: "Ditado, edição e assinatura",
         order: 1,
       },
       {
-        slug: "customer-portal",
-        title: "Customer Portal",
-        description: "Self-serve access",
-        order: 2,
-      },
-    ],
-  },
-  {
-    title: "Reports",
-    slug: "reports",
-    docs: [
-      {
-        slug: "understanding-metrics",
-        title: "Understanding Metrics",
-        description: "How metrics work",
-        order: 1,
-      },
-      {
-        slug: "view-revenue-profit",
-        title: "Revenue & Profit",
-        description: "Track your income",
+        slug: "templates-institucionais",
+        title: "Templates institucionais",
+        description: "Máscaras, descritores e padronização",
         order: 2,
       },
       {
-        slug: "check-runway",
-        title: "Runway",
-        description: "Cash runway analysis",
-        order: 3,
-      },
-      {
-        slug: "view-burn-rate",
-        title: "Burn Rate",
-        description: "Monthly spending",
-        order: 4,
-      },
-      {
-        slug: "share-report",
-        title: "Share Reports",
-        description: "Share with others",
-        order: 5,
-      },
-    ],
-  },
-  {
-    title: "Export & Integrations",
-    slug: "export",
-    docs: [
-      {
-        slug: "apps-overview",
-        title: "Apps Overview",
-        description: "All integrations",
-        order: 1,
-      },
-      {
-        slug: "export-transactions-csv",
-        title: "Export CSV",
-        description: "Download transactions",
-        order: 2,
-      },
-      {
-        slug: "connect-xero",
-        title: "Xero",
-        description: "Export to Xero",
-        order: 3,
-      },
-      {
-        slug: "connect-quickbooks",
-        title: "QuickBooks",
-        description: "Export to QuickBooks",
-        order: 4,
-      },
-      {
-        slug: "connect-fortnox",
-        title: "Fortnox",
-        description: "Export to Fortnox",
-        order: 5,
-      },
-    ],
-  },
-  {
-    title: "Assistant",
-    slug: "assistant",
-    docs: [
-      {
-        slug: "using-assistant",
-        title: "Using Assistant",
-        description: "Ask Midday anything",
-        order: 1,
-      },
-      {
-        slug: "assistant-mcp",
-        title: "AI Tools (MCP)",
-        description: "Cursor, Claude, ChatGPT",
-        order: 2,
-      },
-      {
-        slug: "assistant-connectors",
-        title: "Connected Apps",
-        description: "Gmail, Slack, Calendar & more",
+        slug: "planos",
+        title: "Planos",
+        description: "RadRes+, PRO e Enterprise",
         order: 3,
       },
     ],
   },
   {
-    title: "Team & Settings",
-    slug: "team",
+    title: "Institucional",
+    slug: "institucional",
     docs: [
       {
-        slug: "invite-team-member",
-        title: "Team Members",
-        description: "Add your team",
+        slug: "integracao-pacs-ris",
+        title: "Integração PACS/RIS",
+        description: "Implantação no fluxo existente",
         order: 1,
       },
       {
-        slug: "notification-settings",
-        title: "Notifications",
-        description: "Configure alerts",
+        slug: "crit-achados",
+        title: "CRIT",
+        description: "Achados críticos com SLA e prova",
         order: 2,
       },
       {
-        slug: "manage-subscription",
-        title: "Billing",
-        description: "Manage subscription",
+        slug: "seguranca-lgpd",
+        title: "Segurança e LGPD",
+        description: "Governança para ambientes sensíveis",
         order: 3,
       },
     ],
   },
   {
-    title: "Developer",
-    slug: "developer",
+    title: "Técnico",
+    slug: "tecnico",
     docs: [
       {
-        slug: "api-reference",
-        title: "API Reference",
-        description: "REST API docs",
+        slug: "api-mcp",
+        title: "API e MCP",
+        description: "Integração programática e conectores",
         order: 1,
       },
     ],

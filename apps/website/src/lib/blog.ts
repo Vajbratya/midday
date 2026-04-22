@@ -9,6 +9,12 @@ type Metadata = {
   tag: string;
 };
 
+const publicPostSlugs = [
+  "ia-na-radiologia",
+  "crit-rollout",
+  "editor-mobile-laudos",
+];
+
 function parseFrontmatter(fileContent: string) {
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
   const match = frontmatterRegex.exec(fileContent);
@@ -40,16 +46,18 @@ function readMDXFile(filePath: string) {
 
 function getMDXData(dir: string) {
   const mdxFiles = getMDXFiles(dir);
-  return mdxFiles.map((file) => {
-    const { metadata, content } = readMDXFile(path.join(dir, file));
-    const slug = path.basename(file, path.extname(file));
+  return mdxFiles
+    .filter((file) => publicPostSlugs.includes(path.basename(file, path.extname(file))))
+    .map((file) => {
+      const { metadata, content } = readMDXFile(path.join(dir, file));
+      const slug = path.basename(file, path.extname(file));
 
-    return {
-      metadata,
-      slug,
-      content,
-    };
-  });
+      return {
+        metadata,
+        slug,
+        content,
+      };
+    });
 }
 
 export function getBlogPosts() {

@@ -26,9 +26,9 @@ export async function generateMetadata({ params }: Props) {
   const { page } = await params;
 
   return createPageMetadata({
-    title: `Updates - Page ${page}`,
+    title: `Atualizações - Página ${page}`,
     description:
-      "The latest updates and improvements to Midday. See what we've been building to help you manage your business finances better.",
+      "Novidades sobre editor, CRIT, IA aplicada ao laudo e evolução do produto Laudos.AI.",
     path: `/updates/page/${page}`,
     canonical: false,
   });

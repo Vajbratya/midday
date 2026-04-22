@@ -7,11 +7,11 @@ import { getBlogPosts } from "@/lib/blog";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Updates",
+  title: "Atualizações da Laudos.AI",
   description:
-    "The latest updates and improvements to Midday. See what we've been building to help you manage your business finances better.",
+    "Novidades sobre editor, CRIT, IA aplicada ao laudo e evolução do produto Laudos.AI.",
   path: "/updates",
-  og: { title: "Updates", description: "What we've been building" },
+  og: { title: "Atualizações", description: "O que estamos lançando" },
 });
 
 // Force static generation

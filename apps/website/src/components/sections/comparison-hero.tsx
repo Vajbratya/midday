@@ -32,33 +32,33 @@ export function ComparisonHero({
       {/* Main Content */}
       <div className="lg:col-span-2">
         <h1 className="font-serif text-3xl lg:text-4xl text-foreground mb-4">
-          Best {competitor.name} Alternative for Founders
+          Melhor alternativa ao {competitor.name} para o fluxo radiológico
         </h1>
         <p className="font-sans text-base text-muted-foreground leading-normal mb-8 max-w-2xl">
-          {competitor.description} Compare features, pricing, and see why teams
-          are switching to Midday.
+          {competitor.description} Compare recursos, valor operacional e entenda
+          por que serviços de radiologia estão migrando para a Laudos.AI.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 mb-12">
           <Button asChild className="btn-inverse h-11 px-6">
             <a
-              href="https://app.midday.ai/"
+              href="https://copilot.laudos.ai"
               onClick={() =>
                 track({
                   event: LogEvents.CTA.name,
                   channel: LogEvents.CTA.channel,
-                  label: "Get started now",
+                  label: "Testar grátis",
                   position: "comparison_hero",
                   competitor: competitor.name,
                 })
               }
             >
-              Get started now
+              Testar grátis
             </a>
           </Button>
           <Button asChild variant="outline" className="h-11 px-6">
-            <Link href="/pricing">View pricing</Link>
+            <Link href="/pricing">Ver planos</Link>
           </Button>
         </div>
 
@@ -78,7 +78,7 @@ export function ComparisonHero({
       <div className="lg:col-span-1">
         <div className="border border-border p-6 sticky top-32">
           <h2 className="font-sans text-sm text-muted-foreground mb-4">
-            On this page
+            Nesta página
           </h2>
           <nav>
             <ul className="space-y-3">

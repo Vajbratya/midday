@@ -1,23 +1,18 @@
-import { MCPManus } from "@/components/mcp-manus";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Manus MCP Integration",
+  title: "Manus + Laudos.AI",
   description:
-    "Connect Manus to your Midday data via Model Context Protocol. Automate financial workflows with AI agents.",
+    "Automatize fluxos e agentes com contexto institucional e técnico da Laudos.AI.",
   path: "/mcp/manus",
   og: {
-    title: "Manus + Midday",
-    description: "Automate workflows with AI agents",
+    title: "Manus + Laudos.AI",
+    description: "Automação e operação radiológica em cima da mesma infraestrutura.",
   },
-  keywords: [
-    "Manus MCP",
-    "Manus integration",
-    "Model Context Protocol",
-    "AI agent financial data",
-  ],
 });
 
 export default function Page() {
-  return <MCPManus />;
+  return <PublicFeaturePage content={featurePages.mcp} />;
 }

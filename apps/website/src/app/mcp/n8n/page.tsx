@@ -1,24 +1,18 @@
-import { MCPN8n } from "@/components/mcp-n8n";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "n8n MCP Integration",
+  title: "n8n + Laudos.AI",
   description:
-    "Connect Midday to n8n workflows via MCP. Build automated financial workflows with AI agents and connect to 400+ apps.",
+    "Construa automações de operação radiológica com API, MCP e sinais reais do produto.",
   path: "/mcp/n8n",
   og: {
-    title: "n8n + Midday",
-    description: "Automated financial workflows with 400+ apps",
+    title: "n8n + Laudos.AI",
+    description: "Workflows automatizados sobre a infraestrutura da plataforma.",
   },
-  keywords: [
-    "n8n MCP",
-    "n8n integration",
-    "Model Context Protocol",
-    "workflow automation",
-    "AI agents",
-  ],
 });
 
 export default function Page() {
-  return <MCPN8n />;
+  return <PublicFeaturePage content={featurePages.mcp} />;
 }

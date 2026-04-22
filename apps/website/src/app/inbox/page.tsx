@@ -1,24 +1,24 @@
-import { Inbox } from "@/components/inbox";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Automatic Receipt Matching & Management",
+  title: "Entrada unificada de voz, texto e anexos",
   description:
-    "Capture receipts and invoices automatically. Match documents to transactions, search your records, and stay organized. Built for small business owners.",
+    "Voz, texto e documentos entram no mesmo fluxo para manter a producao organizada e reduzir dispersao operacional.",
   path: "/inbox",
   og: {
-    title: "Inbox",
-    description: "Receipts matched to transactions, automatically",
+    title: "Entrada Laudos.AI",
+    description: "Voz, texto e anexos organizados no mesmo fluxo.",
   },
   keywords: [
-    "receipt management",
-    "receipt scanner",
-    "invoice management",
-    "document management",
-    "expense receipts",
+    "entrada de ditado",
+    "anexos radiologia",
+    "workflow de laudo",
+    "organizacao clinica",
   ],
 });
 
 export default function Page() {
-  return <Inbox />;
+  return <PublicFeaturePage content={featurePages.inbox} />;
 }

@@ -1,24 +1,24 @@
-import { Insights } from "@/components/insights";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Business Insights",
+  title: "Analises e auditoria para radiologia",
   description:
-    "Understand your business at a glance. Get weekly summaries, cash flow analysis, and clear explanations of revenue and spending trends.",
+    "Acompanhe produtividade, uso e consistencia dos laudos com indicadores prontos para profissionais, equipes e operacoes enterprise.",
   path: "/insights",
   og: {
-    title: "Insights",
-    description: "Understand your business at a glance",
+    title: "Analises Laudos.AI",
+    description: "Volume, qualidade e auditoria em uma vista so.",
   },
   keywords: [
-    "business insights",
-    "business analytics",
-    "cash flow analysis",
-    "revenue tracking",
-    "spending analysis",
+    "analytics radiologia",
+    "auditoria laudos",
+    "dashboard radiologico",
+    "metricas enterprise",
   ],
 });
 
 export default function Page() {
-  return <Insights />;
+  return <PublicFeaturePage content={featurePages.insights} />;
 }

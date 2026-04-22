@@ -1,24 +1,18 @@
-import { MCPOpenCode } from "@/components/mcp-opencode";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "OpenCode MCP Integration",
+  title: "OpenCode + Laudos.AI",
   description:
-    "Connect OpenCode to your Midday data via MCP. Track time for client projects, start timers, and log hours directly from your terminal.",
+    "Leve o contexto técnico da Laudos.AI para fluxos assistidos por agentes e conectores.",
   path: "/mcp/opencode",
   og: {
-    title: "OpenCode + Midday",
-    description: "Track time and log hours from your terminal",
+    title: "OpenCode + Laudos.AI",
+    description: "API, MCP e integrações para times técnicos.",
   },
-  keywords: [
-    "OpenCode MCP",
-    "OpenCode integration",
-    "Model Context Protocol",
-    "terminal time tracking",
-    "developer tools",
-  ],
 });
 
 export default function Page() {
-  return <MCPOpenCode />;
+  return <PublicFeaturePage content={featurePages.mcp} />;
 }

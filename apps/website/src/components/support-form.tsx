@@ -46,7 +46,7 @@ export function SupportForm() {
     onSuccess: () => {
       toast({
         duration: 2500,
-        title: "Support ticket sent.",
+        title: "Solicitação enviada.",
         variant: "success",
       });
 
@@ -56,7 +56,7 @@ export function SupportForm() {
       toast({
         duration: 3500,
         variant: "error",
-        title: "Something went wrong pleaase try again.",
+        title: "Não foi possível enviar agora. Tente novamente.",
       });
     },
   });
@@ -67,11 +67,11 @@ export function SupportForm() {
         {/* Header */}
         <div className="mb-12">
           <h1 className="font-serif text-3xl lg:text-4xl text-foreground mb-4">
-            Support
+            Suporte
           </h1>
           <p className="font-sans text-base text-muted-foreground leading-relaxed">
-            Get help with Midday. Contact our team for assistance with any
-            questions or issues you may have.
+            Fale com a equipe da Laudos.AI sobre implantação, integrações,
+            suporte ao produto ou dúvidas comerciais.
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export function SupportForm() {
                   <FormItem className="w-full">
                     <FormLabel className="font-sans text-sm">Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="Email" type="email" {...field} />
+                      <Input placeholder="Seu email" type="email" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -102,10 +102,10 @@ export function SupportForm() {
                 render={({ field }) => (
                   <FormItem className="w-full">
                     <FormLabel className="font-sans text-sm">
-                      Full Name
+                      Nome completo
                     </FormLabel>
                     <FormControl>
-                      <Input placeholder="John Doe" {...field} />
+                      <Input placeholder="Seu nome" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -118,10 +118,10 @@ export function SupportForm() {
               name="subject"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="font-sans text-sm">Subject</FormLabel>
+                  <FormLabel className="font-sans text-sm">Assunto</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="Summary of the problem you have"
+                      placeholder="Resumo do que você precisa"
                       {...field}
                     />
                   </FormControl>
@@ -136,26 +136,23 @@ export function SupportForm() {
                 name="type"
                 render={({ field }) => (
                   <FormItem className="w-full">
-                    <FormLabel className="font-sans text-sm">Product</FormLabel>
+                    <FormLabel className="font-sans text-sm">Área</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select Product" />
+                          <SelectValue placeholder="Selecione a área" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="Transactions">
-                          Transactions
-                        </SelectItem>
-                        <SelectItem value="Vault">Vault</SelectItem>
-                        <SelectItem value="Inbox">Inbox</SelectItem>
-                        <SelectItem value="Invoicing">Invoicing</SelectItem>
-                        <SelectItem value="Tracker">Tracker</SelectItem>
-                        <SelectItem value="AI">AI</SelectItem>
-                        <SelectItem value="General">General</SelectItem>
+                        <SelectItem value="Copilot">Copilot</SelectItem>
+                        <SelectItem value="Editor">Editor</SelectItem>
+                        <SelectItem value="CRIT">CRIT</SelectItem>
+                        <SelectItem value="Integracoes">Integrações</SelectItem>
+                        <SelectItem value="Enterprise">Enterprise</SelectItem>
+                        <SelectItem value="Geral">Geral</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -168,7 +165,7 @@ export function SupportForm() {
                 render={({ field }) => (
                   <FormItem className="w-full">
                     <FormLabel className="font-sans text-sm">
-                      Severity
+                      Prioridade
                     </FormLabel>
                     <Select
                       onValueChange={field.onChange}
@@ -176,14 +173,14 @@ export function SupportForm() {
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select severity" />
+                          <SelectValue placeholder="Selecione a prioridade" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="low">Low</SelectItem>
+                        <SelectItem value="low">Baixa</SelectItem>
                         <SelectItem value="normal">Normal</SelectItem>
-                        <SelectItem value="high">High</SelectItem>
-                        <SelectItem value="urgent">Urgent</SelectItem>
+                        <SelectItem value="high">Alta</SelectItem>
+                        <SelectItem value="urgent">Urgente</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -197,10 +194,10 @@ export function SupportForm() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="font-sans text-sm">Message</FormLabel>
+                  <FormLabel className="font-sans text-sm">Mensagem</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Describe the issue you're facing, along with any relevant information. Please be as detailed and specific as possible."
+                      placeholder="Descreva o cenário, a instituição, o problema ou a integração desejada com o máximo de contexto possível."
                       className="resize-none min-h-[150px]"
                       {...field}
                     />
@@ -215,7 +212,7 @@ export function SupportForm() {
               {sendSupport.status === "executing" ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
               ) : (
-                "Submit"
+                "Enviar"
               )}
             </Button>
           </form>

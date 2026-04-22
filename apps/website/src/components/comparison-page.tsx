@@ -17,12 +17,12 @@ interface Props {
 
 export function ComparisonPage({ competitor }: Props) {
   const sections = [
-    { id: "differences", label: "Key differences at a glance" },
-    { id: "features", label: "Feature comparison" },
-    { id: "pricing", label: "Pricing comparison" },
-    { id: "switching", label: `Switching from ${competitor.name}` },
-    { id: "better-fit", label: "Where Midday is a better fit" },
-    { id: "faq", label: "Frequently asked questions" },
+    { id: "differences", label: "Diferenças principais" },
+    { id: "features", label: "Comparação de recursos" },
+    { id: "pricing", label: "Comparação de custo e valor" },
+    { id: "switching", label: `Migrando de ${competitor.name}` },
+    { id: "better-fit", label: "Onde a Laudos.AI encaixa melhor" },
+    { id: "faq", label: "Perguntas frequentes" },
   ];
 
   return (
@@ -43,7 +43,7 @@ export function ComparisonPage({ competitor }: Props) {
         {/* Key Differences Section */}
         <section id="differences" className="scroll-mt-24 mb-16 lg:mb-24">
           <h2 className="font-serif text-2xl text-foreground mb-8 text-center">
-            Key differences at a glance
+            Diferenças principais
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {competitor.keyDifferences.map((diff) => (
@@ -61,7 +61,7 @@ export function ComparisonPage({ competitor }: Props) {
                   <div className="p-6 bg-background relative border-l-4 border-l-primary">
                     <div className="space-y-2">
                       <span className="font-sans text-xs font-semibold text-primary uppercase tracking-wide block">
-                        Midday
+                        Laudos.AI
                       </span>
                       <p className="font-sans text-sm text-foreground leading-relaxed font-medium">
                         {diff.midday}
@@ -113,10 +113,11 @@ export function ComparisonPage({ competitor }: Props) {
         {/* Switching Guide */}
         <section id="switching" className="scroll-mt-24 mb-16 lg:mb-24">
           <h2 className="font-serif text-2xl text-foreground mb-4 text-center">
-            Switching from {competitor.name} to Midday
+            Migrando de {competitor.name} para a Laudos.AI
           </h2>
           <p className="font-sans text-base text-muted-foreground mb-8 text-center max-w-2xl mx-auto">
-            Making the switch is straightforward. Here's how to get started.
+            O caminho costuma ser mais simples do que parece. Aqui está um
+            roteiro direto para começar.
           </p>
           <div className="max-w-3xl mx-auto">
             <div className="bg-secondary border border-border p-6">
@@ -151,10 +152,10 @@ export function ComparisonPage({ competitor }: Props) {
         {/* Where Midday is a Better Fit */}
         <section id="better-fit" className="scroll-mt-24 mb-16 lg:mb-24">
           <h2 className="font-serif text-2xl text-foreground mb-4 text-center">
-            Where Midday is a better fit
+            Onde a Laudos.AI encaixa melhor
           </h2>
           <p className="font-sans text-base text-muted-foreground mb-8 text-center max-w-2xl mx-auto">
-            Midday is the right choice if you're...
+            A plataforma faz mais sentido se você está...
           </p>
           <div className="max-w-2xl mx-auto">
             <div className="bg-secondary border border-border p-6">
@@ -192,27 +193,27 @@ export function ComparisonPage({ competitor }: Props) {
           <div className="bg-background border border-border p-8 lg:p-12 text-center relative before:absolute before:inset-0 before:bg-[repeating-linear-gradient(-60deg,rgba(219,219,219,0.4),rgba(219,219,219,0.4)_1px,transparent_1px,transparent_6px)] dark:before:bg-[repeating-linear-gradient(-60deg,rgba(44,44,44,0.4),rgba(44,44,44,0.4)_1px,transparent_1px,transparent_6px)] before:pointer-events-none">
             <div className="relative z-10">
               <h2 className="font-serif text-2xl text-foreground mb-4">
-                Ready to make the switch?
+                Pronto para testar no fluxo real?
               </h2>
               <p className="font-sans text-base text-muted-foreground mb-8 max-w-xl mx-auto">
-                Start your 14-day free trial. No credit card required until
-                you're ready to upgrade.
+                Abra o editor, dite um exame e veja a IA transformando sua
+                rotina em um laudo estruturado com menos fricção.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild className="btn-inverse h-11 px-6">
                   <a
-                    href="https://app.midday.ai/"
+                    href="https://copilot.laudos.ai"
                     onClick={() =>
                       track({
                         event: LogEvents.CTA.name,
                         channel: LogEvents.CTA.channel,
-                        label: "Start your free trial",
+                        label: "Testar grátis",
                         position: "comparison_bottom",
                         competitor: competitor.name,
                       })
                     }
                   >
-                    Start your free trial
+                    Testar grátis
                   </a>
                 </Button>
                 <Button
@@ -220,7 +221,7 @@ export function ComparisonPage({ competitor }: Props) {
                   variant="outline"
                   className="bg-background h-11 px-6"
                 >
-                  <Link href="/pricing">View pricing</Link>
+                  <Link href="/pricing">Ver planos</Link>
                 </Button>
               </div>
             </div>

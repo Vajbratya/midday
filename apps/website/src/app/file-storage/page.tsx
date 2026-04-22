@@ -1,24 +1,24 @@
-import { FileStorage } from "@/components/file-storage";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Secure Document Storage for Business",
+  title: "Templates, mascaras e vocabulario",
   description:
-    "Store and organize all your business documents in one secure place. Access receipts, contracts, invoices, and files anytime. Built for small business owners.",
+    "Use templates pessoais ou institucionais para acelerar o laudo, reduzir repeticao e manter consistencia entre profissionais e equipes.",
   path: "/file-storage",
   og: {
-    title: "File Storage",
-    description: "All your business documents in one place",
+    title: "Templates Laudos.AI",
+    description: "Mascaras e descritores organizados dentro do produto.",
   },
   keywords: [
-    "document storage",
-    "business file storage",
-    "secure document vault",
-    "receipt storage",
-    "contract management",
+    "templates de laudo",
+    "mascaras radiologia",
+    "descritores institucionais",
+    "vocabulario medico",
   ],
 });
 
 export default function Page() {
-  return <FileStorage />;
+  return <PublicFeaturePage content={featurePages["file-storage"]} />;
 }

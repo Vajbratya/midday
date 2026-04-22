@@ -20,12 +20,12 @@ export async function generateMetadata({ params }: Props) {
   const categoryData = categories.find((c) => c.id === category);
 
   if (!categoryData) {
-    return { title: "Category Not Found" };
+    return { title: "Categoria não encontrada" };
   }
 
   return createPageMetadata({
-    title: `${categoryData.name} Integrations`,
-    description: `Connect Midday with ${categoryData.name.toLowerCase()} tools. Explore our ${categoryData.name.toLowerCase()} integrations to streamline your financial workflow.`,
+    title: `Integrações ${categoryData.name} | Laudos.AI`,
+    description: `Explore as integrações ${categoryData.name.toLowerCase()} da Laudos.AI para conectar editor, comunicação crítica e operação institucional ao stack da sua equipe.`,
     path: `/integrations/category/${category}`,
   });
 }

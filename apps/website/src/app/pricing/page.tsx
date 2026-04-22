@@ -2,32 +2,35 @@ import { Pricing } from "@/components/pricing";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Pricing",
+  title: "Planos e preços da Laudos.AI",
   description:
-    "Simple, transparent pricing for Midday. Start free and upgrade as you grow. Invoicing, expense tracking, and financial tools for small business owners.",
+    "Escolha o plano ideal para residente, uso individual ou implantação institucional com CRIT, integrações PACS/RIS e governança enterprise.",
   path: "/pricing",
-  og: { title: "Pricing", description: "Start free, upgrade as you grow" },
+  og: {
+    title: "Planos Laudos.AI",
+    description: "Do residente ao hospital, com IA aplicada ao fluxo real.",
+  },
   keywords: [
-    "midday pricing",
-    "free accounting software",
-    "small business software pricing",
-    "invoicing software cost",
+    "preços laudos ai",
+    "plano residente radiologia",
+    "enterprise radiologia",
+    "laudos com ia",
   ],
 });
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Midday",
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web, macOS",
+  name: "Laudos.AI",
+  applicationCategory: "MedicalBusinessApplication",
+  operatingSystem: "Web, mobile browser",
   description:
-    "Business finance software for invoicing, expense tracking, time tracking, and financial insights.",
+    "Software de laudo radiológico com voz natural, IA assistiva, templates institucionais, CRIT e integração PACS/RIS.",
   offers: {
     "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-    description: "Free plan available",
+    price: "49",
+    priceCurrency: "BRL",
+    description: "Plano RadRes+ disponível",
   },
   aggregateRating: {
     "@type": "AggregateRating",

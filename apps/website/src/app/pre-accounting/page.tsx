@@ -1,24 +1,24 @@
-import { PreAccounting } from "@/components/pre-accounting";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Automated Pre-Accounting & Bookkeeping",
+  title: "Integração PACS/RIS e API",
   description:
-    "Automated bookkeeping that collects transactions, matches receipts, and prepares accountant-ready records. Save hours on manual data entry every month.",
+    "Integre a Laudos.AI a PACS, RIS e sistemas internos para reduzir retrabalho e encaixar o produto na infraestrutura que sua operação já usa.",
   path: "/pre-accounting",
   og: {
-    title: "Pre-Accounting",
-    description: "Bookkeeping that prepares itself",
+    title: "Integrações clínicas",
+    description: "PACS, RIS, API e implantação enterprise sem retrabalho.",
   },
   keywords: [
-    "bookkeeping software",
-    "small business bookkeeping",
-    "automated bookkeeping",
-    "pre-accounting",
-    "accountant-ready records",
+    "pacs ris",
+    "integração radiologia",
+    "api laudos",
+    "enterprise radiologia",
   ],
 });
 
 export default function Page() {
-  return <PreAccounting />;
+  return <PublicFeaturePage content={featurePages["pre-accounting"]} />;
 }

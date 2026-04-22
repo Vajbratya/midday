@@ -17,10 +17,10 @@ export function CompetitorFAQ({ competitor }: Props) {
   return (
     <div>
       <h2 className="font-serif text-2xl text-foreground mb-4 text-center">
-        Frequently asked questions
+        Perguntas frequentes
       </h2>
       <p className="font-sans text-base text-muted-foreground mb-8 text-center max-w-2xl mx-auto">
-        Common questions about switching from {competitor.name} to Midday.
+        Dúvidas comuns ao sair de {competitor.name} e migrar para a Laudos.AI.
       </p>
 
       <div className="max-w-3xl mx-auto space-y-4">

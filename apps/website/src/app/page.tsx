@@ -1,17 +1,17 @@
-import { StartPage } from "@/components/startpage";
+import { HomePage } from "@/components/home-page";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Midday — The business stack for modern founders",
+  title: "Laudos.AI — Laudos radiológicos com IA e voz",
   description:
-    "Invoicing, automatic reconciliation, time tracking, documents, and financial exports in one place. The business stack that replaces the tools you've outgrown.",
+    "Pare de ditar pontuação. Fale como você pensa e receba o laudo estruturado com IA assistiva, editor completo e integração PACS/RIS.",
   path: "/",
   og: {
-    title: "Midday",
-    description: "The business stack for modern founders",
+    title: "Laudos.AI",
+    description: "Fale como você pensa. Receba o laudo estruturado.",
   },
 });
 
 export default function Page() {
-  return <StartPage />;
+  return <HomePage />;
 }

@@ -15,7 +15,7 @@ export function IntegrationDetailPage({ app }: Props) {
     .slice(0, 3);
 
   const dashboardUrl = app.active
-    ? `https://app.midday.ai/apps?app=${app.id}`
+    ? app.installUrl || "https://copilot.laudos.ai"
     : undefined;
 
   return (
@@ -29,7 +29,7 @@ export function IntegrationDetailPage({ app }: Props) {
                 href="/integrations"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                Integrations
+                Integrações
               </Link>
             </li>
             <li className="text-muted-foreground">/</li>
@@ -61,7 +61,7 @@ export function IntegrationDetailPage({ app }: Props) {
                   )}
                   {!app.active && (
                     <span className="text-xs font-sans text-muted-foreground bg-secondary px-2 py-1">
-                      Coming soon
+                      Em breve
                     </span>
                   )}
                 </div>
@@ -88,7 +88,7 @@ export function IntegrationDetailPage({ app }: Props) {
             {app.features.length > 0 && (
               <div className="border border-border p-6 lg:p-8">
                 <h2 className="font-sans text-lg text-foreground mb-6">
-                  Key Features
+                  Principais pontos
                 </h2>
                 <ul className="space-y-4">
                   {app.features.map((feature) => (
@@ -110,20 +110,20 @@ export function IntegrationDetailPage({ app }: Props) {
               {/* CTA Card */}
               <div className="border border-border p-6">
                 <h3 className="font-sans text-lg text-foreground mb-4">
-                  {app.active ? "Get started" : "Coming soon"}
+                  {app.active ? "Começar" : "Em breve"}
                 </h3>
                 <p className="font-sans text-sm text-muted-foreground mb-6">
                   {app.active
-                    ? `Connect ${app.name} to your Midday account and start automating your workflow.`
-                    : `We're working on the ${app.name} integration. Sign up to be notified when it's ready.`}
+                    ? `Conecte ${app.name} ao fluxo da Laudos.AI e leve o produto para mais perto da sua operação.`
+                    : `Estamos trabalhando na integração com ${app.name}. Fale com a equipe para acompanhar a disponibilidade.`}
                 </p>
                 {dashboardUrl ? (
                   <Button asChild className="w-full">
-                    <a href={dashboardUrl}>Connect {app.name}</a>
+                    <a href={dashboardUrl}>Conectar {app.name}</a>
                   </Button>
                 ) : (
                   <Button asChild variant="outline" className="w-full">
-                    <Link href="/support">Get notified</Link>
+                    <Link href="/support">Quero saber quando sair</Link>
                   </Button>
                 )}
               </div>
@@ -132,7 +132,7 @@ export function IntegrationDetailPage({ app }: Props) {
               {relatedApps.length > 0 && (
                 <div className="border border-border p-6">
                   <h3 className="font-sans text-sm text-muted-foreground mb-4">
-                    Related integrations
+                    Integrações relacionadas
                   </h3>
                   <div className="space-y-4">
                     {relatedApps.map((relatedApp) => (

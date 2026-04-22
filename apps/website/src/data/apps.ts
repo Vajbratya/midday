@@ -1,9 +1,3 @@
-import { apps as appStoreApps } from "@midday/app-store";
-import {
-  connectorApps as connectorAppDefs,
-  getConnectorLogoUrl,
-} from "@midday/connectors";
-
 export interface WebsiteApp {
   id: string;
   name: string;
@@ -18,318 +12,224 @@ export interface WebsiteApp {
   logoUrl?: string;
 }
 
-const appExtensions: Record<
-  string,
-  { slug: string; features: string[]; installUrl?: string }
-> = {
-  gmail: {
+export const apps: WebsiteApp[] = [
+  {
+    id: "connector-pacs",
+    name: "PACS / RIS",
+    slug: "pacs-ris",
+    category: "clinical",
+    active: true,
+    short_description:
+      "Integração nativa com a infraestrutura existente da clínica ou hospital.",
+    description:
+      "Leve o editor, a estruturação por IA e o fluxo de laudo para dentro da operação existente. A proposta é reduzir retrabalho, não criar mais uma ilha de software.",
+    features: [
+      "Integração com sistemas PACS e RIS",
+      "Entrega de laudo sem quebrar o fluxo atual",
+      "Base para implantações enterprise",
+      "Menos cópia e cola entre sistemas",
+    ],
+  },
+  {
+    id: "connector-crit",
+    name: "CRIT Mobile",
+    slug: "crit-mobile",
+    category: "communication",
+    active: true,
+    beta: true,
+    short_description:
+      "Notificações seguras, registro de ciência e SLA para achados críticos.",
+    description:
+      "O CRIT fecha o ciclo de comunicação de achados críticos com fila priorizada, rastreabilidade e prova jurídica para a instituição.",
+    features: [
+      "Registro de ciência com carimbo de tempo",
+      "Escalação e auditoria institucional",
+      "Priorização por criticidade e setor",
+      "Base segura para comunicação sensível",
+    ],
+  },
+  {
+    id: "gmail",
+    name: "Gmail",
     slug: "gmail",
+    category: "communication",
+    active: true,
+    short_description:
+      "Centralize anexos e referências enviados por email no mesmo fluxo.",
+    description:
+      "Use email como ponto de entrada para anexos, pedidos e documentos de apoio sem perder organização no editor e na operação.",
     features: [
-      "Continuous inbox monitoring",
-      "Automatic PDF extraction",
-      "Smart transaction matching",
-      "Secure OAuth authentication",
+      "Entrada de anexos e referências por email",
+      "Organização no fluxo da operação",
+      "Menos dispersão entre caixas de entrada",
+      "Melhor contexto para o laudo",
     ],
   },
-  outlook: {
+  {
+    id: "outlook",
+    name: "Outlook",
     slug: "outlook",
+    category: "communication",
+    active: true,
+    short_description:
+      "Mesma lógica de captura para ambientes corporativos baseados em Microsoft.",
+    description:
+      "Leve a entrada por email para o contexto institucional sem depender de processos manuais ou anexos espalhados.",
     features: [
-      "Continuous inbox monitoring",
-      "Automatic PDF extraction",
-      "Smart transaction matching",
-      "Secure OAuth authentication",
+      "Captura de anexos por email",
+      "Fluxo compatível com operação corporativa",
+      "Contexto unificado para o editor",
+      "Menos dependência de repasse manual",
     ],
   },
-  slack: {
+  {
+    id: "slack",
+    name: "Slack",
     slug: "slack",
+    category: "communication",
+    active: true,
+    short_description:
+      "Acompanhe operação, alertas e sinais da plataforma dentro do Slack.",
+    description:
+      "Leve alertas operacionais, comunicações relevantes e sinais da plataforma para o workspace da equipe.",
     features: [
-      "Real-time transaction notifications",
-      "Direct receipt upload from Slack",
-      "Smart document matching",
-      "One-click approve or decline",
+      "Alertas operacionais em canais definidos",
+      "Apoio a fluxos internos de equipe",
+      "Visibilidade mais rápida para gestão",
+      "Menos dependência de checagem manual",
     ],
   },
-  telegram: {
-    slug: "telegram",
-    features: [
-      "Open the Midday bot instantly",
-      "Forward receipts while on the go",
-      "Smart document matching",
-      "Real-time invoice and transaction notifications",
-    ],
-  },
-  whatsapp: {
+  {
+    id: "whatsapp",
+    name: "WhatsApp",
     slug: "whatsapp",
+    category: "communication",
+    active: true,
+    short_description:
+      "Canal auxiliar para onboarding e fluxos de contato, sem substituir conformidade clínica.",
+    description:
+      "Use o canal onde sua operação já conversa para acelerar contato e suporte, enquanto o CRIT cobre o fluxo sensível com rastreabilidade e prova.",
     features: [
-      "QR code setup - no app needed",
-      "Forward receipts on the go",
-      "Smart document matching",
-      "One-tap approve or decline",
+      "Suporte e onboarding mais próximos da equipe",
+      "Canal familiar para adesão ao produto",
+      "Complementa o fluxo clínico sem substituí-lo",
+      "Mais capilaridade em implantações",
     ],
   },
-  sendblue: {
-    slug: "imessage",
-    features: [
-      "Use Midday directly from iMessage",
-      "Forward receipts from your iPhone",
-      "Create invoices in chat",
-      "Real-time invoice and transaction notifications",
-    ],
-  },
-  xero: {
-    slug: "xero",
-    features: [
-      "Manual transaction export",
-      "Receipt & invoice attachments",
-      "Smart categorization mapping",
-      "Faster book closing",
-    ],
-  },
-  quickbooks: {
-    slug: "quickbooks",
-    features: [
-      "Export as purchases and sales receipts",
-      "Automatic document attachment",
-      "Smart account mapping",
-      "Efficient bookkeeping",
-    ],
-  },
-  fortnox: {
-    slug: "fortnox",
-    features: [
-      "Export transactions as vouchers",
-      "Automatic attachments",
-      "Swedish BAS account mapping",
-      "Compliance-ready exports",
-    ],
-  },
-  raycast: {
-    slug: "raycast",
-    features: [
-      "Start/stop timers instantly",
-      "Project selection",
-      "Create new projects",
-      "Keyboard-first workflow",
-    ],
-  },
-  "stripe-payments": {
-    slug: "stripe-payments",
-    features: [
-      "Accept credit cards on invoices",
-      "Apple Pay & Google Pay support",
-      "Automatic status updates",
-      "Secure Stripe processing",
-    ],
-  },
-  stripe: {
-    slug: "stripe",
-    features: [
-      "Sync payments automatically",
-      "Revenue data import",
-      "Transaction matching",
-      "Real-time updates",
-    ],
-  },
-  "midday-desktop": {
-    slug: "midday-desktop",
-    features: [
-      "One-click access to finances",
-      "Track time from menu bar",
-      "Manage invoices",
-      "Native Mac experience",
-    ],
-    installUrl: "https://midday.ai/download",
-  },
-  "google-drive": {
+  {
+    id: "google-drive",
+    name: "Google Drive",
     slug: "google-drive",
+    category: "storage",
+    active: true,
+    short_description:
+      "Organize ativos institucionais, modelos e documentos de apoio.",
+    description:
+      "Conecte a base documental da operação ao ecossistema da Laudos.AI para ter mais consistência entre templates, referenciais e materiais internos.",
     features: [
-      "Automatic file sync",
-      "Document organization",
-      "Seamless backup",
-      "Easy file access",
+      "Organização de materiais institucionais",
+      "Base mais acessível para equipes",
+      "Menos arquivos soltos na operação",
+      "Apoio ao rollout de templates e padrões",
     ],
   },
-  dropbox: {
+  {
+    id: "dropbox",
+    name: "Dropbox",
     slug: "dropbox",
+    category: "storage",
+    active: true,
+    short_description:
+      "Sincronize documentos de apoio e ativos usados pela equipe.",
+    description:
+      "Para operações que já usam Dropbox como repositório, a integração facilita manter referências e materiais mais próximos do fluxo real.",
     features: [
-      "Automatic file sync",
-      "Document organization",
-      "Seamless backup",
-      "Easy file access",
+      "Sincronização de ativos relevantes ao fluxo",
+      "Base documental mais padronizada",
+      "Menos dependência de compartilhamento manual",
+      "Melhor apoio a equipes distribuídas",
     ],
   },
-  polar: {
-    slug: "polar",
-    features: [
-      "Sync subscription payments",
-      "Revenue tracking",
-      "Customer insights",
-      "Automated reconciliation",
-    ],
-  },
-  deel: {
-    slug: "deel",
-    features: [
-      "Sync contractor payments",
-      "Payroll integration",
-      "Compliance tracking",
-      "Global workforce support",
-    ],
-  },
-  "e-invoice": {
-    slug: "e-invoice",
-    features: [
-      "Peppol network support",
-      "European compliance",
-      "Send & receive e-invoices",
-      "Automated processing",
-    ],
-  },
-  "cursor-mcp": {
-    slug: "cursor-mcp",
-    features: [
-      "Financial context in your editor",
-      "Query transactions while coding",
-      "One-click install via deeplink",
-      "80+ tools for your entire business",
-    ],
-    installUrl: "https://midday.ai/mcp/cursor",
-  },
-  "claude-mcp": {
-    slug: "claude-mcp",
-    features: [
-      "Conversations with real numbers",
-      "Works with Claude Code & Desktop",
-      "Query invoices and reports",
-      "Granular permission controls",
-    ],
-    installUrl: "https://midday.ai/mcp/claude",
-  },
-  "perplexity-mcp": {
-    slug: "perplexity-mcp",
-    features: [
-      "AI search with your real data",
-      "Works with Perplexity Mac app",
-      "Query transactions and reports",
-      "Natural language questions",
-    ],
-    installUrl: "https://midday.ai/mcp/perplexity",
-  },
-  "raycast-mcp": {
-    slug: "raycast-mcp",
-    features: [
-      "Financial tools at your fingertips",
-      "Keyboard-first access",
-      "One-click install via deeplink",
-      "@-mention in Raycast AI",
-    ],
-    installUrl: "https://midday.ai/mcp/raycast",
-  },
-  "chatgpt-mcp": {
+  {
+    id: "chatgpt-mcp",
+    name: "ChatGPT",
     slug: "chatgpt-mcp",
+    category: "developer",
+    active: true,
+    short_description:
+      "Conecte dados, templates e fluxos da Laudos.AI a copilotos e agentes.",
+    description:
+      "Use MCP para levar partes do workflow radiológico a agentes e copilotos com contexto real do produto.",
     features: [
-      "Build with the MCP SDK",
-      "Custom integrations",
-      "Programmatic data access",
-      "TypeScript support",
+      "Acesso via MCP",
+      "Base para copilotos internos",
+      "Fluxos automatizados com contexto real",
+      "Melhor encaixe com stack técnico",
     ],
-    installUrl: "https://midday.ai/mcp/chatgpt",
+    installUrl: "https://www.laudos.ai/mcp",
   },
-  "opencode-mcp": {
-    slug: "opencode-mcp",
+  {
+    id: "claude-mcp",
+    name: "Claude",
+    slug: "claude-mcp",
+    category: "developer",
+    active: true,
+    short_description:
+      "Conecte agentes e assistentes ao contexto operacional da plataforma.",
+    description:
+      "Leve contexto de editor, templates e operação institucional para agentes que precisam consultar ou acionar partes do workflow.",
     features: [
-      "Track time for clients while coding",
-      "Start/stop timers from terminal",
-      "Query finances from any editor",
-      "Open source AI coding agent",
+      "Acesso seguro ao contexto do produto",
+      "Uso em copilotos e automações",
+      "Permissões e governança",
+      "Integração com o stack técnico da equipe",
     ],
-    installUrl: "https://midday.ai/mcp/opencode",
+    installUrl: "https://www.laudos.ai/mcp",
   },
-  "zapier-mcp": {
-    slug: "zapier-mcp",
+  {
+    id: "cursor-mcp",
+    name: "Cursor",
+    slug: "cursor-mcp",
+    category: "developer",
+    active: true,
+    short_description:
+      "Integre a camada técnica da Laudos.AI ao ambiente de desenvolvimento da sua equipe.",
+    description:
+      "Ideal para times que estão construindo conectores, automações ou fluxos internos em cima da infraestrutura da plataforma.",
     features: [
-      "Connect to 7,000+ apps",
-      "Automate reports and alerts",
-      "No-code workflow builder",
-      "Sync data across tools",
+      "MCP para fluxo de desenvolvimento",
+      "Mais velocidade para integrações internas",
+      "Conexão com API e stack técnico",
+      "Base para automações customizadas",
     ],
-    installUrl: "https://midday.ai/mcp/zapier",
+    installUrl: "https://www.laudos.ai/mcp",
   },
-  "copilot-mcp": {
-    slug: "copilot-mcp",
+  {
+    id: "connector-api",
+    name: "API",
+    slug: "api",
+    category: "developer",
+    active: true,
+    short_description:
+      "Acesso programático para cenários enterprise e integrações customizadas.",
+    description:
+      "Quando o hospital ou parceiro precisa integrar em profundidade, a API abre caminho para levar a plataforma ao fluxo local com mais controle.",
     features: [
-      "Query data from Microsoft 365",
-      "Works with Word, Excel, Outlook",
-      "Build custom Copilot agents",
-      "Enterprise-ready integration",
+      "Integrações customizadas",
+      "Base para cenários enterprise",
+      "Conexão com sistemas internos",
+      "Governança para operações sensíveis",
     ],
-    installUrl: "https://midday.ai/mcp/copilot",
+    installUrl: "https://www.laudos.ai/mcp",
   },
-  "n8n-mcp": {
-    slug: "n8n-mcp",
-    features: [
-      "Build automated financial workflows",
-      "AI agents with Midday tools",
-      "Connect to 400+ apps via n8n",
-      "MCP Client & Server support",
-    ],
-    installUrl: "https://midday.ai/mcp/n8n",
-  },
-  "make-mcp": {
-    slug: "make-mcp",
-    features: [
-      "Visual scenario builder",
-      "Connect to 1,500+ apps",
-      "MCP Client module support",
-      "No-code workflow automation",
-    ],
-    installUrl: "https://midday.ai/mcp/make",
-  },
-};
-
-const officialApps: WebsiteApp[] = appStoreApps
-  .map((app): WebsiteApp | null => {
-    const extension = appExtensions[app.id];
-    if (!extension) return null;
-
-    const appWithCategory = app as {
-      category?: string;
-      beta?: boolean;
-      installUrl?: string;
-    };
-
-    return {
-      id: app.id,
-      name: app.name,
-      slug: extension.slug,
-      category: appWithCategory.category || "Other",
-      active: app.active,
-      beta: appWithCategory.beta,
-      short_description: app.short_description || "",
-      description: app.description || null,
-      features: extension.features,
-      installUrl: extension.installUrl || appWithCategory.installUrl,
-    };
-  })
-  .filter((app): app is WebsiteApp => app !== null);
-
-const connectorApps: WebsiteApp[] = connectorAppDefs
-  .filter((c) => c.active)
-  .map((c) => ({
-    ...c,
-    logoUrl: getConnectorLogoUrl(c.id),
-  }));
-
-export const apps: WebsiteApp[] = [...officialApps, ...connectorApps];
+];
 
 export const categories = [
-  { id: "all", name: "All" },
-  { id: "capture", name: "Capture" },
-  { id: "accounting", name: "Accounting" },
-  { id: "payments", name: "Payments" },
-  { id: "apps", name: "Apps" },
-  { id: "ai-automation", name: "AI Assistants" },
-  { id: "connector", name: "AI Connectors" },
+  { id: "all", name: "Todas" },
+  { id: "clinical", name: "Clínicas" },
+  { id: "communication", name: "Comunicação" },
+  { id: "storage", name: "Arquivos" },
+  { id: "developer", name: "API e MCP" },
 ];
 
 export function getAppBySlug(slug: string): WebsiteApp | undefined {

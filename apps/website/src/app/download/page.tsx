@@ -1,17 +1,18 @@
-import { Download } from "@/components/download";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Download",
+  title: "Editor mobile e acesso em qualquer tela",
   description:
-    "Download Midday for Mac. Your business, always one click away. Access your business data directly from your desktop.",
+    "A experiencia da Laudos.AI acompanha o radiologista no desktop, tablet e celular, sem instalacao obrigatoria.",
   path: "/download",
   og: {
-    title: "Download",
-    description: "Midday for Mac — always one click away",
+    title: "Editor mobile",
+    description: "No navegador, no tablet e agora tambem no celular.",
   },
 });
 
 export default function Page() {
-  return <Download />;
+  return <PublicFeaturePage content={featurePages.download} />;
 }

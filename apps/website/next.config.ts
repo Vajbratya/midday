@@ -1,8 +1,13 @@
+import path from "node:path";
+
 /** @type {import("next").NextConfig} */
 const config = {
   poweredByHeader: false,
   reactStrictMode: true,
   trailingSlash: true,
+  turbopack: {
+    root: path.join(__dirname, "../.."),
+  },
   transpilePackages: [
     "@midday/ui",
     "@midday/tailwind",

@@ -1,17 +1,18 @@
-import { Customers } from "@/components/customers";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Customer Management & Revenue Tracking",
+  title: "Instituicoes, equipes e governanca",
   description:
-    "Know your customers better. Track customer performance, payment history, and outstanding invoices all in one place.",
+    "Padronize templates, perfis de acesso e governanca operacional para equipes, clinicas e hospitais no mesmo produto.",
   path: "/customers",
   og: {
-    title: "Customers",
-    description: "Track revenue, payments, and invoices per customer",
+    title: "Instituicoes",
+    description: "Perfis, auditoria e padrao institucional em uma plataforma.",
   },
 });
 
 export default function Page() {
-  return <Customers />;
+  return <PublicFeaturePage content={featurePages.customers} />;
 }

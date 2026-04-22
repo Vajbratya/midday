@@ -1,17 +1,18 @@
-import { SDKs } from "@/components/sdks";
+import { PublicFeaturePage } from "@/components/public-feature-page";
+import { featurePages } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "SDKs",
+  title: "API, SDKs e integrações técnicas",
   description:
-    "Typed SDKs to build faster with Midday. Integrate Midday into your applications with our official client libraries.",
+    "A camada técnica da Laudos.AI permite integrações, conectores, automações e copilotos em cima do workflow radiológico.",
   path: "/sdks",
   og: {
-    title: "SDKs",
-    description: "Typed client libraries for the Midday API",
+    title: "API e SDKs",
+    description: "Integração técnica com o workflow radiológico da Laudos.AI.",
   },
 });
 
 export default function Page() {
-  return <SDKs />;
+  return <PublicFeaturePage content={featurePages.mcp} />;
 }
